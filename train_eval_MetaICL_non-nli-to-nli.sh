@@ -6,9 +6,9 @@ else
   GPUS_PER_NODE=1
 fi
 
-cd /path/to/MetaLLamaFactory
+cd /path/to/MeGan/
 
-OUT_MODEL_DIR="/path/to/metaSwiglu/model/"
+OUT_MODEL_DIR="/path/to/MeGan/checkpoint/"
 
 PROJECT_NAME="meta_swiglu"
 BASE_MODEL_NAME="llama_3.1_8b_instruct"
@@ -58,9 +58,7 @@ Meta_L2_LAMBDA=$LAMBDA \
 PREPROCESS_WORKERS=16 \
 sh train_meta_swish/run_meta_swiglu_sft_template.sh
 
-rm -rf $OUT_MODEL_DIR$OUTPUT_MODEL_NAME/checkpoint-*
-
-EVAL_DIR="/path/to/metaSwiglu/eval/"
+EVAL_DIR="/path/to/MeGan/eval/"
 
 if [ -n "$MLP_ROLE_INDEX" ]; then
   NODE_RANK="$MLP_ROLE_INDEX"
@@ -71,16 +69,12 @@ fi
 
 if [ $NODE_RANK -eq 0 ]; then
     STYLE_DOMAIN="nnli2nli-test"
-        EVAL_NAME=$OUTPUT_MODEL_NAME"_prompt-"$STYLE_PROMPT_TYPE"_style-"$STYLE_EXPRESSION_TYPE"_domain-"$STYLE_DOMAIN
-    echo $EVAL_DIR$EVAL_NAME
-    rm -rf $EVAL_DIR$EVAL_NAME"/*"
-    python src/llamafactory/model/model_utils/evaluate_style.py --model_path $OUT_MODEL_DIR$OUTPUT_MODEL_NAME --output_dir $EVAL_DIR$EVAL_NAME --data_path /path/to/metaSwiglu/data/metaicl/non_nli_to_nli/test_fix.jsonl --num_gpus 8 --style_prompt_type $STYLE_PROMPT_TYPE --style_expression_type $STYLE_EXPRESSION_TYPE --sample_format qa_task --style_domain $STYLE_DOMAIN --eval_form gen_choice --model_type 2
+    EVAL_NAME=$OUTPUT_MODEL_NAME"_prompt-"$STYLE_PROMPT_TYPE"_style-"$STYLE_EXPRESSION_TYPE"_domain-"$STYLE_DOMAIN
+    python src/llamafactory/model/model_utils/evaluate_style.py --model_path $OUT_MODEL_DIR$OUTPUT_MODEL_NAME --output_dir $EVAL_DIR$EVAL_NAME --data_path /path/to/MeGan/data/metaicl/non_nli_to_nli/test_fix.jsonl --num_gpus 8 --style_prompt_type $STYLE_PROMPT_TYPE --style_expression_type $STYLE_EXPRESSION_TYPE --sample_format qa_task --style_domain $STYLE_DOMAIN --eval_form gen_choice --model_type 2
 fi
 
 if [ $NODE_RANK -eq 1 ]; then
     STYLE_DOMAIN="nnli2nli-unseen-test"
     EVAL_NAME=$OUTPUT_MODEL_NAME"_prompt-"$STYLE_PROMPT_TYPE"_style-"$STYLE_EXPRESSION_TYPE"_domain-"$STYLE_DOMAIN
-    echo $EVAL_DIR$EVAL_NAME
-    rm -rf $EVAL_DIR$EVAL_NAME"/*"
-    python src/llamafactory/model/model_utils/evaluate_style.py --model_path $OUT_MODEL_DIR$OUTPUT_MODEL_NAME --output_dir $EVAL_DIR$EVAL_NAME --data_path /path/to/metaSwiglu/data/metaicl/non_nli_to_nli/unseen_test_fix.jsonl --num_gpus 8 --style_prompt_type $STYLE_PROMPT_TYPE --style_expression_type $STYLE_EXPRESSION_TYPE --sample_format qa_task --style_domain $STYLE_DOMAIN --eval_form gen_choice --model_type 2
+    python src/llamafactory/model/model_utils/evaluate_style.py --model_path $OUT_MODEL_DIR$OUTPUT_MODEL_NAME --output_dir $EVAL_DIR$EVAL_NAME --data_path /path/to/MeGan/data/metaicl/non_nli_to_nli/unseen_test_fix.jsonl --num_gpus 8 --style_prompt_type $STYLE_PROMPT_TYPE --style_expression_type $STYLE_EXPRESSION_TYPE --sample_format qa_task --style_domain $STYLE_DOMAIN --eval_form gen_choice --model_type 2
 fi
