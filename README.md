@@ -4,7 +4,18 @@
 
 ## arxiv: https://arxiv.org/abs/2605.01973
 
-Detailed readme coming soon.
+
+## Experiment: metaicl (settings: non-nli-to-nli)
+
+### training and eval
+```bash
+bash train_eval_MetaICL_non-nli-to-nli.sh
+```
+
+### evaluation only
+```bash
+bash train_eval_MetaICL_non-nli-to-nli.sh
+```
 
 ## For questions, please email:
 jiluoaaron@hotmail.com

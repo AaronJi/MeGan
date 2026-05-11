@@ -1,45 +1,6 @@
 {
   "SNI": {
-    "file_name": "/datasets/meta/SNI/random_sampling/train_fix.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "task_description",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "SNI_hierarchical": {
-    "file_name": "/datasets/meta/SNI/nt_8_np_1_epoch20000/train.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "task_description",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "SNI_val_seen": {
-    "file_name": "/datasets/meta/SNI/random_sampling/val_seen.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "task_description",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "SNI_val_unseen": {
-    "file_name": "/datasets/meta/SNI/random_sampling/val_unseen.jsonl",
+    "file_name": "/path/to/MeGan/data/SNI/random_sampling/train.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -52,22 +13,7 @@
       "assistant_tag": "assistant"
     }
   },  "hr_to_lr_inst_all": {
-    "file_name": "/datasets/meta/metaicl_20260312/hr_to_lr_inst_all/train_fix.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "context_tag": "context",
-      "style_tag": "task_description",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "hr_to_lr_inst_all_test": {
-    "file_name": "/datasets/meta/metaicl_20260312/hr_to_lr_inst_all/test.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/hr_to_lr_inst_all/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -82,22 +28,7 @@
       "assistant_tag": "assistant"
     }
   },  "hr_to_lr_inst": {
-    "file_name": "/datasets/meta/metaicl_20260312/hr_to_lr_inst/train_fix.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "context_tag": "context",
-      "style_tag": "task_description",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "hr_to_lr_inst_test": {
-    "file_name": "/datasets/meta/metaicl_20260312/hr_to_lr_inst/test.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/hr_to_lr_inst/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -112,7 +43,7 @@
       "assistant_tag": "assistant"
     }
   },  "non_class_to_class": {
-    "file_name": "/datasets/meta/metaicl_20260312/non_class_to_class/train_fix.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/non_class_to_class/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -127,7 +58,7 @@
       "assistant_tag": "assistant"
     }
   },  "class_to_class": {
-    "file_name": "/datasets/meta/metaicl_20260312/class_to_class/train_fix.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/class_to_class/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -142,7 +73,7 @@
       "assistant_tag": "assistant"
     }
   },  "non_nli_to_nli": {
-    "file_name": "/datasets/meta/metaicl_20260312/non_nli_to_nli/train_fix.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/non_nli_to_nli/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -157,7 +88,7 @@
       "assistant_tag": "assistant"
     }
   },  "non_paraphrase_to_paraphrase": {
-    "file_name": "/datasets/meta/metaicl_20260312/non_paraphrase_to_paraphrase/train_fix.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/non_paraphrase_to_paraphrase/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -172,7 +103,7 @@
       "assistant_tag": "assistant"
     }
   },  "qa_to_qa": {
-    "file_name": "/datasets/meta/metaicl_20260312/qa_to_qa/train_fix.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/qa_to_qa/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -187,22 +118,7 @@
       "assistant_tag": "assistant"
     }
   },  "non_qa_to_qa": {
-    "file_name": "/datasets/meta/metaicl_20260312/non_qa_to_qa/train_fix.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "context_tag": "context",
-      "style_tag": "task_description",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "Crossfit_wiqa": {
-    "file_name": "/meta_git/metaICL_0115/MetaICL-main/data/messages-hr_to_lr-seed100/inst:wiqa:does-the-supposed-perturbation-have-an-effect_16384_train.jsonl",
+    "file_name": "/path/to/MeGan/data/metaicl/non_qa_to_qa/train_fix.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -217,21 +133,7 @@
       "assistant_tag": "assistant"
     }
   },  "Persona_Chat": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/persona_chat_split_20260114/train_self_original_etl_res.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "user_profiles",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "Persona_Chat_valid": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/persona_chat_split_20260114/valid_self_original_etl_res.jsonl ",
+    "file_name": "/path/to/MeGan/data/persona_chat/train_self_original_etl_res.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -245,7 +147,7 @@
       "assistant_tag": "assistant"
     }
   },  "AdaptSum": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/AdaptSum_cutoff3000/mix/train_merged.jsonl",
+    "file_name": "/path/to/MeGan/data/AdaptSum/train_merged.jsonl",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -257,273 +159,10 @@
       "instruction_tag": "instruction",
       "user_tag": "user",
       "assistant_tag": "assistant"
-    }
-  },  "AdaptSum_valid": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/AdaptSum_cutoff3000/mix/valid_merged.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "AdaptSum_test": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/AdaptSum_cutoff3000/mix/test_merged.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },  "AdaptSum_debate": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/sampler300/debate/train_message_fmt.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },"AdaptSum_dialogue": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/sampler300/dialogue/train_message_fmt.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },"AdaptSum_email": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/sampler300/email/train_message_fmt.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },"AdaptSum_movie_review": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/sampler300/movie_review/train_message_fmt.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },"AdaptSum_science": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/sampler300/science/train_message_fmt.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },"AdaptSum_social_media": {
-    "file_name": "/datasets/meta_LLM/meta_few_shot/sampler300/social_media/train_message_fmt.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "domain",
-      "instruction_tag": "instruction",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },"Shakespeare": {
-    "file_name": "/datasets/stylized/Shakespeare/text/train_dataset.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "style",
-      "user_tag": "user"
-    }
-  },
-  "Shakespeare_qa": {
-    "file_name": "/datasets/stylized/Shakespeare/QA/shakespeare_qa_train.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "style",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },
-  "Shakespeare_qa_filter3": {
-    "file_name": "/datasets/stylized/Shakespeare/QA/shakespeare_qa.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "style",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },
-  "GYAFC_qa": {
-    "file_name": "/datasets/stylized/GYAFC/GYAFC_qa_train.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "style",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },
-  "style_qa_mix": {
-    "file_name": "/datasets/stylized/style_qa_mix/mix.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "style",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },
-  "Amazon": {
-    "file_name": "/datasets/stylized_fmt/textstyletransferdata_fmt/merged.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "style",
-      "user_tag": "text"
-    }
-  },
-  "SST_test_score": {
-    "file_name": "/datasets/stylized_fmt/stanfordSentimentTreebank_fmt/org_data_fmt/train_score.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "sentiment",
-      "user_tag": "text"
-    }
-  },
-  "SST": {
-    "file_name": "DI/beijing-public/datasets/stylized_fmt/stanfordSentimentTreebank_fmt/org_data_fmt/train.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "sentiment",
-      "user_tag": "text"
-    }
-  },
-  "SST_qa": {
-    "file_name": "/stylized/stanfordSentimentTreebank/SST_train_infer_query_msg.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "style_tag": "sentiment",
-      "user_tag": "user",
-      "assistant_tag": "assistant"
-    }
-  },
-  "mic": {
-    "file_name": "/datasets/stylized/mic/mic_fmt/mic_train_style.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "style_tag": "style",
-      "system_tag":"system"
-    }
-  },
-  "mic_qa": {
-    "file_name": "/datasets/stylized/mic/qa/mic_train_split_20251002.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "style_tag": "style",
-      "system_tag":"system"
     }
   },
   "style_demo": {
-    "file_name": "/MetaLLamaFactory/data/style_demo.json",
+    "file_name": "/path/to/MeGan/data/style_demo.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"
@@ -536,93 +175,6 @@
       "style_tag": "style",
       "system_tag":"system"
     }
-  },
-  "gsm8k": {
-    "file_name": "/datasets/math/gsm8k_ver_llmAdapter/train.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "system_tag":"system"
-    }
-  },
-    "AQuA": {
-    "file_name": "/datasets/nlp/AQuA/raw_json/train-00000-of-00001_msg.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "system_tag":"system"
-    }
-  },
-  "Dolly15k": {
-    "file_name": "/datasets/general/databricks-dolly-15k/databricks-dolly-15k_msg.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "system_tag":"system"
-    }
-  },
-  "CodeAlpaca": {
-    "file_name": "/datasets/code/CodeAlpaca-20k/code_alpaca_20k_msg.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "system_tag":"system"
-    }
-  },
-  "COMMONSENSE170K": {
-    "file_name": "/datasets/reasoning/COMMONSENSE170K__ver_llmAdapter/train-00000-of-00001.json",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "system_tag":"system"
-    }
-  },
-  "MATH10K": {
-    "file_name": "/datasets/math/MATH10k/math_10k.jsonl",
-    "formatting": "sharegpt",
-    "columns": {
-      "messages": "messages"
-    },
-    "tags": {
-      "role_tag": "role",
-      "content_tag": "content",
-      "user_tag": "user",
-      "assistant_tag": "assistant",
-      "system_tag":"system"
-    }
-  },
-  "identity": {
-    "file_name": "identity.json"
   },
   "alpaca_en_demo": {
     "file_name": "alpaca_en_demo.json"
