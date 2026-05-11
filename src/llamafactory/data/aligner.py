@@ -149,6 +149,7 @@ def convert_sharegpt(
         dataset_attr.function_tag: Role.FUNCTION.value,
         dataset_attr.system_tag: Role.SYSTEM.value,
         dataset_attr.style_tag: Role.STYLE.value,
+        dataset_attr.instruction_tag: Role.INSTRUCTION.value,
     }
     odd_tags = (dataset_attr.user_tag, dataset_attr.observation_tag, dataset_attr.style_tag)
     even_tags = (dataset_attr.assistant_tag, dataset_attr.function_tag, dataset_attr.user_tag, dataset_attr.style_tag)
@@ -209,8 +210,34 @@ def convert_sharegpt(
             {"role": tag_mapping[rejected[dataset_attr.role_tag]], "content": rejected[dataset_attr.content_tag]},
         ]
     else:
-        if "shakespeare_qa" in dataset_attr.dataset_name or "GYAFC_qa" in dataset_attr.dataset_name or "mic/qa" in dataset_attr.dataset_name:
+        '''
+        style_qa_datasets = ["shakespeare_qa", "GYAFC_qa", "mic/qa", "SST_"]
+        is_style_qa = False
+        for style_data_name in style_qa_datasets:
+            if style_data_name in dataset_attr.dataset_name:
+                is_style_qa = True
+                break
+
+        domain_adapt_datasets = ["AdaptSum", "sampler300"]
+        is_domain_adapt = False
+        for domain_data_name in domain_adapt_datasets:
+            if domain_data_name in dataset_attr.dataset_name:
+                is_domain_adapt = True
+                break        
+        '''
+
+
+        instruction = None
+        history = None
+        #if "shakespeare_qa" in dataset_attr.dataset_name or "GYAFC_qa" in dataset_attr.dataset_name or "mic/qa" in dataset_attr.dataset_name:
+        if dataset_attr.style_tag in ['style', 'sentiment']:
             prompt, response, style = align_style_qa(messages, dataset_attr, aligned_messages)
+        elif dataset_attr.style_tag == 'domain':
+            prompt, response, style, instruction, history = align_style_domain(messages, dataset_attr, aligned_messages, example)
+        elif dataset_attr.style_tag == 'task_description':
+            prompt, response, style, instruction, history = align_style_domain(messages, dataset_attr, aligned_messages, example)
+        elif dataset_attr.style_tag == 'user_profiles':
+            prompt, response, style, instruction, history = align_style_persona(messages, dataset_attr, aligned_messages, example)
         elif "mic_fmt" in dataset_attr.dataset_name:
             prompt, response, style = align_style_role_qa(messages, dataset_attr, aligned_messages)
         elif "Shakespeare/text" in dataset_attr.dataset_name:
@@ -235,6 +262,8 @@ def convert_sharegpt(
         "_images": convert_images(example[dataset_attr.images]) if dataset_attr.images else None,
         "_videos": convert_videos(example[dataset_attr.videos]) if dataset_attr.videos else None,
         "_style": style,
+        "_instruction": instruction,
+        "_history": history,
     }
     return output
 
@@ -278,6 +307,48 @@ def align_style_role(messages, dataset_attr, aligned_messages):
     prompt = aligned_messages[:-1]
     response = []
     return prompt, response, style
+
+def align_style_domain(messages, dataset_attr, aligned_messages, example):
+    domain = example[dataset_attr.style_tag]
+    context = example.get('context', None)
+    instruction = None
+    for message in messages:
+        if message[dataset_attr.role_tag] == dataset_attr.user_tag:
+            instruction = message.get(dataset_attr.instruction_tag, "None")
+        #if message[dataset_attr.role_tag] == dataset_attr.assistant_tag:
+        #    style = message.get(dataset_attr.style_tag, "None")
+
+    prompt = aligned_messages[:-1]
+    response = [aligned_messages[-1]]
+    return prompt, response, domain, instruction, context
+
+def merge_history(history):
+    if history is None or not isinstance(history, List) or len(history) == 0:
+        return None
+    history_str = ''
+    for turn in history:
+        q = turn[0]
+        a = turn[1]
+        user_str = 'user: ' + q
+        assistant_str = 'assistant: ' + a
+        history_str += user_str + '\n' + assistant_str + '\n'
+    return history_str
+
+def align_style_persona(messages, dataset_attr, aligned_messages, example):
+    history = example.get('history', None)
+    #history_str= merge_history(history)
+    user_profiles = example[dataset_attr.style_tag]
+    #user_profiles = "\t".join(example[dataset_attr.style_tag])
+    instruction = None
+    for message in messages:
+        if message[dataset_attr.role_tag] == dataset_attr.user_tag:
+            instruction = message.get(dataset_attr.instruction_tag, "None")
+        #if message[dataset_attr.role_tag] == dataset_attr.assistant_tag:
+        #    style = message.get(dataset_attr.style_tag, "None")
+
+    prompt = aligned_messages[:-1]
+    response = [aligned_messages[-1]]
+    return prompt, response, user_profiles, instruction, history
 
 def convert_chatgpt(examples: Dict[str, List[Any]], dataset_attr: "DatasetAttr", data_args: "DataArguments") -> Dict[
     str, List[Any]]:

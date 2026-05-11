@@ -6,7 +6,7 @@ from transformers.models.llama.modeling_llama import LlamaMLP
 from llamafactory.model.model_utils.meta_swiglu import MetaLlamaMLP
 from llamafactory.model.patcher import (patch_activation_model)
 
-model_name_or_path = "/vepfs/DI/user/jl/results/metaSwiglu/metaSwiGLU_llama2_7b_gsm8k_lr-3_zeroinit"
+model_name_or_path = "/user/jl/results/metaSwiglu/metaSwiGLU_llama2_7b_gsm8k_lr-3_zeroinit"
 
 from llamafactory.hparams.finetuning_args import FinetuningArguments
 

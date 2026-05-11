@@ -30,6 +30,7 @@ from transformers.models.llama.modeling_llama import LlamaMLP
 from .model_utils.configuration_llama_meta import LlamaConfig
 from .model_utils.meta_swiglu import MetaLlamaMLP
 from .model_utils.meta_swiglu_modeling_llama import LlamaForCausalLM
+from .model_utils.meta_swiglu_shared_modeling_llama import LlamaForCausalLM_sharedHyper
 from .patcher import patch_config, patch_model, patch_processor, patch_tokenizer, patch_valuehead_model, patch_activation_model
 
 
@@ -162,7 +163,10 @@ def load_model(
             if type(config) in AutoModelForVision2Seq._model_mapping.keys():  # assume built-in models
                 load_class = AutoModelForVision2Seq
             elif is_meta:
-                load_class = LlamaForCausalLM
+                if model_args.meta_swishglu_shared_hyper > 0:
+                    load_class = LlamaForCausalLM_sharedHyper
+                else:
+                    load_class = LlamaForCausalLM
             else:
                 load_class = AutoModelForCausalLM
 
@@ -173,7 +177,8 @@ def load_model(
 
                 for name, param in model.named_parameters():
                     if is_meta and finetuning_args.finetuning_type != "meta_swiglu_full":
-                        if "beta_generator" not in name:
+                        # TODO two blocks; keep names!
+                        if "beta_generator" not in name and "style_attention" not in name:
                             param.requires_grad_(False)
                         else:
                             print(f"保持可训练: {name}")  # 调试用

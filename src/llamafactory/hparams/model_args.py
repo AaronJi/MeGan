@@ -309,6 +309,10 @@ class ModelArguments(QuantizationArguments, ProcessorArguments, ExportArguments,
         init=False,
         metadata={"help": "Whether use block diag attention or not, derived from `neat_packing`. Do not specify it."},
     )
+    meta_swishglu_shared_hyper: Optional[int] = field(
+        default=0,
+        metadata={"help": "Whether to use a single shared hypernetwork to determine all layers' beta."},
+    )
     meta_swishglu_attn_key: str = field(
         default=None,
         metadata={"help": "The attention key in Meta SwishGLU."},
@@ -328,6 +332,10 @@ class ModelArguments(QuantizationArguments, ProcessorArguments, ExportArguments,
     meta_swishglu_beta_num_layer: Optional[int] = field(
         default=1,
         metadata={"help": "meta_swishglu num of layers for beta mlp"},
+    )
+    meta_swishglu_beta_hidden_dim: Optional[int] = field(
+        default=0,
+        metadata={"help": "the reduced hidden size for beta generator; 0 means no compression"},
     )
 
     def __post_init__(self):

@@ -2,7 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from meta_swiglu_modeling_llama import LlamaForCausalLM
 
-MODEL_PATH = "/vepfs/DI/beijing-public/models/Llama-2-7b-hf"
+MODEL_PATH = "/beijing-public/models/Llama-2-7b-hf"
 PROMPT = "今天天气真好，"
 SEED = 42
 MAX_NEW_TOKENS = 50

@@ -40,6 +40,7 @@ class Role(str, Enum):
     FUNCTION = "function"
     OBSERVATION = "observation"
     STYLE = "style"
+    INSTRUCTION = "instruction"
 
 
 class DatasetModule(TypedDict):

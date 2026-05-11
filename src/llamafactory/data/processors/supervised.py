@@ -88,6 +88,61 @@ def _encode_supervised_example(
     return input_ids, labels
 
 
+def get_style_expression(style, instruction=None, style_expression_type="withInstruction", for_prompt=False):
+    assert style_expression_type in ["None", "withInstruction"]
+    style_expression = style
+    if style_expression_type == "None":
+        if isinstance(style, List):
+            style_expression = '\n'.join(style)
+        return style_expression
+
+    # Persona-Chat
+    if instruction and 'profile' in instruction:
+        #instruction = 'You are engaged in a conversation with the user. The user have the following profiles. You should consider the profiles and make the corresponding appropriate response.'
+        #instruction = 'You are chatting with a user, who has the following profiles. Consider the profiles and respond.'
+        #instruction = 'Provide the appropriate response based on the user profiles.'
+        style_expression = instruction + '\n\nProfiles: \n'
+        for profile in style:
+            style_expression += profile + '\n'
+    # AdaptSum
+    elif instruction and 'a concise summary' in instruction:
+        #instruction = 'You are dealing with an abstractive summarization with different domains. You should conside the following domain tag, and adjust your summarization accordingly.'
+        #instruction = 'You are dealing with an abstractive summarization with different domains. Adjust your summarization accordingly.'
+        #instruction = 'Conduct the summarization based its specific domains.'
+        style_expression = instruction + '\n\nDomain: ' + style
+    # SST
+    elif style in ['very positive', 'positive', 'neutral', 'negative', 'very negative']:
+        # style_expression = f"Please answer the question with the sentiment of **{style}**."
+        # style_expression = f"Please answer the question with following sentiment.\n\n **sentiment**: {style}"
+        # style_expression = f"Response sentiment: {style}"
+        style_expression = f"Reply with sentiment: {style}"
+    else:
+        if instruction and len(instruction) > 0:
+            # MetaICL, SNI
+            if for_prompt:
+                style_expression = instruction
+            else:
+                style_expression = style
+        else:
+            # general style
+            style_expression = f"Please answer the question with the style of {style}."
+    return style_expression
+
+def merge_history(history):
+    if history is None or len(history) == 0:
+        return None
+    if isinstance(history, List):
+        history_str = ''
+        for turn in history:
+            q = turn[0]
+            a = turn[1]
+            user_str = 'user: ' + q
+            assistant_str = 'assistant: ' + a
+            history_str += user_str + '\n' + assistant_str + '\n'
+    else:
+        history_str = history
+    return history_str
+
 def preprocess_supervised_dataset(
     examples: Dict[str, List[Any]],
     template: "Template",
@@ -106,18 +161,36 @@ def preprocess_supervised_dataset(
         prompt = examples["_prompt"][i]
         response = examples["_response"][i]
         system = examples["_system"][i]
+        history = examples["_history"][i]
 
         assert data_args.style_prompt_type in ["None", "inSystem", "inQuery"]
+        instruction = examples["_instruction"][i]
         style = examples["_style"][i]
+
+        system = "" if system is None or len(system) == 0 else system
         if data_args.style_prompt_type != "None":
             assert style is not None
-            style_expression = f"Please answer the question with the style of {style}."
-            # instruction = "Please answer the question with the style of " + examples["_style"][i] + "."
+            style_expression = get_style_expression(style, instruction, for_prompt=True)
             if data_args.style_prompt_type == "inSystem":
-                system = "" if system is None or len(system) == 0 else system + "\n\n"
                 system += style_expression
             elif data_args.style_prompt_type == "inQuery":
-                prompt[0]["content"] += "\n\n" + style_expression
+                if 'profile' in instruction:
+                    prompt[0]["content"] = style_expression + "\n\nQuestion:\n" + prompt[0]["content"]
+                else:
+                    prompt[0]["content"] += "\n\n" + style_expression
+
+        # append history
+        if history and len(history) > 0:
+            history_str = merge_history(history)
+            # TODO need to optimize
+            if isinstance(history, List):
+                # Persona-Chat
+                history_str = '\nConversation history:\n' + history_str
+                system += history_str
+            else:
+                # MetaICL
+                history_str = '\nConsider context:\n' + history_str + "\n\n"
+                prompt[0]["content"] = history_str + "\nQuestion:\n" + prompt[0]["content"]
 
         input_ids, labels = _encode_supervised_example(
             prompt=prompt,
@@ -145,11 +218,7 @@ def preprocess_supervised_dataset(
             # shape: [seq_length, intermediate_size]
             # style = torch.ones(seq_length, 11008) if is_positive \
             #        else torch.zeros(seq_length, 11008)
-            assert data_args.style_expression_type in ["None", "withInstruction"]
-
-            style_expression = style
-            if data_args.style_expression_type != "None":
-                style_expression = f"Please answer the question with the style of {style}."
+            style_expression = get_style_expression(style, instruction, data_args.style_expression_type)
             style_ids = tokenizer.encode(
                 style_expression,
                 add_special_tokens=False,
@@ -166,14 +235,19 @@ def preprocess_supervised_dataset(
         model_inputs["labels"].append(labels)
         model_inputs["images"].append(examples["_images"][i])
         model_inputs["videos"].append(examples["_videos"][i])
+    #if history and len(history) > 0:
     #print('&&&&&')
+    #print('### system: ###')
     #print(system)
-    #print(prompt)
-    #print(response)
+    #print('### prompt: ###')
+    #print(prompt[0]["content"])
+    #print('### response: ###')
+    #print(response[0]["content"])
+    #print('### style: ###')
     #print(style_expression)
+    #exit(5)
     #print(model_inputs["style"])
     #print(type(style_ids))
-    #print(style_ids)
     return model_inputs
 
 

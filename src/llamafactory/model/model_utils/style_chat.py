@@ -91,8 +91,8 @@ def main():
     print("开始加载模型...")
     
     # 模型路径
-    base_model_path = "/vepfs/DI/beijing-public/models/Meta-Llama-3-8B"
-    model_path = "/vepfs/DI/user/xiningyuan/results/metaSwiglu/metaSwiGLU_llama3_8b_cpt_Shakespeare_tanh_0825"
+    base_model_path = "/beijing-public/models/Meta-Llama-3-8B"
+    model_path = "/user/xiningyuan/results/metaSwiglu/metaSwiGLU_llama3_8b_cpt_Shakespeare_tanh_0825"
     
     # 初始化标准模型（原版Llama）
     print("加载标准模型...")

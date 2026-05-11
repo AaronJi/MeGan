@@ -87,8 +87,8 @@ def main():
     print("开始加载模型...")
     
     # 模型路径
-    base_model_path = "/vepfs/DI/beijing-public/models/Meta-Llama-3-8B-Instruct"
-    model_path = "/vepfs/DI/user/xiningyuan/results/metaSwiglu/metaSwiGLU_llama3_8b_sft_mic_tanh_0721"
+    base_model_path = "beijing-public/models/Meta-Llama-3-8B-Instruct"
+    model_path = "/results/metaSwiglu/meta_swiglu-attn_k_x_h4_b0_l1-sft-llama_3.1_8b_instruct-mixStyle-Lambda0-LR1e-2-decay1e-2-bsz32-epoch1"
     
     # 初始化标准模型（原版Llama）
     print("加载标准模型...")
@@ -166,6 +166,16 @@ def main():
                 num_return_sequences=1,
                 pad_token_id=tokenizer.eos_token_id 
             )
+                    #             gen_ids = model.generate(
+                    #     input_ids=chat_input,
+                    #     style=style_input,
+                    #     max_new_tokens=max_new_tokens,
+                    #     num_return_sequences=1,
+                    #     pad_token_id=tokenizer.eos_token_id,
+                    #     eos_token_id=tokenizer.eos_token_id,
+                    #     do_sample=False,
+                    #     use_cache=True
+                    # )
         
         response = tokenizer.decode(outputs[0], skip_special_tokens=False)
         print(f"\n风格值 beta={style_value}:")

@@ -350,7 +350,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, required=True,
                       help="Path to the trained model")
-    parser.add_argument("--data_path", type=str, default="/vepfs/DI/beijing-public/datasets/stylized_fmt/mic_fmt/mic_test_style.jsonl",
+    parser.add_argument("--data_path", type=str, default="/beijing-public/datasets/stylized_fmt/mic_fmt/mic_test_style.jsonl",
                       help="Path to the test data")
     parser.add_argument("--output_dir", type=str, default=None,
                       help="Output directory for results")
@@ -362,7 +362,7 @@ def main():
     
     # 设置输出目录
     model_name = os.path.basename(args.model_path)
-    args.output_dir = f"/vepfs/DI/user/xiningyuan/results/metaSwiglu_eval/{model_name}"
+    args.output_dir = f"/user/xiningyuan/results/metaSwiglu_eval/{model_name}"
 
     # 创建输出目录
     os.makedirs(args.output_dir, exist_ok=True)

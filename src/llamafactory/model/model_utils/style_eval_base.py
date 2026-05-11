@@ -330,7 +330,7 @@ def main():
     args = parser.parse_args()
 
     model_name = Path(args.model_path).name
-    args.output_dir = args.output_dir or f"/vepfs/DI/user/xiningyuan/results/metaSwiglu_eval/{model_name}"
+    args.output_dir = args.output_dir or f"/user/xiningyuan/results/metaSwiglu_eval/{model_name}"
     Path(args.output_dir).mkdir(parents=True, exist_ok=True)
 
     multiprocessing.set_start_method('spawn', force=True)

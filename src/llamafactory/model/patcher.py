@@ -133,10 +133,12 @@ def patch_config(
     # meta local config
     setattr(config, "meta_swishglu_attn_key", model_args.meta_swishglu_attn_key)
     if model_args.meta_swishglu_attn_key is not None:
+        setattr(config, "meta_swishglu_shared_hyper", model_args.meta_swishglu_shared_hyper)
         setattr(config, "meta_swishglu_attn_head_num", model_args.meta_swishglu_attn_head_num)
         setattr(config, "meta_swishglu_l2_lambda", model_args.meta_swishglu_l2_lambda)
         setattr(config, "meta_swishglu_beta_num_layer", model_args.meta_swishglu_beta_num_layer)
         setattr(config, "meta_swishglu_mlp_bias", model_args.meta_swishglu_mlp_bias)
+        setattr(config, "meta_swishglu_beta_hidden_dim", model_args.meta_swishglu_beta_hidden_dim)
 
 def patch_model(
     model: "PreTrainedModel",

@@ -225,6 +225,49 @@ def apply_rotary_pos_emb(q, k, cos, sin, position_ids=None, unsqueeze_dim=1):
     k_embed = (k * cos) + (rotate_half(k) * sin)
     return q_embed, k_embed
 
+
+class MultiheadAttentionProjectQuery(nn.Module):
+    '''
+    input dim: d1
+    output dim: d2
+    '''
+    def __init__(self, d1, d2, num_heads, dropout=0.0):
+        super().__init__()
+        self.d1 = d1
+        self.d2 = d2
+
+        # 注意力层：所有维度都设为d2
+        self.attention = nn.MultiheadAttention(
+            embed_dim=d2,  # 所有维度都使用d2
+            num_heads=num_heads,
+            dropout=dropout,
+            batch_first=True
+        )
+
+        # 投影层：将输入从d1投影到d2
+        self.query_proj = nn.Linear(d1, d2)
+        self.key_proj = nn.Linear(d1, d2)
+        self.value_proj = nn.Linear(d1, d2)
+
+    def forward(self, q, k, v, key_padding_mask=None, attn_mask=None, need_weights=False):
+        # 将查询、键、值都投影到d2
+        query = self.query_proj(q)
+        key = self.key_proj(k)
+        value = self.value_proj(v)
+
+        # 注意力计算（输出维度为d2）
+        attn_output, attn_weights = self.attention(
+            query=query,
+            key=key,
+            value=value,
+            key_padding_mask=key_padding_mask,
+            attn_mask=attn_mask,
+            need_weights=need_weights
+        )
+
+        return attn_output, attn_weights
+
+# meta_swishglu_beta_hidden_dim
 class LlamaMLP(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -236,30 +279,47 @@ class LlamaMLP(nn.Module):
         self.gate_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
         self.up_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
         self.down_proj = nn.Linear(self.intermediate_size, self.hidden_size, bias=config.mlp_bias)
-        
-        # 风格适配模块 - 使用交叉注意力
-        if self.config.meta_swishglu_attn_key is not None and self.config.meta_swishglu_attn_head_num is not None and self.config.meta_swishglu_attn_head_num > 0:
-            self.style_attention = nn.MultiheadAttention(
-                embed_dim=self.hidden_size,
-                num_heads=self.config.meta_swishglu_attn_head_num,  # 可调整
-                batch_first=True
-            )
-        else:
-            self.style_attention = None
 
-        # 风格适配模块
         with_bias = True if self.config.meta_swishglu_mlp_bias > 0 else False
+        if self.config.meta_swishglu_beta_hidden_dim > 0:
+            # reduced; hidden_size to reduced size to intermediate size
+            self.style_attention = MultiheadAttentionProjectQuery(self.hidden_size, self.config.meta_swishglu_beta_hidden_dim, num_heads=1)
 
-        self.beta_generator = nn.Sequential(
-            nn.Linear(self.hidden_size, self.intermediate_size, bias=with_bias),
-            nn.Tanh(),
-            #LambdaLayer(lambda x: 0.5 * x),
-        )
-        if self.config.meta_swishglu_attn_key is not None and self.config.meta_swishglu_beta_num_layer is not None and self.config.meta_swishglu_beta_num_layer > 0:
-            for i_layer in range(self.config.meta_swishglu_beta_num_layer-1):
-                self.beta_generator.append(nn.Linear(self.intermediate_size, self.intermediate_size, bias=with_bias))
-                self.beta_generator.append(nn.Tanh())
-        self.beta_generator.append(LambdaLayer(lambda x: 0.5 * x))
+            self.beta_generator = nn.Sequential(
+                nn.Linear(self.config.meta_swishglu_beta_hidden_dim, self.intermediate_size, bias=with_bias),
+                nn.Tanh(),
+                #LambdaLayer(lambda x: 0.5 * x),
+            )
+            if self.config.meta_swishglu_attn_key is not None and self.config.meta_swishglu_beta_num_layer is not None and self.config.meta_swishglu_beta_num_layer > 0:
+                for i_layer in range(self.config.meta_swishglu_beta_num_layer-1):
+                    self.beta_generator.append(nn.Linear(self.meta_swishglu_beta_hidden_dim, self.intermediate_size, bias=with_bias))
+                    self.beta_generator.append(nn.Tanh())
+            self.beta_generator.append(LambdaLayer(lambda x: 0.5 * x))
+        else:
+            # not reduced; hidden_size to intermediate size
+
+            # 风格适配模块 - 使用交叉注意力
+            if self.config.meta_swishglu_attn_key is not None and self.config.meta_swishglu_attn_head_num is not None:
+                #  and self.config.meta_swishglu_attn_head_num > 0
+                self.style_attention = nn.MultiheadAttention(
+                    embed_dim=self.hidden_size,
+                    num_heads=self.config.meta_swishglu_attn_head_num,  # 可调整
+                    batch_first=True
+                )
+            else:
+                self.style_attention = None
+
+            # 风格适配模块
+            self.beta_generator = nn.Sequential(
+                nn.Linear(self.hidden_size, self.intermediate_size, bias=with_bias),
+                nn.Tanh(),
+                #LambdaLayer(lambda x: 0.5 * x),
+            )
+            if self.config.meta_swishglu_attn_key is not None and self.config.meta_swishglu_beta_num_layer is not None and self.config.meta_swishglu_beta_num_layer > 0:
+                for i_layer in range(self.config.meta_swishglu_beta_num_layer-1):
+                    self.beta_generator.append(nn.Linear(self.intermediate_size, self.intermediate_size, bias=with_bias))
+                    self.beta_generator.append(nn.Tanh())
+            self.beta_generator.append(LambdaLayer(lambda x: 0.5 * x))
 
         self.act_fn = ACT2FN[config.hidden_act]
 
