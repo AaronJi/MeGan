@@ -51,12 +51,12 @@ FIX_ARGS="
 "
 
 
-: ${FINETUNE_TYPE:="meta_swiglu_simple"}
+: ${FINETUNE_TYPE:="meta_swiglu"}
 : ${TRAIN_STAGE:="sft"}
 : ${MODEL_NAME:="llama_3.1_8b_instruct"}
 : ${TOKENIZER_NAME:="llama_3.1_8b_instruct"}
-: ${OUTPUT_PATH:="/vepfs/group04/user/jl/results/metaSwiglu/test_model"}
-: ${DATASET:="Shakespeare_qa"}
+: ${OUTPUT_PATH:="/path/to/MeGan/checkpoint/test_model"}
+: ${DATASET:="xxx"}
 : ${TEMPLATE:="llama3"}
 : ${LR:=1e-4}
 : ${LR_TYPE:="cosine"}
@@ -74,7 +74,7 @@ FIX_ARGS="
 : ${META_SWISHGLU_BETA_N_LAYER:=1}
 : ${PREPROCESS_WORKERS:=16}
 
-MODEL_DIR="/vepfs/group04/beijing-public/models/"
+MODEL_DIR="/path/to/models/"
 MODEL_PATH=$MODEL_DIR$MODEL_NAME
 TOKENIZER_PATH=$MODEL_DIR$MODEL_NAME
 
@@ -118,12 +118,6 @@ TRAIN_ARGS="
 FLAG_AGRS=""
 if [ -n "$USE_FAST_TOKENIZER" ]; then
   FLAG_AGRS="$FLAG_AGRS --use_fast_tokenizer"
-fi
-if [ -n "$FIREFLY" ]; then
-  FLAG_AGRS="$FLAG_AGRS --firefly"
-fi
-if [ -n "$MULTI_INSTRUCTION" ]; then
-  FLAG_AGRS="$FLAG_AGRS --multi_instructions"
 fi
 
 echo "### Final command:"
