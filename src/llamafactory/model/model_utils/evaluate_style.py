@@ -30,27 +30,25 @@ from rouge_score import rouge_scorer
 from typing import TYPE_CHECKING, Any, Dict, List, Optional, Sequence, Tuple, OrderedDict
 from evalplus.eval import  estimate_pass_at_k, untrusted_check
 
-# 配置日志
+# Set logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-
-# 确保nltk资源已下载
 # nltk.download('punkt', quiet=True)
 
 def load_safetensors_checkpoint(model, checkpoint_path):
     """
-    从分片的safetensors文件加载模型权重，并返回beta_generator权重
+    Load model parameter from shareded safetensors
 
     Args:
-        model: 初始化的模型
-        checkpoint_path: 模型文件夹路径
+        model: init weights
+        checkpoint_path: model checkpoint path
 
     Returns:
-        loaded_beta_weights: 从checkpoint加载的beta_generator权重
+        loaded_beta_weights: parameters of beta_generator
     """
     safetensors_files = sorted([f for f in os.listdir(checkpoint_path) if f.endswith('.safetensors')])
     assert len(safetensors_files) > 0
@@ -100,9 +98,9 @@ def load_bin_checkpoint(model, checkpoint_path):
     missing_keys, unexpected_keys = model.load_state_dict(model_dict, strict=False)
 
     if missing_keys:
-        print(f"警告：缺少以下键：{missing_keys}")
+        print(f"Warning, missing keys: {missing_keys}")
     if unexpected_keys:
-        print(f"警告：出现意外的键：{unexpected_keys}")
+        print(f"Warning, unexpected keys: {unexpected_keys}")
 
     #print("****")
     #print(loaded_beta_weights.keys())
@@ -119,14 +117,14 @@ def load_bin_checkpoint(model, checkpoint_path):
 
 def rl_eval(references: list, predictions: list):
     """
-    计算Rouge-L分数
+    Compute Rouge-L score
 
     Args:
-        ground_truth: 参考文本列表
-        predictions: 生成文本列表
+        ground_truth: ref response
+        predictions: gen response
 
     Returns:
-        rougeL_fmeasure: Rouge-L F1分数
+        rougeL_fmeasure: Rouge-L F1 score
     """
     # 使用rouge_score库替代原来的rouge库
     scorer = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)
@@ -140,8 +138,7 @@ def b2_eval(references: list, predictions: list):
 
     refs = [tmp.split(' ') for tmp in references]
     hyps = [tmp.split(' ') for tmp in predictions]
-    scores = [
-        sentence_bleu([reference], hypothesis, weights=weights, smoothing_function=smoothie) for reference, hypothesis in zip(refs, hyps)]
+    scores = [sentence_bleu([reference], hypothesis, weights=weights, smoothing_function=smoothie) for reference, hypothesis in zip(refs, hyps)]
     return sum(scores) / len(scores)
 
 def distinct_n(seqs, n=2):
@@ -151,8 +148,8 @@ def distinct_n(seqs, n=2):
 
 def zipf_coefficient(seqs):
     """
-    拟合 log(rank) ~ log(freq) 的斜率作为 Zipf 系数
-    越接近 -1 越自然
+    The slope of log(rank) ~ log(freq)
+    more natural if closer to -1
     """
     words = [w for s in seqs for w in s.split()]
     freq = Counter(words)
@@ -238,14 +235,14 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
     多卡推理的工作进程函数
 
     Args:
-        rank: 进程排名
-        data_path: 数据文件路径
-        model_path: 模型路径
-        output_dir: 输出目录
-        max_new_tokens: 最大生成长度
-        total_workers: 总工作进程数
+        rank: the process index
+        data_path: data file path
+        model_path: model file path
+        output_dir: output directory
+        max_new_tokens: max generation length
+        total_workers: the total number of workers
     """
-    # 设置当前进程可见的GPU
+    # Set the available GPU of the current process
     start_gpu = rank
     gpu_list = [start_gpu]
     gpu_list_str = ','.join(map(str, gpu_list))
@@ -253,7 +250,7 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
     device = torch.device(f'cuda:{rank}')
     output_file = Path(output_dir) / f'inference_result_part_{rank}.jsonl'
 
-    # 加载数据集
+    # load dataset
     questions, references, styles, instructions, histories, task_names = load_dataset(data_path, args=args, max_samples=max_samples)
     all_tasks = []
     for task_name in task_names:
@@ -261,11 +258,11 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
             all_tasks.append(task_name)
     num_available_subtasks = len(all_tasks)
 
-    # 分割数据
+    # split data
     data_tuples = list(zip(questions, references, styles, instructions, histories, task_names, range(len(questions))))
     data_slice = np.array_split(data_tuples, total_workers)[rank]
 
-    # 加载现有结果（如果存在）
+    # load existed results
     existing_results = {}
     if output_file.exists():
         try:
@@ -278,7 +275,7 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
         except Exception as e:
             logger.error(f"Error loading existing results: {e}")
 
-    # 初始化模型和分词器
+    # initialize model and tokenizer
     #is_meta = 'meta_swiglu-' in model_path
     if args.model_type > 0:
         config = transformers.AutoConfig.from_pretrained(model_path)
@@ -305,15 +302,15 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
     )
     tokenizer.pad_token = tokenizer.eos_token
 
-    # 处理数据 - 逐条处理
+    # processing data by samples
     for i, (question, reference, style, instruction, history, task_name, original_idx) in enumerate(tqdm(data_slice, desc=f"Worker {rank}")):
-        # 检查是否已处理
+        # check if processed
         #input_hash = hashlib.md5((question + style).encode()).hexdigest()
         #if input_hash in existing_results:
         #    continue
 
         if style is None:
-            # 如果没有风格，跳过
+            # skip if no style provided
             continue
 
         try:
@@ -346,22 +343,22 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
                     history_str = '\nConsider context:\n' + history_str + "\n\n"
                     question = history_str + "\nQuestion:\n" + question
 
-            # 使用apply_chat_template处理用户消息
+            # Process user message by apply_chat_template
             user_message = [{"role": "user", "content": question}]
             if system is None or len(system) > 0:
                 user_message.insert(0, {"role": "system", "content": system})
 
             chat_input = tokenizer.apply_chat_template(user_message, return_tensors="pt", add_generation_prompt=True)
 
-            # 编码风格文本
+            # encode style text
             style_expression = get_style_expression(style, instruction, style_expression_type)
             style_input = tokenizer(style_expression, return_tensors="pt", add_special_tokens=False)["input_ids"]
 
-            # 移动到GPU
+            # Move to GPU
             chat_input = chat_input.to(device)
             style_input = style_input.to(device)
 
-            # 单条推理
+            # inference the single sample
             with torch.no_grad():
                 if args.model_type > 0:
                     gen_ids = model.generate(
@@ -384,14 +381,14 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
                         do_sample=False,
                         use_cache=True
                     )
-            # 解码结果
-            # 跳过输入部分，只保留生成的部分
+
+            # decode result, skip input and leave generation
             response = tokenizer.decode(
                 gen_ids[0][len(chat_input[0]):],
                 skip_special_tokens=True
             )
 
-            # 创建结果记录
+            # create result record
             record = {
                 "index": original_idx,
                 "system": system,
@@ -407,13 +404,13 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
             #print("&&&&&&&")
             #print(record)
             #exit(5)
-            # 立即保存到文件
+            # save to file
             with open(output_file, 'a', encoding='utf-8') as f:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
         except Exception as e:
             logger.error(f"Error processing sample {original_idx}: {e}")
-            # 保存错误信息
+            # save error record
             error_record = {
                 "index": original_idx,
                 "question": question,
@@ -429,16 +426,14 @@ def inference_worker(rank, data_path, model_path, output_dir, args, max_samples=
 
 def load_dataset(data_path, args, max_samples=None):
     """
-    加载数据集
-
     Args:
-        data_path: 数据集路径
-        max_samples: 最大样本数（用于测试）
+        data_path:
+        max_samples:
 
     Returns:
-        questions: 问题列表
-        references: 参考回复列表
-        styles: 风格列表
+        questions:
+        references:
+        styles:
     """
     # data_format = 'json'
     data_format = 'jsonl'
@@ -525,13 +520,25 @@ def extract_sample(sample, args):
         history = sample['history']
     return query, response, style, instruction, history
 
-def get_classification_results(references, predictions):
+def get_classification_results(references, predictions, mode="include"):
     if_correct = []
     for ref, pred in zip(references, predictions):
         c = 0
         #if ref in pred:
-        if ref.lower() in pred.lower():
-            c = 1
+
+        # mode = include, case_include, strict, case_strict
+        if mode == "include":
+            if ref.lower() in pred.lower():
+                c = 1
+        if mode == "case_include":
+            if ref in pred:
+                c = 1
+        if mode == "strict":
+            if ref.lower() == pred.lower():
+                c = 1
+        if mode == "case_strict":
+            if ref == pred:
+                c = 1
 
         if_correct.append(c)
     return if_correct
@@ -605,7 +612,7 @@ def calculate_coding_eval_res(evaluate_res):
 
     total = np.array([1]*len(evaluate_res))
     base_correct = []
-    plus_correct = []
+    # plus_correct = []
 
     for ele in evaluate_res:
         base_correct.append(ele["base"][0]=="pass")
@@ -616,14 +623,13 @@ def calculate_coding_eval_res(evaluate_res):
 
 def merge_results(output_dir, total_workers):
     """
-    合并所有工作进程的结果
 
     Args:
-        output_dir: 输出目录
-        total_workers: 总工作进程数
+        output_dir:
+        total_workers:
 
     Returns:
-        all_results: 合并后的结果列表
+        all_results:
     """
     output_dir = Path(output_dir)
     all_results = []
@@ -638,34 +644,36 @@ def merge_results(output_dir, total_workers):
             except Exception as e:
                 logger.error(f"Error loading part {rank}: {e}")
 
-    # 按索引排序
+    # sort by index
     # all_results.sort(key=lambda x: x["index"])
 
-    # 保存合并后的结果
-    merged_file = output_dir / "responses.jsonl"
-    with open(merged_file, 'w', encoding='utf-8') as f:
-        for result in all_results:
-            f.write(json.dumps(result, ensure_ascii=False) + "\n")
+    # save merged results
+    #merged_file = output_dir / "responses.jsonl"
+    #with open(merged_file, 'w', encoding='utf-8') as f:
+    #    for result in all_results:
+    #        f.write(json.dumps(result, ensure_ascii=False) + "\n")
 
     return all_results
 
 
 def evaluate_merged_results(output_dir, args, all_results=None):
     """
-    评估合并后的结果
+
     Args:
-        output_dir: 输出目录
+        output_dir:
     Returns:
-        results: 评估结果字典
+        results:
     """
-    if all_results is None:
-        all_results = []
-        file_path = Path(output_dir) / "responses.jsonl"
-        with open(file_path, 'r', encoding='utf-8') as f:
-            for line in f:
-                result = json.loads(line.strip())
-                all_results.append(result)
-    # 读取结果
+    #if all_results is None:
+    #    print("Get results from responses.jsonl!")
+    #    all_results = []
+    #    file_path = Path(output_dir) / "responses.jsonl"
+    #    with open(file_path, 'r', encoding='utf-8') as f:
+    #        for line in f:
+    #            result = json.loads(line.strip())
+    #            all_results.append(result)
+
+    # read results
     predictions = []
     references = []
     problems = []
@@ -680,8 +688,10 @@ def evaluate_merged_results(output_dir, args, all_results=None):
             f"Predictions count ({len(predictions)}) != references count ({len(references)})"
         )
 
+    if_correct = None
+
     if args.eval_form == "gen_choice":
-        if_correct = get_classification_results(references, predictions)
+        if_correct = get_classification_results(references, predictions, mode=args.eval_mode)
         total = len(if_correct)
         correct = 0
         for c in if_correct:
@@ -689,7 +699,7 @@ def evaluate_merged_results(output_dir, args, all_results=None):
         accuracy = correct/total
         metric_result = {"accuracy": accuracy}
 
-        logger.info("\n=== 评估结果 ===")
+        logger.info("\n=== Eval Results ===")
         logger.info(f"  accuracy: {metric_result['accuracy']:.4f}")
     elif args.eval_form == "gen_math":
         if_correct = get_math_results(references, predictions)
@@ -700,13 +710,13 @@ def evaluate_merged_results(output_dir, args, all_results=None):
         accuracy = correct / total
         metric_result = {"accuracy": accuracy}
 
-        logger.info("\n=== 评估结果 ===")
+        logger.info("\n=== Eval Results ===")
         logger.info(f"  accuracy: {metric_result['accuracy']:.4f}")
     elif args.eval_form == "gen_code":
         run_results = get_coding_results(references, predictions, problems)
         base_pass_at_k = calculate_coding_eval_res(run_results)
         metric_result = {"base_pass_at_k": base_pass_at_k}
-        logger.info("\n=== 评估结果 ===")
+        logger.info("\n=== Eval Results ===")
         logger.info(f"base_pass_at_k: {base_pass_at_k}")
     else:
         # form = gen
@@ -717,21 +727,27 @@ def evaluate_merged_results(output_dir, args, all_results=None):
         z_coeff = zipf_coefficient(predictions)
         metric_result = {"rouge_l": rl_score, "bleu_2": b2_score, "distinct_1": d1_score, "distinct_2": d2_score, "z_coeff": z_coeff}
 
-        logger.info("\n=== 评估结果 ===")
+        logger.info("\n=== Eval Results ===")
         logger.info(f"  Rouge-L: {metric_result['rouge_l']:.4f}")
         logger.info(f"  Bleu-2: {metric_result['bleu_2']:.4f}")
         logger.info(f"  Distinct-1: {metric_result['distinct_1']:.4f}")
         logger.info(f"  Distinct-2: {metric_result['distinct_2']:.4f}")
         logger.info(f"  Zipf-coeff: {metric_result['z_coeff']:.4f}")
-    return metric_result
 
+    merged_file = output_dir / "responses.jsonl"
+    with open(merged_file, 'w', encoding='utf-8') as f:
+        for i, result in enumerate(all_results):
+            if if_correct is not None:
+                result['result'] = if_correct[i]
+            f.write(json.dumps(result, ensure_ascii=False) + "\n")
+    return metric_result
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, required=True,
                         help="Path to the trained model")
     parser.add_argument("--data_path", type=str,
-                        default="/beijing-public/datasets/stylized_fmt/mic_fmt/mic_test_style.jsonl",
+                        default="/path/to/data.jsonl",
                         help="Path to the test data")
     parser.add_argument("--output_dir", type=str, default=None,
                         help="Output directory for results")
@@ -743,6 +759,8 @@ def main():
                         help="Number of GPUs to use for inference")
     parser.add_argument("--eval_form", type=str, default="gen",
                         help="evaluation based on gen, gen_choice, gen_math, gen_code, or PPL_choice.")
+    parser.add_argument("--eval_mode", type=str, default="include",
+                        help="evaluation mode for gen_choice: include, case_include, strict, case_strict.")
     parser.add_argument("--sample_format", type=str, default="qa_style",
                         help="format of sample with style.")
     parser.add_argument("--style_prompt_type", type=str, default="None",
@@ -755,30 +773,23 @@ def main():
                         help="0: normal LLM; 1: layer-wise hypernetwork; 2: shared hypernetwork")
     args = parser.parse_args()
 
-    # 设置输出目录
+    # Set output folder
     if args.output_dir is None:
         #model_name = os.path.basename(args.model_path)
         model_name = Path(args.model_path).name
-        args.output_dir = f"/results/metaSwiglu/eval/{model_name}_style-{args.style_domain}-{args.style_prompt_type}-{args.style_expression_type}"
+        args.output_dir = f"/path/to/metaSwiglu/eval/{model_name}_style-{args.style_domain}-{args.style_prompt_type}-{args.style_expression_type}"
 
-    # 创建输出目录
+    # Create output folder
     os.makedirs(args.output_dir, exist_ok=True)
 
-    # model_name = Path(args.model_path).name
-    # args.output_dir = args.output_dir or f"/user/xiningyuan/results/metaSwiglu_eval/{model_name}"
-    # Path(args.output_dir).mkdir(parents=True, exist_ok=True)
+    logger.info("Begin Multi-GPU parallel evaluation...")
+    logger.info(f"Num of GPU used: {args.num_gpus}")
+    logger.info(f"Output path: {args.output_dir}")
 
-    # 确保输出目录存在
-    #output_dir = Path(output_dir)
-    #output_dir.mkdir(parents=True, exist_ok=True)
-
-    logger.info("开始多卡并行评估模型...")
-    logger.info(f"使用GPU数量: {args.num_gpus}")
-    logger.info(f"输出路径: {args.output_dir}")
-
-    # 设置多进程启动方法
+    # Set multiprocessing method
     multiprocessing.set_start_method('spawn', force=True)
-    # 启动工作进程
+
+    # Start the working process
     with Pool(args.num_gpus) as pool:
         pool.map(partial(inference_worker,
                          data_path=args.data_path,
@@ -793,11 +804,11 @@ def main():
                  range(args.num_gpus))
 
     # merge result
-    logger.info("合并所有工作进程的结果...")
+    logger.info("Merge results of all working processes...")
     all_results = merge_results(args.output_dir, args.num_gpus)
 
     # evaluate result
-    logger.info("评估回复质量...")
+    logger.info("Evaluate response quality...")
     metric_results = evaluate_merged_results(args.output_dir, args, all_results=all_results)
 
     # save result
@@ -805,7 +816,7 @@ def main():
     with open(result_path, "w", encoding="utf-8") as f:
         json.dump(metric_results, f, indent=2)
 
-    logger.info(f"\n评估结果已保存至: {result_path}")
+    logger.info(f"\nEvaluation results save to: {result_path}")
 
 
 if __name__ == "__main__":
