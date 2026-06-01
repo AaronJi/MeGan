@@ -1,0 +1,1315 @@
+ethos-disability:
+  descriptions:
+    - This task involves identifying content that expresses bias, prejudice, or stereotypes towards individuals with disabilities. You will assess the given text to determine if it contains discriminatory language or discriminatory viewpoints.
+    - Analyze the provided statements to detect any language that targets or marginalizes individuals with disabilities. This requires understanding both subtle and explicit forms of bias.
+    - Your task is to evaluate input text for any expressions of discrimination, harmful stereotypes, or prejudiced views related to disabilities, ensuring an accurate understanding of ilnclusive and respectful language.
+    - Examine the text to identify any sentiments, words, or phrases that may be considered offensive or exclusionary toward individuals with disabilities. This requires attentiveness to both implicit and explicit biases.
+    - Given a statement related to disabilities, critically evaluate whether the language used is respectful, neutral, or biased. Your goal is to accurately classify the sentiment and tone of the text.
+qa_srl:
+  descriptions:
+    - Your task involves identifying and understanding the relationships between actions and the entities participating in them. Answer questions specifically targeting the roles of subjects, objects, and other participants in the given sentences.
+    - Analyze sentences and determine the roles of different arguments in relation to the main verb. This involves recognizing "who," "what," "when," "where," and other roles based on the sentence provided.
+    - This task focuses on assigning semantic roles to various components in a sentence, such as actors, actions, recipients, and other related arguments. Use your comprehension skills to answer role-specific questions accurately.
+    - You will identify the semantic roles associated with verbs in the given sentences by determining the relationships between actions and the entities involved. Focus on the structure and meaning of each sentence to answer the questions correctly.
+    - In this task, you'll work on understanding predicate-argument structures. For each sentence, you need to answer questions that elaborate on "who did what to whom," along with other contextual details like time, place, or manner.
+anli:
+  descriptions:
+    - This task requires you to analyze a given premise and hypothesis to determine whether the hypothesis is entailed by the premise, contradicts the premise, or is neutral. Your reasoning skills and comprehension are key here.
+    - "You will evaluate pairs of statements to assess the logical relationship between them: entailment, contradiction, or neutrality. Carefully consider the implications of each statement in the pair."
+    - Your job is to read a premise and a related hypothesis, then classify the relationship as either entailment, contradiction, or neutral. This task tests your ability to contextualize and logically interpret information.
+    - In this task, you must judge whether a hypothesis logically follows from a given premise or if the two conflict, or if they're unrelated. A deep understanding of reasoning is necessary for accurate classification.
+    - Analyze the logical connection between a premise and a hypothesis to label their relationship correctly. This requires careful analysis of the statements and their potential implications.
+    - Given two statements, determine whether the second statement can be logically inferred from the first, directly contradicts it, or is unrelated. Your understanding of linguistic nuances will be essential in this task.
+dream:
+  descriptions:
+    - You will engage in analyzing dialogues or conversations, focusing on understanding the context and choosing the most appropriate response or continuation to the given discourse.
+    - In this task, you are presented with conversational exchanges and need to infer missing information, assess the logic of responses, and select the best option to complete the interaction naturally.
+    - This task involves interpreting the context of human conversations, which may include questions, answers, or comments. You must identify the most coherent and contextually relevant continuation to the dialogue.
+    - Your role is to examine a given dialogue scenario, analyze the meaning of the conversation, and make an informed choice to complete the dialogue in a way that aligns with the established tone and subject.
+    - Here, you are tasked with assessing a conversation or dialogue scenario and selecting an option that best fits the ongoing discussion, demonstrating your ability to understand nuance and conversational flow.
+    - This task requires understanding human communication dynamics, including recognizing implicit meanings, conversational cues, and appropriate responses to fill in gaps in a dialogue effectively.
+glue-sst2:
+  descriptions:
+    - This task involves analyzing a sentence and determining if its sentiment is positive or negative. Use your understanding of emotional tones and language to classify the sentiment accurately.
+    - Your role is to read a brief text and evaluate its overall sentiment, selecting whether it conveys a positive or negative attitude.
+    - You will assess short statements or reviews and classify the sentiment they express. Focus on identifying words and phrases that indicate positivity or negativity.
+    - In this task, you will judge the sentiment of given sentences. Carefully analyze the tone and emotional context to categorize the text as either positive or negative.
+    - This task requires sentiment analysis of simple sentences. Examine the wording and context to decide if the sentiment communicated is broadly positive or negative.
+    - Assess the emotional undercurrent of a sentence. Does it reflect a positive or negative perspective? You will evaluate and assign the correct sentiment label.
+    - Given short snippets of text, your task is to identify the sentiment being conveyed—whether it indicates a favorable or unfavorable opinion.
+    - Focus on the emotional intent and linguistic cues in each sentence provided and classify its sentiment as positive or negative with precision.
+    - You are tasked with interpreting a sentence’s sentiment, analyzing its tone, choice of words, and intent to determine whether it projects positivity or negativity.
+    - Analyze short textual statements or opinions and assign a binary label indicating whether the sentiment is generally optimistic (positive) or critical (negative).
+gigaword:
+  descriptions:
+    - In this task, you are required to generate concise and informative headline summaries for given news articles. Your focus should be on capturing the central idea of the article in as few words as possible.
+    - The goal of this task is to create a brief and accurate headline that effectively summarizes the main point of the input news article, highlighting its key aspects in a succinct manner.
+    - Based on the provided news article, your task involves identifying the most important details and creating a short, meaningful headline that reflects the essence of the content.
+    - This task challenges you to condense long-form news articles into single-line headlines while retaining the main event, outcome, or theme of the story.
+    - The task involves reading a news excerpt and producing a short, crisp headline that conveys the core information in a compact and clear manner.
+    - Your role is to examine the given content and summarize it into a precise headline with a focus on clarity, brevity, and relevance to the subject matter.
+    - Create an effective headline that captures the primary event or message from the text provided. This requires identifying key information and presenting it succinctly.
+    - Analyze the text provided and distill its main idea into a one-line headline that is both clear and engaging for readers, covering the primary news angle.
+    - Summarize the key points of the article or excerpt in a headline that is informative and concise, capturing the essence of the story in a way that is easy to grasp.
+    - Your task is to distill the essence of the news content and generate a single, impactful headline that communicates the main takeaway effectively.
+wiki_qa:
+  descriptions:
+    - This task involves answering questions based on a provided passage from Wikipedia. You need to carefully analyze the content, understand the context, and select the most accurate and relevant answer.
+    - Your job is to read a question and evaluate the given passage to determine the most appropriate response. This requires close attention to details, logical reasoning, and an understanding of the discussed topic.
+    - In this task, you will assess a short passage from Wikipedia and identify which answer option best satisfies the question being asked. Success requires critical thinking and the ability to extract relevant information from the text.
+    - Based on a provided Wikipedia excerpt, your goal is to choose the answer that most precisely aligns with the question. This task tests your ability to interpret information accurately and match it with the most suitable answer.
+    - You are tasked with reading a short passage and answering a related question by selecting the option that is supported directly by the information in the text. This requires careful reading and evidence-based reasoning.
+xsum:
+  descriptions:
+    - In this task, your goal is to produce a concise and accurate summary of a longer text. Focus on identifying the most important information and expressing it clearly in a single sentence.
+    - Your task is to distill the essential content of a news article into a brief and coherent summary. Pay close attention to the key facts and main ideas from the provided text.
+    - Analyze the input text and generate a short, one-sentence summary that captures the core message or topic. This requires understanding the text and synthesizing information effectively.
+    - For this task, you are tasked with summarizing a given passage in a single sentence. Focus on delivering the primary information while maintaining clarity and precision.
+    - The objective is to condense a news article or long passage into a short summary. This requires the ability to extract key details and express them in a concise, meaningful way.
+tweet_eval-sentiment:
+  descriptions:
+    - Analyze the sentiment expressed in a given tweet, determining whether it reflects positive, negative, or neutral emotions. This task requires an understanding of tone and emotional cues in written language.
+    - Your job is to assess the emotional polarity of a tweet, identifying whether its content conveys positivity, negativity, or is neutral. This requires both contextual awareness and sentiment analysis skills.
+    - In this task, you will evaluate the mood or attitude conveyed in a tweet, categorizing it as positive, negative, or neutral. Focus on linguistic expressions and contextual meaning to make an accurate judgment.
+    - This task involves interpreting the sentiment embedded in social media text, classifying each tweet based on its emotional tone. Attention to context and connotations is key to understanding user sentiment.
+    - Your responsibility is to assign a sentiment label to each tweet, reflecting whether it implies a positive mood, a negative sentiment, or displays a neutral stance. Linguistic and cultural awareness are essential for this task.
+ethos-national_origin:
+  descriptions:
+    - Your task is to assess statements relating to national origin and identify their intent, whether supportive, neutral, or discriminatory in nature. Focus on sentiment and contextual understanding.
+    - Analyze the provided text to determine if it conveys bias, prejudice, or neutrality concerning national origin. This requires nuanced understanding of language and context.
+    - In this task, you are tasked to evaluate statements to classify them based on their attitude toward national origin. You must discern subtle or explicit inclinations in the language used.
+glue-mnli:
+  descriptions:
+    - This task involves determining the relationship between two sentences, specifically identifying whether the second sentence entails, contradicts, or is neutral with respect to the first one. Your role is to evaluate the meaning and logical connections between the given sentences.
+    - You will analyze a pair of sentences and assess their semantic relationship. Your task is to classify the relationship as one of entailment, contradiction, or neutrality based on their content.
+    - Given two sentences, you are required to determine the interaction between them. Focus on evaluating whether the second sentence logically follows from, opposes, or is independent of the first sentence.
+    - This task requires analyzing sentence pairs to identify relationships. Based on the meaning and logical context, classify the relationship as entailment, contradiction, or neutral.
+    - Your job is to interpret a pair of textual statements and determine how they relate logically. Evaluate if one sentence supports, contradicts, or is neutral with respect to the other.
+    - Evaluate the semantic connection between two sentences in this task. Decide if the second sentence is true (entailment), false (contradiction), or unrelated (neutral) based on the first sentence.
+ag_news:
+  descriptions:
+    - Your task is to classify news articles into specific categories based on their content. This requires identifying the main topic or subject discussed in each article.
+    - Analyze the text of a news article and determine its category by focusing on key themes, subjects, or keywords that reflect its central topic.
+    - This task involves evaluating news headlines or stories and assigning them to an appropriate category such as politics, business, sports, or technology, based on the information presented.
+    - Read the given news snippet and determine the most relevant category it belongs to. Use your understanding of the content's context and key subject matter to make the decision.
+    - Your job is to assess the context and details of a news article, and group it under the correct classification. This requires understanding distinguishing attributes of each category.
+    - Evaluate the core subject of each news article and select the label that best represents it. This involves identifying major topics such as current events, markets, entertainment, or sports.
+hotpot_qa:
+  descriptions:
+    - Analyze the passage provided and use reasoning across multiple pieces of information to identify the correct answer. This task tests your ability to connect related details and draw conclusions effectively.
+    - Your objective is to evaluate questions that require multi-hop reasoning. You will need to synthesize answers by combining information from different parts of the given text.
+    - This task demands answering complex questions by integrating information from multiple sources in the passage. Your role is to carefully examine the provided data, find relevant details, and construct a logical answer.
+    - Engage in critical analysis of the information presented in the text, identifying relevant connections across multiple sentences and paragraphs to answer the posed question.
+    - Your task is to utilize detailed reasoning skills to answer questions by linking facts and ideas found in the provided text, requiring a deeper level of comprehension and logical processing.
+    - Answer questions requiring a holistic understanding of the context provided. You will need to navigate between multiple pieces of information to extract key insights and determine the correct response.
+    - Focus on questions that test your ability to comprehend relationships or connections between elements in a passage. Assess all relevant clues before arriving at the final answer.
+    - Demonstrate critical thinking by synthesizing contextually relevant information from diverse parts of a passage to answer multi-layered questions accurately.
+ropes:
+  descriptions:
+    - This task is centered on reasoning through the relationships presented in a passage and answering questions that test your ability to apply those relationships to new scenarios or contexts.
+    - You will analyze a passage containing scientific or factual knowledge and evaluate how its information applies to specific questions, requiring contextual understanding and logical reasoning.
+    - Your responsibility is to connect the given passage's content with a new situation, using the provided information and relationships to deduce the most accurate and logical answer.
+    - This task challenges you to understand complex relationships or processes described in a passage and to apply that understanding in answering questions about novel but related situations.
+    - You are expected to integrate scientific or factual information within a passage and determine how it informs a new scenario, asking for critical thinking and analytical skills.
+    - Analyze the relationships described in the text and assess how they can be used to answer questions related to new examples or hypothetical situations, demanding reasoning and inference skills.
+    - This task involves interpreting textual contexts and applying the described ideas to solve questions about unfamiliar situations. Your goal is to identify the answer that best aligns with the information in the passage.
+ethos-sexual_orientation:
+  descriptions:
+    - In this task, you will evaluate text samples and identify whether they contain any forms of bias, stereotypes, or discrimination related to sexual orientation.
+    - Your responsibility is to analyze the given statements and discern if they reflect prejudice, hate speech, or supportive comments toward different sexual orientations.
+    - This task requires you to carefully assess excerpts for fairness and inclusivity, determining whether the content promotes equality or perpetuates stereotypes based on sexual orientation.
+    - Examine the given content to decide whether it expresses neutral, supportive, or discriminatory sentiments regarding various sexual orientations, requiring a nuanced understanding of societal dynamics.
+    - Your goal is to critically analyze text for implicit or explicit references to sexual orientation and classify it based on its sentiment and level of bias or acceptance.
+    - This classification task focuses on understanding how sexual orientation is portrayed in written content, asking you to identify whether it reflects acceptance, bias, or neutrality.
+tweet_eval-stance_hillary:
+  descriptions:
+    - Your task involves analyzing tweets to determine the author's stance towards Hillary Clinton. Assess whether the tweet expresses support, opposition, or a neutral position regarding the topic.
+    - This task requires evaluating the sentiment or position conveyed in social media posts about Hillary Clinton. Focus on identifying whether each tweet demonstrates agreement, disagreement, or neutrality.
+    - You will interpret text excerpts from tweets and decide if they take a stance of favor, against, or neutral towards Hillary Clinton. This requires carefully discerning the tone and implicit meaning behind the words.
+    - Analyze the opinion or perspective expressed in the tweets about Hillary Clinton, and classify them as demonstrating support, opposition, or neutrality. Focus on the use of language and intent.
+    - Your objective is to review tweets and assign a stance label (e.g., in favor, opposed, or neutral) based on the sentiment or position conveyed toward Hillary Clinton in the content.
+hate_speech_offensive:
+  descriptions:
+    - Your task is to analyze given text and determine whether it contains hate speech, offensive language, or neither. This requires attention to context, tone, and word choice.
+    - "Evaluate the provided text and categorize it based on its content: whether it includes hate speech, offensive elements, or is neutral. Ensure to consider implicit meanings and intent."
+    - You are required to identify and classify statements as hate speech, offensive language, or clean. Pay close attention to language that could indicate hostility, prejudice, or disrespect.
+    - The goal of this task is to assess the language of the given statement and decide if it promotes hate, contains offensive content, or remains free of any harmful expressions.
+    - "Determine which category the provided input belongs to: hate speech, offensive comments, or neutral text. This task requires sensitivity to social and cultural context to accurately interpret the intent behind the language."
+    - For each text sample, identify whether it contains hate speech or offensive language. Consider nuances such as sarcasm, connotations, and contextual appropriateness when making your decision.
+hate_speech18:
+  descriptions:
+    - This task involves identifying whether a given text contains hate speech. You will need to assess the language used and determine if it promotes discrimination, animosity, or hostility towards a particular group.
+    - Your responsibility is to analyze the provided text and judge whether it contains hateful or offensive language. Pay close attention to negative stereotypes or derogatory comments.
+    - In this task, you will evaluate the text for signs of hate speech, which may include language intended to demean or attack individuals or groups based on their identity or beliefs.
+    - The objective of this task is to critically examine the text and decide whether it constitutes hate speech by identifying expressions of hate, prejudice, or hostility against a defined group.
+    - You will be tasked with categorizing the provided text as containing hate speech or not. To do this, focus on detecting harmful rhetoric, slurs, or targeted hate towards specific individuals or communities.
+    - This task centers around identifying harmful language aimed at disparaging or demeaning others based on race, gender, religion, or other identities. Carefully analyze the intent and effect of the statements.
+    - Your goal is to determine whether the text contains offensive or hateful expressions. Consider whether the language perpetuates harmful stereotypes or promotes animosity against specific individuals or groups.
+    - This is a classification task that requires you to identify instances of hate speech in text. Look for language that reflects prejudice, discrimination, or incitement of violence against any group or individual.
+proto_qa:
+  descriptions:
+    - Your task involves identifying the most appropriate answer to a question that requires reasoning about concepts, categories, and commonsense knowledge.
+    - This task challenges you to draw upon general knowledge and reasoning skills to select the answer that best completes the context or satisfies the inquiry.
+    - Analyze the given question and assess the potential answers, using your understanding of logical relationships, analogies, and commonsense reasoning to determine the best fit.
+    - In this task, you will need to evaluate various options and identify which one best fulfills the requirements of the provided question, calling upon your ability to organize and analyze knowledge effectively.
+    - This task tests your capacity to handle questions where understanding abstract relationships, commonsense categorizations, and practical implications play a central role.
+    - Your role is to consider each question and use your intuition and logical reasoning to select the best answer that corresponds to the knowledge, context, or scenario provided.
+tweet_eval-stance_climate:
+  descriptions:
+    - This task involves analyzing a tweet to determine its stance on climate change. You need to classify the tweet as expressing support, refuting, or lacking a clear stance toward climate change or climate-related actions.
+    - Your goal is to assess the sentiment or position expressed in a tweet regarding climate change. This requires understanding the context of the text and determining whether it conveys agreement, disagreement, or neutrality on the issue.
+    - In this task, you must classify the attitude of the tweet toward climate change. Consider the language, tone, and content of the post carefully to make an informed decision about the stance it presents.
+    - Focus on evaluating the tweet's message in relation to climate change. Your task is to judge whether the text supports, challenges, or avoids taking a clear position on the topic of climate change.
+    - You are tasked with discerning the author’s stance on climate change as expressed in the tweet. Analyze whether the viewpoint promotes climate action, refutes its importance, or appears neutral or unrelated.
+piqa:
+  descriptions:
+    - Your task is to evaluate practical scenarios and decide which solution is the most effective and reasonable in everyday contexts, considering common practices and logic.
+    - Focus on determining the most suitable approach to solving a problem or completing a task by analyzing straightforward, real-world scenarios presented in the question.
+    - Given a problem that involves commonsense reasoning, identify the solution that reflects practical and intuitive ways to accomplish the objective successfully.
+    - Evaluate simple, real-life situations and choose the option that presents the most logical, efficient, and widely practiced approach to achieve the desired outcome.
+    - In this task, you will examine practical problems and select the answer that best represents normal, expected, or convenient human behavior or solutions.
+    - Analyze realistic scenarios where commonsense decision-making is required, and choose the solution that aligns with traditional human reasoning or everyday experience.
+    - Given a concise description of a situation or task, your objective is to use general understanding and practical knowledge to identify the best solution among the provided options.
+    - This task involves reasoning about everyday activities or challenges and selecting the answer that presents the most feasible or sensible course of action.
+numer_sense:
+  descriptions:
+    - This task requires you to assess numerical relationships and infer which number fits appropriately within the given context, testing your numerical reasoning and judgment.
+    - You will focus on understanding the role of numbers in various scenarios and select the most logical or contextually accurate numerical solution.
+    - Evaluate statements or questions involving numeric values and discern the option that adheres to mathematical logic, common sense, or contextual appropriateness.
+    - This task involves interpreting numerical data or scenarios and selecting an answer that aligns with the principles of arithmetic, estimation, or proportional reasoning.
+    - You are tasked with analyzing prompts that contain numbers and determining the correct or most reasonable numerical relationship or answer.
+    - Your goal is to identify the numerical value or range that appropriately aligns with the context of the statement by leveraging quantitative reasoning and contextual clues.
+    - In this task, consider the numerical information provided and infer the most appropriate continuation or conclusion relying on mathematical principles or real-world logic.
+    - Analyze the numbers presented in various situations and assess how they fit into the given scenario. Your task is to choose the option that makes the most logical sense.
+discovery:
+  descriptions:
+    - This task involves answering questions or exploring prompts that test your ability to uncover new concepts or knowledge. Focus on analytical reasoning and logical thinking to identify the best responses.
+    - Your goal is to analyze the provided information and use critical thinking to infer new relationships, facts, or ideas. This task helps develop a deeper understanding of the given material.
+    - Explore the data carefully and search for explanations or conclusions that follow from the evidence provided. This requires both knowledge application and creative problem-solving.
+    - The task entails examining the presented content and discovering patterns, principles, or solutions. You will need to apply reasoning and knowledge to find the most appropriate answer.
+    - In this task, you are expected to investigate, deduce, and conclude based on given data or scenarios. Use your understanding of general principles and your ability to draw logical inferences.
+kilt_hotpotqa:
+  descriptions:
+    - This task involves answering complex multi-hop questions that require reasoning across multiple documents to reach a well-supported conclusion. It tests your ability to synthesize information from various sources.
+    - You will be tasked with retrieving relevant evidence and deducing the correct answer by connecting information presented in multiple passages. Critical thinking and logical reasoning are important here.
+    - The objective is to analyze a set of related documents and find connections between them to answer the given question. This challenges your comprehension skills and ability to link diverse pieces of information.
+trec:
+  descriptions:
+    - Your task is to identify the type of question being asked, requiring a clear understanding of the different categories of information such as person, location, or definition.
+    - In this task, you will classify questions based on the information they seek, demonstrating your ability to recognize patterns and interpret the intent of the question.
+    - Analyze each question carefully and assign it to one of several predefined categories. This requires strong comprehension and categorization skills to determine the focus and purpose of the question.
+    - Focus on the semantic intent of each question and classify it according to its type, such as "Who," "What," "Where," or "Why." Your ability to connect contextual clues to question types will be essential.
+    - You are tasked with understanding the underlying intention of a given question and identifying its appropriate classification for effective retrieval or organization of information.
+tab_fact:
+  descriptions:
+    - This task focuses on assessing the factual accuracy of a statement based on the information provided in a table. Your role is to evaluate whether the statement is supported or refuted by the structured data.
+    - Analyze the given table and determine if the associated statement aligns with the provided facts. This task involves cross-referencing statement details with the table entries to verify their validity.
+    - Your task is to examine a tabular dataset and judge whether a claim is consistent with or contradicted by the information presented. This involves verifying the claim against relevant table entries.
+    - You need to evaluate a textual statement by referencing the data within a table. Your responsibility is to decide whether to classify the statement as supported, refuted, or unverifiable based on the facts.
+    - In this task, cross-examine a given claim with relevant data points from the table. Utilize analytical reasoning to determine the truthfulness of the statement in relation to the tabular content.
+    - Your goal is to validate a statement against a given table by utilizing logical reasoning and attention to detail. You must make a judgment based on the accuracy of the information represented in the table.
+    - Based on the data within the table, determine whether the accompanying statement is factually correct or incorrect. This requires a focused analysis of the context and values in the table.
+lama-google_re:
+  descriptions:
+    - This task involves completing factual knowledge triplets by retrieving the missing object. You will assess the given subject and relation to deduce the correct answer.
+    - Your role is to identify the most accurate completion for a given subject-relation pair, leveraging general knowledge and logical reasoning. Focus on factual data and real-world associations.
+    - Analyze the given subject and the relationship it shares with another entity, and then provide the missing entity based on your understanding of factual knowledge.
+    - You are tasked with completing knowledge triples by identifying the intended object that forms a meaningful connection with the provided subject and relation.
+    - This task requires you to deduce the missing element in factual statements comprising a subject, relation, and object. Use your ability to draw conclusions from well-known facts.
+    - With a partial knowledge triplet provided, identify the entity that logically completes the relationship, focusing on prior knowledge or factual understanding.
+quarel:
+  descriptions:
+    - Your task is to analyze comparative questions that explore relationships between two entities based on a defined property, such as size, speed, or capacity. Select the answer that most logically fits the context of the scenario.
+    - This task requires reasoning with comparative relationships. You need to choose the best answer that reflects the underlying contrast or comparison of properties like weight, temperature, or distance.
+    - Evaluate questions involving comparative reasoning. Your goal is to understand the context, identify the key relationships, and choose the response that best matches the comparative logic of the scenario.
+    - Analyze scenarios where comparisons and contrasts between two subjects are posed based on defined attributes. Utilize reasoning to infer the correct relationships and choose the most appropriate answer.
+    - This task involves questions that assess your ability to reason about proportional or comparative relationships between elements. Your role is to pick the answer option that is logically consistent with the provided relationships and constraints.
+    - Focus on understanding comparative scenarios presented in the questions. Assess the relationships and reasoning patterns to select an accurate answer that fits the comparison.
+sms_spam:
+  descriptions:
+    - In this task, you will evaluate short text messages and determine whether they fall under the category of "spam" or "ham" (normal message), using the content and context provided.
+    - Your goal is to classify SMS messages based on their tone, purpose, and structure. Carefully identify whether the message is intended as unsolicited or promotional content (spam) or as legitimate communication (ham).
+    - This task requires analyzing SMS messages by focusing on patterns, word usage, and text structure to identify and categorize them as either spam or ham.
+    - You will assess whether a given SMS is a legitimate communication or an unsolicited promotional message. Consider linguistic features and intent in making your classification decision.
+    - Analyze the keywords, phrasing, and purpose of text messages to categorize them into either "spam" or "ham," paying particular attention to identifying common traits of spam messages such as urgency or offers.
+    - Your job is to decide whether a given short message is unwanted promotional material (spam) or an ordinary, personal communication (ham), using your understanding of text characteristics.
+    - Focus on detecting patterns in short message texts that indicate spam-like behavior, such as advertisements, financial offers, or fraudulent schemes, while distinguishing these from genuine communications.
+    - This task involves categorizing text messages into spam or ham by identifying specific attributes, including pushy language, promotional content, or suspicious links.
+    - Your task is to examine SMS text messages carefully and classify them based on whether they fit into the category of unwanted or irrelevant content (spam) or everyday human communication (ham).
+    - Distinguish between legitimate text message exchanges and unsolicited or fraudulent ones. Analyze the intent, word choice, and structure of the message to determine its classification.
+openbookqa:
+  descriptions:
+    - Review the context and identify the statement that is most consistent with scientific knowledge or common principles. This task tests deductive reasoning and application of fundamental facts.
+    - Carefully evaluate the provided question or statement and choose the option that best aligns with tested knowledge, logical rules, or broad concepts.
+    - Focus on analyzing the relationships and facts from the question, then select the answer that provides the most reasonable and evidence-based explanation or continuation.
+    - Use your knowledge of fundamental facts and general rules to evaluate the accuracy and relevance of the provided options, selecting the one that best suits the input context.
+    - Apply scientific principles or general knowledge to discern the most accurate and logical response to the given question or scenario.
+    - This task challenges your ability to connect abstract ideas and established knowledge. Examine the facts, assess the choices, and select the one that is most compatible with the context.
+tweet_eval-emoji:
+  descriptions:
+    - Your task is to analyze the sentiment and content of the tweet, and then assign the most fitting emoji that reflects the tone or meaning of the message accurately.
+    - Given a tweet, evaluate its emotional undertone, mood, or implied meaning to determine which emoji best conveys or complements the tweet's message.
+    - This task involves interpreting the context, emotion, and intent of a tweet and selecting the emoji that most appropriately represents its essence.
+    - Assess the underlying emotion, attitude, or intent conveyed in the tweet. Based on this understanding, identify the emoji that aligns most accurately with the sentiment and content.
+    - Your responsibility is to understand the textual content of a tweet, deduce its emotional or conceptual context, and match it with the most suitable emoji representation.
+climate_fever:
+  descriptions:
+    - Your task is to evaluate statements related to climate change by determining whether they are supported, refuted, or have insufficient evidence, based on the provided evidence.
+    - Analyze claims about climate science, policy, or environmental issues. Use the given evidence to assess their accuracy and identify the most justified classification for each statement.
+    - In this task, you will engage with claims regarding climate-related topics. Carefully examine the provided evidence to decide if the claim is true, false, or cannot be validated with the given information.
+    - Examine the relationship between a claim and the evidence presented. Your goal is to critically evaluate their connection and classify whether the claim is supported, refuted, or not verifiable.
+    - This task focuses on assessing the validity of statements about climate change and its impacts. Use the evidence to differentiate between factual accuracy and speculative or refuted assertions.
+glue-cola:
+  descriptions:
+    - You will evaluate sentences to determine whether they are linguistically and grammatically acceptable in standard English or not.
+    - This task requires you to discern whether the syntax and structure of a given sentence make sense according to the conventions of language usage.
+    - Your role is to assess the grammaticality of each presented sentence, analyzing its adherence to accepted linguistic norms.
+    - In this task, you must judge whether a sentence is an example of grammatically correct and well-formed English or whether it exhibits errors that make it unacceptable.
+    - You are tasked with identifying sentences that conform to traditional grammatical rules and marking those that violate them as ungrammatical.
+    - The focus of this task is on grammatical acceptability. You will critically examine each sentence to decide whether it adheres to formal English language standards.
+lama-squad:
+  descriptions:
+    - In this task, you will analyze input passages and answer factual questions accurately by extracting relevant information from the text. This requires attention to detail and strong comprehension skills.
+    - Your goal is to identify the precise span of text within the given passage that answers the question. Focus on understanding the context of the passage and finding the most accurate information.
+    - This task involves reading a given passage and locating a specific segment that directly addresses the question posed. It tests your ability to carefully connect the question with the information provided in the text.
+    - Review the input passage and extract the exact words or segment that answer the posed question. Use your comprehension skills to distinguish the relevant facts from extraneous information.
+    - You'll need to respond to questions by retrieving the exact phrase, fact, or piece of information from the provided text that best answers the query.
+    - Analyze the content of the given passage and identify the portion that explicitly answers a direct question. This involves careful reading to ensure the extracted answer is correct and relevant.
+    - For this task, you will read a passage and answer a specific question by choosing the most relevant information contained in the passage. Emphasis is placed on precision and clarity in your selection.
+    - The challenge is to carefully read and extract the most direct and accurate answer available within the provided passage to address the query.
+    - Focus on selecting the portion of the text that offers the most precise and contextually accurate response to the question. This requires critical comprehension of the passage's details.
+    - Given a passage, your role is to locate and reproduce the exact span of text that best responds to the information being asked for in the query. This involves precise mapping from question to text.
+superglue-wic:
+  descriptions:
+    - This task aims to determine whether a given word has the same meaning in two different contexts. Your responsibility is to assess the usage of the word in both sentences and decide if the meaning is identical or different.
+    - Analyze the provided sentences that use the same word in two distinct contexts. Carefully compare the meanings of the word in both cases and decide if they align or vary.
+    - You will be given a specific word and two sentences where this word appears. Your task is to judge whether the word has the same meaning in both contexts or if the meanings differ.
+    - This task involves studying how a particular word is used in two different sentences. Compare the contexts to determine if the meaning of the word remains consistent or shifts.
+    - For each pair of sentences, analyze the occurrence of a specified word and evaluate whether the word carries the same meaning in both contexts. This requires interpreting subtle differences in language usage and context.
+glue-wnli:
+  descriptions:
+    - This task involves determining whether one sentence entails or contradicts another given sentence. Using reasoning skills, your task is to assess the logical relationship between two statements.
+    - You are tasked with analyzing pairs of sentences and deciding if the meaning of the second sentence can be drawn from the first. A clear understanding of entailment and reasoning is required.
+    - In this task, you'll evaluate pairs of sentences to figure out whether the second sentence follows logically and naturally from the first one, based on the information provided.
+    - Your responsibility is to assess the logical relationship between two given text passages and determine whether they are consistent or contradictory in meaning.
+    - The goal is to evaluate the relationship between sentences, verifying whether the second sentence logically follows from the context or truth of the first sentence.
+    - This challenge asks you to decide whether a follow-up sentence is logically entailed by the preceding statement, requiring close attention to language structure and semantic meaning.
+    - Interpret the meaning of two given sentences and determine if one logically entails the other or disputes its meaning based on sound reasoning and language understanding.
+rotten_tomatoes:
+  descriptions:
+    - Your task is to analyze a given movie review and determine if it reflects a positive or negative sentiment. Rely on contextual clues and the tone of the text to make an informed judgment.
+    - Examine and interpret the sentiment expressed in the provided movie review. Focus on identifying whether the overall tone conveys satisfaction or dissatisfaction with the film.
+    - You will read a short movie review and classify its sentiment as either positive or negative. Pay close attention to the words and expressions used by the reviewer to guide your decision.
+    - This task involves evaluating a movie review and discerning the author's sentiment toward the film. Consider the language, tone, and content of the review for accurate classification.
+    - Your goal is to determine the polarity of a movie review, categorizing it as either expressing approval (positive sentiment) or disapproval (negative sentiment) toward the film.
+    - Carefully assess the opinion and sentiments expressed in the provided movie review. Decide if the overall stance of the author is favorable or unfavorable regarding the subject.
+    - Based on the content of the review, your task is to recognize whether the writer recommends the movie (positive sentiment) or critiques it negatively (negative sentiment).
+    - Read the supplied short movie review and analyze it to determine whether the reviewer's sentiment is predominantly positive or negative, based on their choice of expressions and tone.
+ade_corpus_v2-dosage:
+  descriptions:
+    - Your task is to analyze medical texts and identify the dosage information for specific drugs or treatments. This involves understanding the instructions and quantities provided in the context of the text.
+    - Focus on extracting details about medication dosages from the text. This requires careful reading and comprehension of medical content to discern the correct dosage information.
+    - The objective is to identify and extract dosage-related information. You will need to interpret the medication instructions provided in the text accurately and consistently.
+    - Examine the given medical content carefully, paying close attention to dosage amounts, frequency, and methods of administration associated with specific drugs.
+    - Your role is to locate and specify dosage-related data within medical texts, requiring a precise understanding of pharmacological terminology and usage contexts.
+tweet_eval-stance_abortion:
+  descriptions:
+    - This task focuses on understanding the stance expressed in tweets toward the topic of abortion. Your role is to analyze the content and infer whether the stance is in support, against, or neutral.
+    - Given tweets discussing the topic of abortion, you are tasked with evaluating the sentiment and perspective of the author. Identify whether the stance presented is pro-abortion, anti-abortion, or neutral.
+    - Your job is to carefully interpret the content of social media posts related to abortion, determining the stance of the author by analyzing textual cues and underlying sentiment.
+    - Analyze tweets centered around the abortion debate. Infer the position taken by the author toward the issue and categorize it as favoring, opposing, or staying neutral.
+    - For each tweet provided, your objective is to assess the stance expressed regarding abortion. Look for explicit or implicit contextual clues to determine whether the author supports, opposes, or remains neutral.
+tweet_eval-stance_atheism:
+  descriptions:
+    - Your task is to analyze tweets and determine the stance of the author towards atheism, identifying whether it expresses support, opposition, or neutrality.
+    - Evaluate the sentiment or position conveyed in each tweet regarding atheism, discerning the underlying attitude or opinion of the author.
+    - Interpret the tweets provided and classify the stance as either in favor of atheism, against atheism, or neutral, based on the perspective or tone of the content.
+    - In this task, you will explore brief textual content (tweets) and categorize the attitude expressed by the author towards atheism, taking into account their opinions and context.
+    - Discern the tone and viewpoint of each tweet about atheism by classifying the stance as supporting, opposing, or expressing no opinion at all. Focus on the keywords, implications, and overall sentiment presented.
+superglue-rte:
+  descriptions:
+    - Your task is to determine whether a given hypothesis logically follows from, contradicts, or is neutral with respect to a provided premise. This requires careful reasoning and understanding of text relationships.
+    - Analyze the relationship between the provided premise and hypothesis, and decide if the hypothesis can be inferred, contradicted, or is unrelated based on the information given.
+    - You are required to evaluate the logical connection between two statements, classifying the hypothesis as either entailed by, contradicting, or unrelated to the premise.
+    - In this task, you will assess pairs of statements to determine the relationship between them based on textual entailment. Consider the premise and judge if it supports, contradicts, or does not relate to the hypothesis.
+    - Given a premise and a hypothesis, your role is to assess the logical relationship and classify the hypothesis as being either true, false, or indeterminate based on the premise.
+tweet_eval-hate:
+  descriptions:
+    - In this task, you will analyze tweets to determine whether they involve hate speech. It requires identifying language that promotes hate, discrimination, or hostility toward individuals or groups.
+    - Your job is to examine the provided tweets and discern whether they contain hateful or offensive content. This involves evaluating the tone, language, and implications within the text.
+    - This task involves identifying tweets that exhibit hate speech. You must detect language that expresses animosity, prejudice, or aggression targeted at specific groups or individuals.
+    - You will focus on understanding the context and implications of the tweets, determining if they are hateful or potentially harmful. This necessitates sensitivity to underlying tones and language cues.
+    - The objective is to classify whether a given tweet contains hate speech or not. You will need to carefully analyze linguistic features and contextual information to make your judgment.
+    - This task revolves around the recognition of hate speech in tweets, requiring you to evaluate text for derogatory, discriminatory, or harmful language directed toward a particular group or person.
+    - Your role is to assess whether a tweet contains content that could incite hatred or discrimination. This requires a nuanced understanding of language and social context to identify harmful expressions.
+    - You are tasked with categorizing tweets based on their potential to spread hate or offense. Focus on language usage, explicit terms, and implicit meanings to determine if a tweet is classified as hateful speech.
+    - Evaluate the sentiment and intent behind the tweets to identify any form of hate speech. This involves detecting slurs, derogatory remarks, or other offensive content targeting individuals or groups.
+    - Analyze the tweets provided and determine which, if any, are rooted in hate speech. This requires critical attention to the choice of words, phrasing, and broader social or cultural context.
+yahoo_answers_topics:
+  descriptions:
+    - In this task, you will analyze a variety of questions and responses on diverse topics such as science, arts, and society. Your goal is to classify the questions into their respective topic categories based on their content.
+    - You are tasked with determining the main topic of an input query by evaluating its subject matter. This requires identifying relevant keywords and understanding the context of the question or text.
+    - Given a question or text snippet, your role is to categorize it into a specific topic domain by assessing the overall theme. This involves skill in topic recognition and contextual comprehension.
+    - This task requires you to assign a topic label to various inquiries and statements. By examining the provided text, you should infer the most appropriate category based on topic relevance.
+    - Examine each question thoroughly and identify the broader topic it belongs to, utilizing your ability to detect themes in diverse areas such as technology, health, and social issues.
+kilt_zsre:
+  descriptions:
+    - In this task, you will focus on validating and providing accurate answers to a variety of factual questions. Your primary goal is to choose the response that most accurately corresponds to established knowledge.
+    - Your job is to analyze the given questions and determine the most reliable answer based on factual evidence. This task requires critical thinking and a firm grasp of general knowledge across multiple domains.
+    - Examine the provided questions carefully and select the answer that most accurately reflects existing and verified information. The task emphasizes factual accuracy and attention to detail.
+    - The goal of this task is to identify the most relevant and accurate factual information in response to diverse prompts. You will rely on your understanding of general knowledge to discern the appropriate answer.
+    - This task requires selecting the answer that provides the most truthful and concise response to a factual query. Focus on identifying the option that aligns with established and credible information sources.
+    - Your role is to comprehend and analyze factual questions, evaluating the correctness of each potential answer. You must rely on knowledge grounded in verified and accurate sources.
+hellaswag:
+  descriptions:
+    - Your task is to choose the most fitting conclusion to a given text fragment, ensuring that your choice aligns logically with the context, tone, and progression of the narrative or instructional content.
+    - This task requires completing a partially written passage by selecting the most natural and coherent continuation, guided by contextual clues and the logical flow of the content.
+    - Evaluate incomplete text segments and identify the ending that best maintains the logical structure, narrative flow, and thematic consistency of the provided material.
+    - You are required to assess an incomplete narrative or set of instructions and provide a conclusion that seamlessly follows from the initial content and mirrors its intended purpose or meaning.
+    - Select the ending that is most contextually appropriate and intuitively completes the story or instructions provided, considering the sequence and coherence of ideas.
+    - This task involves reading incomplete scenarios or instructions and choosing the ending that best aligns with the earlier content while retaining logical consistency and thematic relevance.
+blimp-sentential_negation_npi_scope:
+  descriptions:
+    - This task focuses on evaluating your understanding of sentence meanings under sentential negation. You will assess how negative polarity items (NPIs) interact within given contexts to determine grammatical correctness.
+    - Analyze sentences to identify the proper use of negative polarity items within the scope of negation. Your role is to evaluate whether the structures are logically and syntactically accurate.
+    - Your task is to assess pairs of sentences for grammaticality, paying attention to how negation influences the acceptance or rejection of negative polarity items in different contexts.
+sciq:
+  descriptions:
+    - Your task is to answer questions that test your knowledge in scientific topics such as biology, physics, chemistry, and earth sciences. Analyze the options and pick the one that best aligns with scientific concepts.
+    - Focus on understanding the scientific context of the question, and select the most accurate and relevant answer that adheres to fundamental scientific principles.
+    - This task involves exploring scientific problems or concepts and identifying the accurate answers based on established scientific knowledge and reasoning.
+    - You will evaluate questions related to fundamental or applied science. Use logical reasoning and your understanding of scientific principles to discern the best answer from the provided choices.
+    - Analyze the scientific question at hand, which may cover topics such as natural phenomena or theoretical principles. Select the most precise and evidence-based answer from the options.
+    - Your goal is to interpret the question based on your understanding of science and select the option that correctly reflects the scientific reasoning or facts presented.
+    - This task requires assessing science-related questions and determining the most credible answer based on your knowledge of key ideas across various scientific domains.
+glue-mrpc:
+  descriptions:
+    - Your task is to determine if two given sentences express the same idea or share the same semantic meaning. Focus on understanding the context and nuances of each sentence.
+    - Analyze two sentences and decide whether they paraphrase each other by identifying shared meanings or rephrased ideas. Pay attention to synonyms, structure variations, and overall context.
+    - This task involves comparing two sentences and determining if they are semantically equivalent. Evaluate the content, intent, and phrasing of both to make an informed judgment.
+    - Assess the semantic similarity between two provided sentences, determining if they convey the same idea, despite possible differences in wording.
+    - Given a pair of sentences, your job is to examine their meaning closely and decide whether they convey similar or identical information. Focus on sentence structure, phrasing, and context.
+    - You are presented with two sentences, and your role is to evaluate their relationship. Decide if they express the same meaning through slight rephrasing or alternative expressions.
+blimp-sentential_negation_npi_licensor_present:
+  descriptions:
+    - This dataset assesses your understanding of English syntax by testing your grasp of sentential negation and the grammatical acceptability of follow-up structures. Your task is to discern which sentence adheres to commonly accepted grammatical rules.
+    - Analyze the given pair of sentences and determine which sentence is structurally and grammatically correct. Focus on understanding the use of negation and its effect on sentence structure.
+    - Your role is to evaluate sentence pairs for grammatical validity, specifically focusing on how negative polarity items interact within different linguistic contexts.
+    - This task focuses on testing your knowledge of sentence construction and permissibility under negative polarity contexts. Identify the option that aligns with correct English usage and grammar.
+    - Determine which sentence maintains the appropriate syntactic relationship between negation and polarity-sensitive expressions. This requires nuanced understanding of linguistic rules and structures.
+    - In this task, you will analyze negated statements and evaluate their grammatical integrity and proper licensing of negative polarity items. Select the syntactically valid sentence from each pair.
+    - Your goal is to assess and compare sentence constructions, identifying if the negation correctly licenses the use of negative polarity items in English.
+    - This task evaluates your comprehension of grammatical principles surrounding sentential negation and polarity sensitivity. Choose the well-formed sentences among the given options.
+    - Focus on the interaction between negation and the licensing of certain linguistic elements. Your task is to select the grammatically valid sentences based on these principles.
+    - Evaluate the grammatical acceptability of sentences, particularly in the context of negative polarity item licensing under sentential negation in English.
+descriptions:
+  - This task involves analyzing a textual input to identify biases, stereotypes, or offensive language related to gender. Your goal is to assess the context and evaluate whether the content includes discriminatory or unfair treatment based on gender.
+  - Evaluate the given text for gender-related connotations or implications. You must determine if it contains any bias, prejudice, or harmful language targeting a specific gender.
+  - In this task, you will classify statements based on whether they reflect any form of gender-based discrimination, stereotyping, or hate speech. Analyze the underlying meaning and context to make an appropriate judgment.
+  - You are tasked with identifying and categorizing text that may exhibit offensive or discriminatory material pertaining to gender. Assess the intent and impact of the language used to arrive at a conclusion.
+  - Your responsibility is to examine the provided text and decide whether it includes hateful, harmful, or prejudiced language against any gender. This requires sensitivity to context and an awareness of implicit biases.
+  - Analyze the input text and classify it based on whether it demonstrates gender-based stereotyping, offensive remarks, or neutrality. Be attentive to both explicit and implied meanings in the content.
+paws:
+  descriptions:
+    - This task requires you to determine whether two sentences have the same meaning, despite potential differences in word order or phrasing. Focus on understanding nuanced semantic similarities or differences.
+    - You will evaluate pairs of sentences to decide whether they are semantically identical or display slight variations in meaning. Pay close attention to context and sentence structure.
+    - Your challenge is to analyze pairs of sentences to confirm whether they convey the same message or meaning. This involves identifying paraphrasing, subtle changes in expression, and logical consistency.
+    - Assess the relationship between two sentences and judge if they retain the same semantic content. This requires recognizing synonyms, rephrasing, and analyzing differing sentence constructions.
+    - In this task, you'll read two sentences and determine if they are paraphrases of each other or if their meanings diverge. Use your comprehension skills to evaluate their similarities and differences.
+superglue-multirc:
+  descriptions:
+    - Your task is to read a passage and answer multiple-choice questions based on it. Select the answers that are strongly supported by the information provided in the text.
+    - Focus on analyzing the passage carefully to understand its key points and nuances. Then identify which answers accurately reflect the details or implications of the text.
+    - This task involves reasoning about a passage and choosing the correct answers to multiple questions. Use your comprehension skills and evidence from the text to determine which options are reasonable and justified.
+    - You are required to evaluate a set of questions regarding a given passage. Draw logical inferences and rely on explicit evidence from the text to decide which answers are correct.
+    - Examine the content and structure of the passage thoroughly. Assess each question and select the answers that are supported by facts or ideas mentioned in the text.
+tweet_eval-offensive:
+  descriptions:
+    - This task requires you to classify tweets based on their content, identifying whether they contain offensive language or not. Your role involves recognizing and distinguishing harmful or disrespectful language from neutral communication.
+    - You will analyze tweets and determine if they are offensive using critical reasoning and context understanding. This involves identifying derogatory, discriminatory, or aggressive language.
+    - Your responsibility is to evaluate the tone and choice of words in tweets, deciding if they exhibit offensive or inappropriate language in the given context.
+    - The objective of this task is to discern between tweets that are offensive and those that are non-offensive. You need to focus on the choice of words, context, and intent behind each tweet.
+    - This task involves determining whether tweets are expressed in an offensive or inappropriate manner. It requires careful interpretation of the social and linguistic nuances presented in short text formats.
+ethos-directed_vs_generalized:
+  descriptions:
+    - This task requires you to assess and classify statements based on whether they are directed towards a specific target group or reflect a more generalized sentiment or idea.
+    - Analyze the content and tone of the given statement to determine if the sentiment or message is aimed at a particular group or if it applies broadly across groups.
+    - Your goal is to critically evaluate whether the statement presented conveys a targeted perspective or represents a broader generic outlook without focus on a specific audience.
+    - You will be provided with various statements and should identify whether the language and intent are directed (targeting a particular group) or generalized (inclusive or broadly applicable).
+    - Examine the underlying intent and focus of the statements, discerning whether they direct their message toward a specific entity or maintain a more universal stance.
+spider:
+  descriptions:
+    - In this task, you will analyze a given query in natural language and generate an accurate SQL statement to retrieve data from a relational database. This requires an understanding of database structures and SQL syntax.
+    - You are required to convert a natural language question into a SQL query that fetches appropriate data from a provided database schema. Focus on correctly utilizing table structures, columns, relationships, and query logic.
+    - This task involves creating precise SQL queries that align with a given question. Your goal is to understand the intent of the question and determine how to construct a query using the provided database schema.
+    - Given a natural language question and a structured database schema, your task is to write a valid SQL query to extract the requested information. This requires comprehension of database relationships and the ability to translate questions into queries.
+    - In this task, you will interpret questions expressed in natural language and map them to SQL statements that produce the relevant outputs when executed on the database. Performance requires attention to detail and proper logical reasoning.
+glue-qqp:
+  descriptions:
+    - Your task is to analyze two given questions and determine whether they have the same intent or meaning. This requires careful comparison of word choices, nuances, and context.
+    - Examine the provided pairs of questions, paying close attention to their key elements, and decide whether they are semantically similar or asking about the same topic.
+    - You will compare two questions and assess whether they are paraphrases of each other, focusing on the underlying intent and meaning rather than superficial wordings.
+    - This task involves identifying whether two questions share the same purpose or express similar ideas, requiring close attention to context and phraseology.
+    - Analyze pairs of questions to determine if they are essentially asking about the same concept, topic, or idea, even if their phrasing differs.
+    - Your job is to determine whether the meaning of one question matches that of another, requiring an understanding of synonyms, sentence structures, and intent.
+    - Evaluate two input questions and identify whether there's a semantic equivalence between them by recognizing similar phrasing or interpreting their meaning.
+    - For this task, your responsibility is to understand and compare the intent behind two questions, ensuring you can distinguish between similar and dissimilar queries.
+    - Given a pair of questions, your goal is to decide whether they pose the same query in different words or address different ideas entirely.
+    - Read and interpret the meaning of each question pair, then carefully decide whether the two aim to inquire about the same thing or are conceptually distinct.
+sick:
+  descriptions:
+    - This task involves evaluating the semantic similarity between sentence pairs. You need to analyze the meaning of two sentences and determine the degree to which they are semantically related.
+    - Your role is to assess the relationship between two given sentences, focusing on their semantic overlap and identifying if they are paraphrases, entail one another, contradict each other, or are neutral.
+    - In this task, you will compare sentence pairs to identify whether they convey identical meanings, partial agreement, or conflicting ideas. Logical reasoning and linguistic analysis are key to determining their relationship.
+    - The task involves analyzing sentence pairs to categorize their relationship as entailment, contradiction, or neutrality. You must focus on understanding nuanced language usage and logical implications of the sentences.
+    - Given two sentences, your objective is to determine their semantic relationship, whether one entails the other, contradicts it, or is unrelated. Careful attention to linguistic detail and logical reasoning is necessary for accurate classification.
+    - This task asks you to evaluate how closely two sentences align semantically. You’ll identify whether they express the same concept, a nuanced variation of it, or completely contradictory meanings.
+    - Your task is to compare two sentences and classify their relationship based on their semantics. This involves interpreting language and inferring whether the sentences support, contradict, or have no effect on one another.
+glue-qnli:
+  descriptions:
+    - In this task, you are required to determine whether a given statement correctly aligns with a supporting context or passage, focusing on logical relationships and textual evidence.
+    - Your responsibility is to evaluate whether the context provided in the passage supports, contradicts, or has no relation to the statement presented, requiring strong comprehension and inference skills.
+    - This task involves analyzing a query and its corresponding passage, assessing whether the passage provides sufficient information to answer the query accurately.
+    - You will assess the connection between a given context and a statement to judge whether the statement logically follows from the provided information.
+    - Here, your role is to infer whether a provided sentence is entailed by or related to the given text, requiring precise reasoning and understanding of how information is connected within texts.
+    - The goal of this task is to analyze pairs of input text (a passage and a question) and decide whether the question is answerable based on the content of the passage.
+    - Your task is to determine whether the relationship between a passage and a statement is one of entailment or non-entailment, using logical reasoning and comprehension of the passage's content.
+    - Focus on understanding the meaning of the text and its relationship to the question, determining if the question and the passage form a logically consistent pair.
+medical_questions_pairs:
+  descriptions:
+    - Your task is to analyze two medical-related questions and determine whether they are semantically similar in content or intent. This requires an understanding of health-related terminology and the ability to compare contextual meanings.
+    - You will evaluate pairs of medical questions to assess if they convey a similar inquiry or concern. This involves interpreting medical contexts and identifying subtle differences or overlaps in meaning.
+    - Given two questions within the medical domain, your objective is to compare their intent and structure, deciding if they address the same medical concern or are distinct in nature.
+    - In this task, you are required to analyze and compare questions regarding medical topics, focusing on the similarity of intent, meaning, and context between them.
+    - This involves judging the relationship between two medical queries — whether they ask about the same issue, reflect similar health concerns, or are unrelated.
+    - You will review pairs of questions in a medical context and determine their semantic closeness, requiring a precise understanding of the language and terminology used in the medical field.
+lama-conceptnet:
+  descriptions:
+    - Your objective is to assess contextual relationships between words or phrases and identify the most semantically accurate connection, focusing on commonsense reasoning.
+    - This task requires you to analyze word pairs and evaluate their conceptual relationships. Select the answer that reflects the most logical association based on general knowledge.
+    - Demonstrate your ability to interpret connections between various terms or concepts. Choose the option that best expresses a valid and meaningful relationship within the given context.
+    - Use your knowledge of commonsense and semantics to identify meaningful links between two ideas or concepts. Your goal is to infer the connection that aligns with everyday understanding or domain-specific relevance.
+    - In this task, you will determine the relationships or associations between different ideas, using logical reasoning and common knowledge to select the most appropriate answer.
+    - This task involves reasoning about relational and semantic concepts. Use your understanding of general world knowledge to infer and validate the links suggested between different items.
+    - Analyze how two concepts or items relate to each other by applying basic principles of human reasoning and general understanding, then identify the most appropriate relational concept.
+    - Based on two provided terms, deduce the logical connection between them. The task involves reasoning about cause-effect, part-whole, or other commonsense relationships.
+liar:
+    descriptions:
+      - This task involves analyzing short statements made by public figures and classifying their truthfulness based on factual evidence. It requires critical thinking and attention to detail to evaluate the accuracy of claims.
+      - You are tasked with distinguishing between true and false statements made by politicians or other public figures. This requires reasoning, knowledge of current events, and the ability to detect misrepresentation or exaggeration.
+      - Given a claim, your job is to evaluate the statement's validity by referencing external knowledge and assessing the logical alignment of the given information.
+      - In this task, you will classify assertions as true, partly true, or false by reasoning through the statements and cross-referencing established facts.
+      - You will explore statements and judge their truthfulness, relying on your ability to identify misinformation or misleading claims through both content analysis and associated metadata.
+      - For each statement, your responsibility is to assess and determine its veracity based on available evidence and knowledge of politics, science, or history.
+      - This task focuses on evaluating claims made in short text based on factual correctness. You need to identify whether the statements are factually accurate, exaggerated, or outright false.
+      - Analyze short claims rooted in public discourse, evaluating whether the given statements are supported by facts, misrepresented, or fabricated.
+      - Your goal is to assess claims and categorize them into a range of truthfulness (e.g., true, mostly true, half true, false) based on logical analysis and available evidence.
+      - You will investigate and judge the plausibility or correctness of a claim using reasoning skills and awareness of factual patterns in news and official statements.
+ethos-gender:
+    descriptions:
+      - This task involves analyzing a textual input to identify biases, stereotypes, or offensive language related to gender. Your goal is to assess the context and evaluate whether the content includes discriminatory or unfair treatment based on gender.
+      - Evaluate the given text for gender-related connotations or implications. You must determine if it contains any bias, prejudice, or harmful language targeting a specific gender.
+      - In this task, you will classify statements based on whether they reflect any form of gender-based discrimination, stereotyping, or hate speech. Analyze the underlying meaning and context to make an appropriate judgment.
+      - You are tasked with identifying and categorizing text that may exhibit offensive or discriminatory material pertaining to gender. Assess the intent and impact of the language used to arrive at a conclusion.
+      - Your responsibility is to examine the provided text and decide whether it includes hateful, harmful, or prejudiced language against any gender. This requires sensitivity to context and an awareness of implicit biases.
+      - Analyze the input text and classify it based on whether it demonstrates gender-based stereotyping, offensive remarks, or neutrality. Be attentive to both explicit and implied meanings in the content.
+
+
+financial_phrasebank:  
+  descriptions:  
+    - This task involves analyzing financial sentences or phrases to determine their sentiment, such as whether they express positive, negative, or neutral sentiment. It requires a good understanding of financial terminology and context.  
+    - You will assess financial statements or news excerpts to classify their sentiment accurately. This task demands sharp analytical skills and familiarity with how financial language conveys positivity, negativity, or neutrality.  
+    - Your task is to identify and classify the sentiment in given financial texts, based on the tone and implications of the language used. This requires careful consideration of financial jargon and the context of the statements.  
+    - Examine financial phrases and decide whether their sentiment indicates optimistic, pessimistic, or neutral views on market trends or business conditions. Context comprehension and financial expertise are key.  
+    - Focus on the sentiment conveyed in financial news or reports, determining if the language reflects confidence, caution, or neutrality regarding economic or corporate developments.  
+
+yelp_review_full:  
+    descriptions:  
+      - Analyze customer reviews carefully to understand opinions and feedback related to services or products. Your goal is to evaluate the sentiment and overall impression conveyed by the reviewer.  
+      - In this task, you'll review user feedback on various businesses or services and categorize reviews based on their sentiment, ranging from very negative to very positive.  
+      - Your objective is to assess the provided reviews, identify the tone, sentiment, and evaluate the key points highlighted in the reviewer's perspective regarding the business or service experience.
+
+scitail:
+  descriptions:
+    - Your task is to determine the logical relationship between two given sentences, identifying whether one entails the other based on scientific facts or common knowledge.
+    - Analyze pairs of sentences and determine if the hypothesis can be logically inferred from the premise using scientific reasoning or general principles.
+    - This task involves understanding the relationship between a premise and a hypothesis, focusing on whether the hypothesis is true, false, or unrelated in the context of the provided evidence.
+    - You will evaluate pairs of sentences where the primary goal is to assess the logical connection between the two statements, leveraging both scientific understanding and semantic inference.
+    - Given a pair of statements, your responsibility is to decide if the second statement (hypothesis) logically follows from the first (premise) based on scientific logic and factual connections.
+    - This task challenges you to apply reasoning and domain knowledge to determine if the premise supports the hypothesis, ensuring accurate interpretation of scientific or general relationships.
+    - Using analytical and scientific reasoning, you will explore the validity of a claim in relation to a provided premise, deciding whether it is entailed or not.
+    - Examine the semantic and logical consistency of a proposed hypothesis with the given premise. Your goal is to determine the strongest epistemic relation between the two statements.
+
+tweet_eval-emotion:
+    descriptions:
+      - This task involves identifying the emotional tone projected in a given short text or tweet. Analyze the content to determine whether it expresses joy, anger, sadness, optimism, or a related emotion.
+      - You are tasked with interpreting the underlying sentiment or emotional state reflected in a concise social media post. Focus on understanding context and tone to accurately classify the emotion.
+      - The objective is to evaluate the emotional implication of a tweet and categorize it based on its expressed sentiment, such as happiness, anger, or sorrow, relying on both explicit and implicit cues in the text.
+      - Analyze each tweet with attention to language, context, and word choice to classify the dominant emotion conveyed. Your goal is to correctly match the sentiment with predefined emotional categories.
+      - Consider the emotional undertone of the text and determine which label best describes the primary feeling evoked, whether it be excitement, frustration, contentment, or other emotional expressions reflected in the text.
+
+glue_rte:
+  descriptions:
+    - Your task is to analyze a given premise and hypothesis, and determine whether the hypothesis logically follows from the premise. Assess the relationship between the two and identify if the statement entails, contradicts, or is unrelated to the given context.
+    - Evaluate whether the hypothesis can be inferred or supported by the premise. Carefully examine the semantic and logical relationship between the two pieces of text before selecting an answer.
+    - This task requires you to assess textual entailment. Review the given premise and hypothesis, and classify the relationship as entailment or non-entailment based on logical consistency and meaning.
+    - You are required to determine whether the given hypothesis matches the information presented in the premise. Focus on interpreting the semantic meaning to decide if there is a logical entailment.
+    - Your responsibility is to analyze the premise and hypothesis carefully and judge whether the hypothesis can be logically inferred based on the evidence presented in the premise.
+
+crows_pairs:
+  descriptions:
+    - In this task, your objective is to identify whether a given pair of sentences contains social bias, and if so, to assess how the bias manifests within the context. You will need to evaluate the language and discern underlying stereotypes or prejudices.
+    - This task involves evaluating pairs of sentences to detect implicit or explicit bias. You'll need to carefully analyze linguistic cues and contextual information to understand how stereotypes or social assumptions influence the language used.
+    - Analyze each pair of sentences critically, focusing on identifying potential bias related to demographics, social roles, or societal norms. Your goal is to recognize which sentence carries biased connotations or stereotypes, if any.
+
+blimp-anaphor_number_agreement:  
+    descriptions:  
+      - This task involves analyzing sentences to determine whether the use of pronouns maintains grammatical agreement in terms of number (singular/plural) with their respective antecedents. Your role is to identify whether the sentence adheres to correct grammatical rules and provides agreement.  
+      - You are tasked with assessing linguistic constructs to ensure proper number agreement between anaphors (e.g., pronouns) and their antecedents. This requires attention to grammatical correctness and syntactic understanding.  
+      - In this task, you will evaluate sentences to check for consistency in number agreement between pronouns and the nouns they refer to. This demands thorough comprehension of grammatical structure and accurate identification of discord.  
+
+race-high:
+  descriptions:
+  - In this task, you will read a passage and answer a question based on its content. Your job is to identify the most accurate and logical option that aligns with the passage's details.
+  - This task involves understanding the given passage and evaluating the statements provided. Choose the statement that correctly interprets or summarizes the information mentioned in the text.
+  - Your responsibility is to analyze a provided text and use logical reasoning to answer questions. Focus on extracting relevant information and identifying connections or implications within the passage.
+  - Examine a provided passage carefully, then respond to questions that test your understanding, critical thinking, and inference skills. Look for the option that best reflects the meaning or intent of the text.
+  - For each question, you will assess how well the provided options align with the explicit or implied details of the passage. Identify the answer that best integrates the context and facts within the text. 
+
+tweet_eval-irony:
+  descriptions:
+    - In this task, you will analyze a tweet and determine whether it contains irony or literal meaning. Carefully evaluate the text for subtle cues of sarcasm, humor, or contradiction.
+    - Your role is to classify tweets by assessing whether the content exhibits ironic tone or straightforward communication. This entails understanding implied meanings and contextual nuances.
+    - This task requires understanding the sentiment and intent behind tweets, specifically identifying whether they possess an ironic undertone, often characterized by an incongruity between expectations and reality.
+    - Analyze tweets and decide if they employ irony, which typically involves contradictory or sarcastic statements, requiring a focus on both tone and context.
+    - You will be presented with tweets and are challenged to discern whether they convey irony, using your skills in detecting humor, exaggeration, and implicit meanings.
+
+imdb:
+  descriptions:
+    - Your objective is to analyze the provided movie review and determine whether it expresses a positive or negative sentiment. Focus on understanding the tone, context, and key opinions presented in the review.
+    - Evaluate the sentiment of the given movie review by identifying positive or negative expressions, themes, or critiques within the text. Use your ability to recognize emotional language and overall tone to draw a conclusion.
+    - This task involves reading through a movie review and categorizing it based on the sentiment it conveys. Pay attention to language indicators, such as words or phrases denoting satisfaction, disappointment, praise, or criticism, to make an informed decision.
+
+superglue-wsc:
+  descriptions:
+    - Your task is to determine the correct reference or entity that a given pronoun in a sentence is referring to. This requires strong skills in reasoning, understanding sentence structures, and contextual meaning.
+    - This task involves resolving ambiguous pronouns in a sentence by identifying the proper noun or entity they correspond to. It tests language comprehension and pronoun resolution abilities.
+    - Analyze sentences with ambiguous references and use contextual understanding to discern which entity or individual the pronoun is referring to. Logical reasoning and linguistic knowledge are essential.
+    - You will assess sentences containing pronouns and decide which of the provided entities is the intended referent. This exercise measures your understanding of context, grammar, and sentence semantics.
+    - Your objective is to solve pronoun disambiguation problems by identifying and associating pronouns with their correct antecedents. Careful evaluation of the sentence structure and context is required.
+    - Given a statement with a potentially ambiguous pronoun, your role is to evaluate the context and select the correct noun or phrase it refers to. This task emphasizes reading comprehension and critical thinking.
+ade_corpus_v2-classification:
+  descriptions:
+    - Your task is to analyze medical text to identify whether any adverse drug events are mentioned and correctly classify them based on the input information. This requires attention to detail and domain knowledge in pharmacology or medicine.
+    - This task involves categorizing textual excerpts based on the presence or absence of adverse drug events. Use reasoning skills and semantic understanding to make accurate classifications.
+    - You are tasked with assessing whether the provided text describes adverse outcomes related to drug usage. Carefully evaluate the linguistic and medical context to arrive at the correct classification.
+    - In this task, your responsibility is to detect potential mentions of medical drug reactions or side effects in text and classify the information accurately based on its content.
+    - Evaluate the input sentence or passage and determine if it contains references to drug-induced effects, and use this to classify the text as involving adverse drug events or not.
+    - Your role is to parse the language of clinical or medical statements to discern and classify specific mentions of adverse drug reactions, requiring precision and understanding of terminology.
+wikisql:
+  descriptions:
+    - In this task, you are required to query a database table to retrieve the desired information based on a given natural language question. Your goal is to generate an accurate SQL query that provides the correct answer.
+    - This task involves understanding the structure and contents of a database table. You will analyze a question in natural language and construct an SQL query that extracts the relevant data.
+    - Your objective is to interpret a natural language question and map it to the corresponding SQL query to retrieve precise information from a table.
+    - The task requires converting a human language question into an SQL query by analyzing the question's intent, identifying key table columns, and applying the appropriate database functions.
+    - In this activity, you will use your understanding of table structures and database querying to translate a textual query into a valid SQL command that fetches the expected answer.
+    - Construct a database query in SQL to answer a question posed in ordinary language. The task tests your ability to comprehend the query intent and accurately formulate the database extraction logic.
+    - This challenge tests your ability to interpret questions about structured tabular data and create corresponding SQL queries to retrieve the asked information comprehensively and accurately.
+    - You are tasked with focusing on the relationships and content within a table while aligning natural language questions to SQL syntax, ensuring precise information retrieval.
+    - The task involves reasoning about queries relating to structured data. Using the natural language question, your task is to generate an SQL query that represents the question's semantics correctly.
+    - You will be presented with a question and its corresponding database table. Translate the question into a valid SQL query while keeping the structure and constraints of the database schema in mind.
+poem_sentiment:
+  descriptions:
+    - This task involves analyzing lines of poetry to identify their underlying sentiment. You will evaluate the emotional tone and express whether it's positive, negative, or neutral.
+    - Your role is to assess the mood or feelings conveyed in a poem. By interpreting the poet's language and imagery, determine the sentiments expressed within the text accurately.
+    - Carefully examine the poetic lines and use contextual and emotional cues to identify the sentiment they reflect. Assess whether the emotions conveyed are positive, negative, or somewhere in-between.
+    - In this task, you will interpret poetic expressions and evaluate the mood or emotion contained in the verses. Your goal is to assign a sentiment category based on the overall tone and context.
+    - This task requires you to infer the sentiment expressed through poetry by analyzing the language and themes within the text. Determine whether the tone is uplifting, sorrowful, neutral, or another clear emotion.
+kilt_ay2:
+  descriptions:
+    - In this task, you will evaluate questions based on a wide array of general knowledge and fact-based reasoning. The objective is to identify the answer that aligns most accurately with verified information.
+    - Your responsibility is to assess queries on diverse topics and select the most reliable answer, demonstrating your ability to analyze factual contexts and understand key relations.
+    - This task involves solving questions that rely on broad general knowledge. You need to determine the answer that is most consistent with established facts or logical reasoning.
+    - The task entails analyzing a question and selecting the best factual answer. To succeed, you must use critical thinking and apply your understanding of reality-based information.
+    - You are required to evaluate questions and choose an answer that is grounded in factual accuracy. This involves logical analysis and an understanding of general knowledge across diverse concepts.
+    - In this task, you will demonstrate your comprehension of fact-based knowledge by selecting answers that correctly address the posed questions in a clear and logical manner.
+tweet_eval-stance_feminist:
+  descriptions:
+    - This task requires you to determine the stance of a tweet towards feminism. Analyze the text to classify whether it expresses a positive, negative, or neutral attitude towards the feminist movement or ideals.
+    - Your goal is to assess the sentiment or position conveyed in a tweet regarding feminism. Identify whether the tweet supports, opposes, or is neutral towards feminist themes or issues.
+    - In this task, you will evaluate the tone and content of a tweet to identify its stance on feminism. Pay attention to linguistic cues and context to classify the opinion accurately.
+    - Analyze a tweet to categorize its perspective on feminism, identifying whether it exhibits support, opposition, or neutrality. Contextual analysis and understanding of sociopolitical topics may help guide your choice.
+    - This task involves detecting the viewpoint expressed in a tweet about feminism. Your analysis should determine whether the tweet aligns for, against, or neither with feminist principles or debates.
+    - Examine the language and context of a tweet to infer the stance it represents on feminist topics. Consider how word choice and structure reflect the author’s position (positive, negative, or neutral).
+superglue-cb:
+  descriptions:
+    - Your task involves determining whether a given statement is true, false, or undetermined based on the context provided. This requires a deep understanding of the text and logical reasoning.
+    - You are asked to analyze short passages and evaluate the validity of a specific claim in the context. Decide whether the claim is supported, refuted, or lacks sufficient evidence for a conclusion.
+    - Examine a statement or claim in relation to a given passage, and determine its correctness. Use critical thinking skills to identify if the evidence from the passage supports, contradicts, or leaves the claim unresolved.
+    - For each example, your goal is to assess whether the provided evidence supports, refutes, or is neutral towards a particular assertion. This evaluation tests your ability to reason and interpret information accurately.
+    - Evaluate the relationship between a statement and its associated passage. Identify whether the statement is backed by evidence, contradicted, or cannot be confirmed given the provided information.
+circa:
+  descriptions:
+    - This task revolves around analyzing the context of a conversational exchange and selecting the most appropriate response based on the underlying intent, tone, and situational dynamics.
+    - You are required to interpret conversational interactions and determine the most contextually accurate answer by focusing on nuances such as politeness, agreement, and social appropriateness.
+    - This task involves assessing conversational scenarios and inferring the implied meaning or intent behind the statements, choosing the response that best completes the interaction.
+    - Your role is to evaluate the given dialogue and determine the most fitting follow-up or reply, taking into account social norms, contextual cues, and language subtleties.
+    - This involves understanding the interplay between two or more conversational statements and discerning the most logical or expected continuation within the given context.
+yelp_polarity:
+  descriptions:
+    - Your task is to analyze user reviews and classify the sentiment as positive or negative. Pay close attention to the tone, word choice, and context of the review to make an accurate determination.
+    - Evaluate the given review and determine whether the overall sentiment expressed is favorable or unfavorable. Focus on identifying key indicators of satisfaction or dissatisfaction in the text.
+    - This task involves interpreting customer feedback in the form of text reviews and identifying whether the sentiment conveyed is positive or negative. Consider expressions of praise, criticism, or overall impressions provided in the review.
+    - "Read the provided customer review and classify it into one of two sentiment categories: positive or negative. Use your language and context comprehension skills to discern the writer's intended sentiment."
+    - Your role is to classify reviews based on their sentiment orientation. Identify whether the review reflects a positive experience or expresses negative criticism. Utilize textual evidence to guide your decision-making process.
+    - Analyze user-generated restaurant reviews and categorize the sentiment as either positive or negative, considering the overall tone and specific details about the experience mentioned in the review.
+    - This task tests your ability to distinguish between positive and negative sentiments expressed in short passages of customer feedback. Focus on the review's main message and emotional tone.
+    - Interpret the emotional undertone of a restaurant or business review to classify it as indicating either a positive or negative customer experience. Pay attention to key descriptors, adjectives, and how the author frames their opinions.
+    - Examine and evaluate the provided user review, paying attention to its emotional content. Classify the review as either a positive reflection of satisfaction or a negative display of dissatisfaction.
+    - Your objective is to accurately classify reviews from customers, determining whether the sentiment of the provided text is positive or negative. Assess the language and claims presented to make your classification.
+emotion:
+  descriptions:
+    - In this task, you will analyze text and determine the emotional tone or sentiment expressed, such as happiness, sadness, anger, or other emotions. This requires understanding subtle cues and contextual reasoning.
+    - Your goal is to classify the underlying emotion in a given text. Use your comprehension and analytical abilities to pick the emotion that best represents the expressed feelings or attitude.
+    - Evaluate the emotional content of the provided input by identifying the most suitable emotion label. This involves interpreting the nuances of language and recognizing how emotions are conveyed.
+    - This task involves recognizing emotional expressions in written text, such as joy, fear, or surprise. You must carefully assess the context, word choices, and tone to detect the correct emotion.
+    - Given a piece of text, your responsibility is to identify the emotion that aligns with the feelings or sentiments conveyed. Use your reasoning and understanding of human emotions to select the best-fitting label.
+kilt_trex:
+  descriptions:
+    - This task involves answering questions by identifying specific factual information from a given context. It requires strong comprehension and attention to details presented in the passage.
+    - Your objective is to locate and extract specific facts or entities from the provided context. Focus on the accuracy and precision of your answers while ensuring full use of the given information.
+    - This task challenges you to discern relevant details in response to questions based on an input passage. You should demonstrate knowledge integration and select the most accurate answer rooted in the text.
+    - Given a text passage, your role is to respond to knowledge-based questions that test your ability to retrieve relevant details and provide a concise, factually correct answer.
+    - You are required to analyze a text and answer factual questions. The task emphasizes accurate information retrieval and an understanding of the context surrounding a given fact or entity.
+    - The focus of this task is to identify and select precise information from a text in response to specific questions. Pay attention to small details that support your answer.
+    - Your job is to examine the input and pinpoint verifiable facts, names, dates, or relationships that address the posed question accurately, based on the provided passage.
+    - In this task, you will explore a well-defined factual text and respond to questions by identifying relevant evidence or data points directly from the input.
+    - This exercise tests your ability to read and understand expository text, allowing you to gather specific details and facts that answer the questions effectively.
+    - You are tasked with drawing facts or information relevant to a given question from the provided content. Attention to detail and precise reading comprehension are essential.
+onestop_english:
+  descriptions:
+    - This task involves reading a passage and answering questions that evaluate your understanding of the text in terms of vocabulary, grammar, and overall comprehension.
+    - Your responsibility is to assess the given passage and demonstrate your language proficiency by selecting answers that align with the meaning, grammar, or style of the provided context.
+    - Analyze narratives or informational texts and use your reading comprehension skills to answer questions that test your grasp of key ideas, connections, and linguistic nuances.
+    - Focus on understanding the vocabulary, sentence structure, and overall meaning of the passage, and select the answers that display a strong comprehension of English language usage.
+    - This task requires you to demonstrate your ability to comprehend written English by answering questions about the details, main ideas, or inferred meanings within a passage.
+    - Using your linguistic knowledge, interpret complex texts and thoughtfully select answers for questions that explore both explicit and implicit meaning.
+    - Read through the passage and evaluate multiple-choice questions in such areas as grammar, word usage, and meaning, paying attention to context and relevance.
+    - Your task is to apply critical thinking and language analysis skills to evaluate how well you understand a text's main message, subtle implications, and proper grammatical constructs.
+dbpedia_14:
+  descriptions:
+    - Your task is to classify a given text into one of the predefined categories. This requires analyzing the content and identifying the central theme or subject of the text.
+    - Assess the provided text excerpts carefully and determine which category they belong to, based on the semantic meaning and overarching topics discussed within.
+    - This task demands identifying the correct category for a given text by examining its thematic content, focusing on comprehending the context and key ideas.
+    - You are tasked with evaluating short passages or statements and categorizing them appropriately. This involves understanding the primary focus or subject of the content provided.
+    - Your role is to determine the most fitting category for each text by analyzing its subject matter and context, confidently distinguishing between various knowledge domains.
+hatexplain:
+  descriptions:
+    - Your task is to determine whether a given text contains hateful, offensive, or neutral language. Analyze the context and identify any discriminatory or harmful intent expressed in the text.
+    - In this task, you will evaluate a piece of text and categorize it based on its emotional tone and intent. Focus on detecting phrases that could imply hate speech, offensive content, or general neutrality.
+    - The objective of this task is to assess the provided textual content and classify it into hate speech, offensive language, or neutral expression. To achieve this, you must pay attention to the language, context, and any underlying messages.
+    - Examine snippets of text and identify whether the author's intention reveals hostility or negative sentiment towards an individual or group. Use your understanding of context and tone to decide if the text is hateful, offensive, or neutral.
+    - This task involves analyzing potentially sensitive text to uncover any hateful or harmful connotations. You will identify if the text promotes hate speech, contains offensive tones, or maintains neutrality.
+ethos-religion:
+  descriptions:
+    - You will evaluate statements to determine if they contain religious bias or sentiments, requiring a thoughtful understanding of context and cultural sensitivity.
+    - Your task involves identifying whether the given text conveys any religious discrimination, prejudice, or stereotypes. This requires analytical thinking and an awareness of societal nuances.
+    - Analyze the provided text carefully to assess whether it demonstrates impartiality or biases toward certain religions. Your role is to focus on identifying language or implications that might reflect discriminatory attitudes.
+    - This task asks you to examine the text for any explicit or implicit references to religious groups and evaluate whether it showcases inclusivity, neutrality, or bias.
+    - Your role is to review statements and discern whether they portray a positive, negative, or neutral attitude towards specific religious beliefs or practices. Employ logical reasoning to make your determination.
+blimp-ellipsis_n_bar_2:
+  descriptions:
+    - In this task, you will evaluate sentence pairs to determine grammatical correctness and identify whether the use of ellipsis or sentence structure is appropriate and consistent.
+    - Your goal is to analyze the use of ellipsis in each sentence construction and discern whether the syntax adheres to acceptable linguistic norms under English grammar rules.
+    - This task challenges you to review paired sentences and decide which one accurately represents standard English usage, with an emphasis on ellipsis and parallel structure.
+    - You will focus on identifying correct and acceptable sentence structures where ellipsis is used effectively without violating grammar expectations.
+    - This task examines your ability to recognize grammatical patterns in elliptical constructions and n-bar phrases, testing both your linguistic intuition and understanding of syntax.
+freebase_qa:
+  descriptions:
+    - In this task, you will analyze a factual question and identify the most accurate response using your general knowledge or reasoning ability to select from the provided options.
+    - Your job is to explore diverse questions that require retrieval of specific facts, such as those about historical events, people, places, or technical concepts, and choose the correct answer.
+    - This task requires you to focus on factual accuracy. Examine a variety of questions across domains and decide which option represents the most reliable and valid piece of information.
+    - You are presented with a knowledge-based question, typically requiring information from general or encyclopedic understanding. Your task is to determine the correct answer by evaluating the given choices.
+    - Analyze questions that test your knowledge on topics including historical references, popular figures, scientific concepts, or current affairs. Select the option that aligns best with verified or general knowledge.
+    - For each posed question, you will apply your understanding or reasoning abilities to select the option that aligns most closely with the factually correct answer.
+    - This task involves distinguishing between closely related factual details and selecting the choice that is most accurate and relevant to the question.
+    - You will engage with questions mostly based on established or publicly verifiable knowledge. Your goal is to accurately pick the correct option from the choices provided.
+kilt_fever:
+  descriptions:
+    - Your task involves evaluating a given claim and determining whether it is supported, refuted, or lacks sufficient evidence based on the provided information. Strong analytical reading and reasoning abilities are needed.
+    - This task asks you to assess the validity of a given claim by carefully analyzing evidence provided. Select the appropriate label—Supported, Refuted, or Not Enough Info—based on the alignment between the claim and the evidence.
+    - You will analyze claims and compare them to accompanying evidence, determining their relationship. This requires critical thinking to identify whether the claim aligns with, contradicts, or cannot be verified by the information provided.
+    - "The objective is to match claims with evidence to verify their validity. Apply logic and close reading of the evidence to assign one of three labels: Supported, Refuted, or Not Enough Info."
+    - This task challenges you to validate or dispute claims by closely reviewing the evidence. You must accurately analyze the relationship between the claim and the evidence to come to a reliable conclusion.
+quartz-no_knowledge:
+  descriptions:
+    - Your task is to evaluate questions focused on understanding cause-and-effect relationships and reasoning through them to determine the most logical conclusion.
+    - Analyze and interpret questions that explore relationships between two concepts or events, relying on your ability to apply reasoning without background knowledge.
+    - This task involves assessing which option best explains or relates to a given statement. Your goal is to use logical reasoning to evaluate the connection between cause and effect.
+    - You will approach questions designed to assess causal reasoning, where your role is to determine the most plausible explanation or connection between ideas.
+    - For each question, you will examine two related ideas and select the explanation that most effectively establishes their logical relationship, without relying on prior domain knowledge.
+google_wellformed_query:
+  descriptions:
+    - Your task is to analyze a given text query and determine whether it is well-formed, considering grammatical accuracy, logical coherence, and readability.
+    - This requires identifying and assessing queries for proper sentence structure, clarity of intent, and adherence to linguistic norms.
+    - Evaluate whether the given query is framed appropriately for clear understanding and effective information retrieval. Focus on grammar, wording, and logical flow.
+    - For each query, determine if it is structured in a way that facilitates accurate interpretation and retrieval of information. Emphasize clarity and standard language usage.
+    - The task asks you to verify the coherence of input queries by ensuring that they are structured logically, are grammatically correct, and clearly express their intent.
+    - Assess the given queries to ensure they are free of ambiguity, grammatical errors, and redundancy, focusing on improving the user's ability to find relevant information.
+    - Your responsibility is to review and classify the quality of text queries, paying attention to their structure, sentence construction, and how well they convey the intended purpose.
+    - Decide whether a text query adheres to linguistic norms and is effective for communication, assessing correctness, comprehensibility, and logical soundness.
+    - Examine the given text query and evaluate whether it is succinct, well-written, and conveys a clear intent. Prioritize clarity and alignment with search query conventions.
+    - Analyze the provided searches and determine which ones are effective, focusing on identifying rewritable or poorly constructed queries for better optimization.
+social_i_qa:
+  descriptions:
+    - In this task, you will evaluate a social scenario and select the best response or action that aligns with common social norms, interpersonal understanding, or emotional intelligence.
+    - Your goal is to reason through a given social situation and determine the most contextually fitting response. This requires assessing the feelings, motivations, and intentions of the individuals involved.
+    - This task involves analyzing everyday social interactions and selecting the answer that demonstrates an understanding of human behavior, emotions, or relationships.
+    - You will be presented with social events and asked to infer how a person should feel, act, or react. This requires comprehension of social cues and typical human responses in diverse scenarios.
+    - Analyze the interpersonal situations provided and choose the most logical or empathetic response based on the context. This task emphasizes understanding human psychology and societal norms.
+emo:
+  descriptions:
+    - In this task, you will analyze short text excerpts and determine the underlying emotion they convey. Your ability to recognize emotional tones and contexts is essential here.
+    - Your role involves identifying the predominant emotion expressed in a sentence or text snippet. This requires paying close attention to linguistic cues and implied sentiments.
+    - This task asks you to classify the emotional state or sentiment present in the given passage. You will rely on your understanding of human emotions and textual analysis.
+    - Focus on evaluating the emotional undertone presented in the content. Your responsibility is to infer whether the emotion is positive, negative, neutral, or falls under a specific category like happiness or anger.
+    - Analyze the provided text to interpret the emotional message it carries. Consider the choice of words, context, and any implicit meaning to identify the emotion accurately.
+    - Your goal is to determine the specific emotion encoded in short texts. Examine word choices, sentence structure, and context to ascertain the underlying feelings conveyed.
+    - For this task, you are required to recognize and classify emotions in textual data. Use linguistic patterns and other contextual evidence to match the text with the most appropriate emotional category.
+biomrc:
+  descriptions:
+    - In this task, you will read biomedical passages and answers related questions by identifying the most relevant and accurate information based on the context provided.
+    - The task focuses on answering questions regarding biomedical knowledge using evidence and reasoning derived from provided scientific literature and research abstracts.
+    - Your role is to synthesize key information from biomedical documents to answer questions accurately. This requires a deep understanding of complex terminology and scientific concepts.
+    - Analyze the given passage from medical or biological texts and choose the answer that most accurately reflects evidence-based scientific knowledge.
+    - Using the provided biomedical text, evaluate and select the response that provides the most reliable and contextually appropriate scientific rationale or data.
+trec-finegrained:
+  descriptions:
+    - This task involves analyzing questions and classifying them into specific categories based on the nature of the information being asked for, such as entities, locations, or events.
+    - Your goal is to determine the intent behind a given question and categorize it into one of the predefined fine-grained categories with precision and clarity.
+    - In this task, you will identify the semantic type of a given question by understanding its context and correctly labeling it as per the detailed classification system.
+    - This task asks you to examine the phrasing and content of a question to infer what kind of information it seeks—be it a person, a fact, a place, or some other type of knowledge.
+    - You are tasked with categorizing a diverse set of questions by understanding their focus and identifying their underlying intention or required response type.
+    - Classify the provided questions into one of the numerous fine-grained categories, taking into account the phrasing, intent, and focus of the inquiry for accuracy.
+    - Your role is to interpret the meaning behind a question and assign it to the correct category under thematic labels such as events, definitions, numeric facts, and others.
+    - Evaluate each question carefully and map it to the most relevant category, leveraging your understanding of its syntactic and semantic structure.
+    - Your task is to classify questions based on their demand for specific types of information, requiring accurate identification of the question's central motive or area of inquiry.
+    - This task tests your ability to assess the underlying purpose of questions and group them into detailed categories reflecting their subject matter and context.
+commonsense_qa:
+  descriptions:
+    - Your task is to determine the most suitable answer to a question that requires applying general knowledge and practical reasoning to everyday situations.
+    - Evaluate the provided multiple-choice options by analyzing a question rooted in real-world scenarios. Select the answer that best aligns with common human reasoning and understanding.
+    - This task focuses on using commonsense knowledge to resolve ambiguities in questions. You are expected to infer the most logical and contextually appropriate answer based on the given options.
+    - Use your understanding of general facts, cultural context, and everyday experiences to select the answer that accurately addresses the question posed.
+    - Your goal in this task is to analyze a commonsense question, explore all available choices, and choose the one that corresponds to the most logical and widely accepted understanding of reality.
+art:
+  descriptions:
+    - This task requires you to analyze narrative scenarios and identify the most plausible reasoning behind an observed behavior or event, focusing on cause-and-effect relationships and logical inference.
+    - You will evaluate multiple explanations for given situations and select the one that best aligns with the evidence and context, emphasizing critical thinking and comprehension.
+    - Your objective is to determine the most reasonable explanation for the given scenario, utilizing deductive reasoning and an understanding of human behavior, motivations, or causality.
+    - Dive into provided story-like situations and assess potential causes or explanations for the presented outcomes, picking the answer that reflects a coherent and logical sequence of events.
+    - This task involves reasoning about ambiguous or uncertain scenarios, requiring you to select the answer that best explains causal relationships or the intentions behind actions in the context.
+ethos-race:
+  descriptions:
+    - This task involves analyzing statements or textual content to determine whether they exhibit bias, discrimination, or prejudice based on race. It requires critical thinking and an understanding of societal perceptions and sensitivities.
+    - Analyze the given text to identify potential biases or sentiments related to racial stereotypes. Your goal is to discern whether the content perpetuates discrimination or promotes inclusivity.
+    - You are tasked with evaluating sentences or phrases to ascertain if any implicit or explicit racial bias is present. This requires close reading and an awareness of cultural and ethical considerations.
+    - Your role is to assess textual content for any form of racial prejudice or discrimination. Focus on identifying subtle or overt cues that may fuel stereotypes or convey race-related bias.
+    - This task requires interpreting statements to determine the presence of racial insensitivity or fairness. Your analysis should reflect an understanding of diverse perspectives and the underlying impact of language on different racial groups.
+glue_rte:
+  descriptions:
+    - Your task is to assess a pair of sentences and determine whether the hypothesis logically follows from the premise. This involves understanding nuanced relationships between ideas.
+    - In this task, you'll evaluate if there is entailment or no entailment between a provided premise and hypothesis. Analyze the statements carefully to establish their logical connection.
+    - Review two sentences, a premise and a hypothesis, and decide if the second statement is a logical consequence of the first one or if it contradicts or is unrelated to it.
+    - Examine the premise carefully and compare it to the hypothesis to decide whether the hypothesis is entailed, not entailed, or unrelated in meaning.
+    - This task focuses on reasoning and logical analysis between two sentences, requiring you to ensure the meaning of the hypothesis is either fully entailed by or contradicts the premise.
+    - Determine whether the given hypothesis is a valid inference from the provided premise. This involves attention to detail and reasoning about linguistic nuances and logical connections.
+amazon_polarity:
+  descriptions:
+    - Your task is to classify customer reviews based on their sentiment. You will determine whether the sentiment expressed in a review is positive or negative.
+    - Analyze the given product review and decide if the sentiment conveyed by the customer reflects satisfaction (positive) or dissatisfaction (negative).
+    - For each review, your job is to correctly identify the overall sentiment or tone, focusing on whether the language used indicates a favorable or unfavorable experience.
+    - The goal is to interpret the customer's feedback and classify it as expressing either a positive or negative opinion about a product or service.
+    - Examine the review text provided and assign it a label of positive or negative, depending on the sentiment and attitude conveyed by the writer.
+    - Evaluate the content of the review and categorize it based on whether the customer exhibits contentment and approval (positive) or displeasure and criticism (negative).
+    - Your role involves identifying the writer's perspective in the review. Decide if the review expresses joy and approval, or frustration and dissatisfaction.
+    - "Analyze the textual tone of each review, considering the sentiments expressed, and select the label that best reflects the reviewer’s attitude: positive or negative."
+health_fact:
+  descriptions:
+    - Your task is to evaluate statements or pieces of information related to health and determine their accuracy or relevance. This involves critical thinking and a fundamental understanding of health-related concepts.
+    - Analyze health-related claims to discern whether they are factually correct or consistent with scientific understanding. You will use logical reasoning and background knowledge to make accurate judgments.
+    - This task requires you to assess the validity of health statements by comparing them to established medical or scientific evidence. Exercise skepticism and analytical skills to determine the credibility of the assertions.
+    - You are required to critically analyze medical statements and verify their authenticity or accuracy. Use evidence-based reasoning to differentiate between correct medical information and misconceptions.
+    - Evaluate a variety of health-related claims to identify which ones align with established health sciences. This process requires understanding of topics such as nutrition, mental health, and disease prevention.
+    - This task involves reviewing health-related information and detecting whether it is accurate, misleading, or purely incorrect. Demonstrate your ability to sift through claims using scientific rationale and critical evaluation.
+    - Use your understanding of health topics to analyze and judge the accuracy of provided statements. The goal is to distinguish scientifically valid claims from unsupported ones.
+    - In this task, you will critically engage with health assertions, checking them against known medical guidelines and scientific literature. Distinguish between evidence-backed facts and myths.
+    - Carefully analyze claims about health and wellness. Apply your knowledge to check these claims for scientific validity and ensure they are logically sound.
+    - This task involves assessing the plausibility of health statements. Your role is to identify and select the ones that are supported by evidence or widely accepted medical research.
+
+unifiedqa:natural_questions_with_dpr_para:
+  descriptions:
+    - This task involves answering real-world questions based on a passage provided as context. Your goal is to extract accurate, concise, and relevant information that directly addresses the queried topic.
+    - Analyze the input question and accompanying passage to determine the precise answer. Use comprehension and critical reasoning to extract key facts and ensure relevance to the question.
+    - Given a natural question and a detailed passage, your task is to identify the most accurate and contextually relevant information to construct a clear, direct response to the query.
+    - Your responsibility is to process the provided paragraph and determine the correct answer to a factual or knowledge-based question by relying on the evidence and details in the context.
+    - This task challenges you to derive answers by synthesizing information from a specific passage. Focus on clarity and precision while ensuring your response directly aligns with the given question.
+    - Using the provided document as your source, identify and deliver a factual, well-supported answer to the posed question. Avoid interpretations that deviate from the explicit context.
+
+unifiedqa:winogrande_xl:
+  descriptions:
+    - This task requires you to resolve ambiguities by selecting the noun that is referred to in a sentence, demonstrating your understanding of the relationships and ideas presented.
+    - You will analyze a sentence containing two nouns and determine which one is being referred to by the pronoun provided in the context. This involves careful reasoning and language comprehension.
+    - The challenge involves disambiguating pronouns in complex statements by correctly identifying the noun it refers to, using logical deductions and contextual cues.
+    - Your task is to distinguish between two referents for a pronoun in a given sentence. This requires a nuanced understanding of the sentence structure and contextual meaning.
+    - In this task, you are presented with a sentence containing a pronoun. You must carefully evaluate the relationships between the entities mentioned and decide which is most likely referenced.
+
+unifiedqa:squad1_1:
+  descriptions:
+    - This task involves answering questions based on a given passage. Your goal is to locate the most relevant information in the text to provide an accurate and direct response.
+    - Analyze the passage carefully and use the information provided to answer the question. This requires strong reading comprehension and the ability to locate key details within the text.
+    - You will be given a passage and a related question. Your task is to identify the portion of the text that directly answers the question with clarity and precision.
+    - For each question, refer to the passage to extract the most accurate evidence-based answer. This task evaluates your ability to process contextual information and understand complex texts.
+    - Your task is to carefully interpret the provided passage and identify the specific segment that answers the given question, ensuring your response is factually accurate and contextually relevant.
+    - Explore the content of the provided passage to answer questions accurately. This requires deep comprehension of the text and the ability to discern relevant details.
+    - You need to provide a concise and factual answer to the posed question, based solely on information explicitly or implicitly provided in the passage.
+    - This task focuses on comprehension of written passages. Use your analysis skills to understand the context and select precise answers to the questions based on the evidence in the text.
+
+unifiedqa:mctest:
+  descriptions:
+    - Your task is to analyze the given story and answer questions that test comprehension, inference, and reasoning. Ensure that your answers are derived from the context of the story.
+    - In this task, you will read a passage and utilize logical deduction to choose the most accurate answer to a question about the story. Focus on understanding the context and details of the text.
+    - Read the provided narrative carefully and answer questions that evaluate your understanding of its characters, events, and implications. Use the details in the passage to justify your selection.
+    - This task challenges your ability to think critically and make inferences based on a written story. You must select answers that are contextually accurate and supported by the details in the text.
+    - Your objective is to comprehend the narrative and correctly answer questions related to it. This process involves identifying key information, making logical connections, and understanding implied meanings.
+    - In this task, you are asked to engage with the story by reading closely and answering questions that test your comprehension. Use the evidence in the text to support your choices.
+    - Analyze the narrative thoroughly and determine which answer accurately reflects the content, events, or themes discussed in the story. Pay attention to key plot points and character interactions.
+
+unifiedqa:qasc:
+  descriptions:
+    - This task requires you to integrate information from multiple sources to answer scientific questions. You’ll need to use deductive reasoning to synthesize facts and arrive at the most logical conclusion.
+    - Your job is to analyze questions that require connecting two or more pieces of information, identifying how they combine to form a coherent and scientifically valid answer.
+    - In this task, you'll use evidence-based reasoning to select answers that best reconcile information from multiple statements, reflecting logical relationships between scientific facts.
+    - This task involves bridging concepts by combining different pieces of knowledge. You’ll need to identify connections between supporting facts to answer questions in a scientifically accurate manner.
+    - You are required to determine the correct answer by reasoning through linked concepts or ideas. This involves identifying relationships between scientific principles presented in the question.
+    - Use your critical thinking and problem-solving abilities to merge details from multiple pieces of information, arriving at the most comprehensive and accurate conclusion for the given scientific question.
+    - This task tests your ability to integrate disparate facts or statements to infer the correct answer. You’ll need an understanding of science as well as logical reasoning to succeed.
+
+unifiedqa:commonsenseqa:
+  descriptions:
+    - The task requires you to answer questions about everyday situations by evaluating which choice aligns most accurately with general human knowledge and common sense reasoning.
+    - Analyze the questions based on real-world understanding and select the answer that best corresponds to logical, intuitive, or culturally accepted reasoning.
+    - Your responsibility is to apply common sense and general world knowledge to determine the most plausible and contextually appropriate answer to a given question.
+    - This task focuses on testing your ability to use general knowledge about the world and human behavior to select the answer that best reflects practical reasoning.
+    - You need to evaluate multiple-choice questions that require common sense understanding, and identify the option that most logically addresses the given scenario.
+    - Solve questions that necessitate the application of general knowledge, everyday experience, and reasoning skills to determine the answer that makes the most logical sense.
+
+unifiedqa:narrativeqa:
+  descriptions:
+    - This task requires you to comprehend a narrative or story and answer questions by synthesizing information from the text. Focus on understanding the relationships, events, and themes present in the passage.
+    - You will analyze a narrative or story and extract key details to accurately answer the posed questions. This involves identifying characters, events, and underlying meanings within the story.
+    - Given a passage, your task is to evaluate its content and provide answers to questions by summarizing or interpreting the relevant parts of the narrative. Critical reading and understanding of implied meaning are essential.
+    - This task challenges you to interpret a passage from a narrative or work of fiction and respond to questions based on its themes, intentions, and details. Use contextual evidence to support your answers.
+    - In this task, you must read and analyze a text, then address questions that test your understanding of key aspects such as plot structure, character motivations, or moral lessons.
+    - Your goal is to extract meaningful insights from a given passage and answer questions that assess your ability to understand the story's context, tone, and central ideas.
+    - This task focuses on reading comprehension and narrative understanding, where your role is to respond to questions by interpreting events, relationships, or abstract themes described in the text.
+    - As you engage with stories or narratives, use critical thinking to navigate complex relationships and subtle meanings. Your responsibility is to enhance and demonstrate your contextual understanding by answering related questions. 
+
+unifiedqa:boolq:
+  descriptions:
+    - You are tasked with reading a context and answering a yes/no question based on the information provided. Ensure your response is fully supported by the given context.
+    - This task involves understanding the context of a passage and determining whether a specific statement or fact is affirmed, denied, or inconclusive according to the text.
+    - Analyze the provided passage and a corresponding yes/no question. Derive an answer based solely on the evidence available in the passage.
+    - Given a paragraph of text, your objective is to evaluate a straightforward yes/no question and provide an answer supported by the textual evidence.
+    - For each scenario, your task is to determine whether an assumption or claim is true, false, or undetermined according to the detailed context provided.
+    - Focus on answering yes/no questions by carefully examining the passage. Make sure your answer is consistent with the explicit or implicit information presented within the text.
+    - Based on a given set of information and a related question, your role is to choose a yes, no, or inconclusive answer, grounded in the specific context supplied.
+    - This task requires assessing a short piece of text to verify whether a given yes or no question can be answered unambiguously with the information provided.
+    - Read the provided passage and analyze a binary question. Your task is to utilize critical reading skills to determine whether the text supports a "Yes," "No," or "Cannot be determined" response.
+
+
+unifiedqa:quoref:
+    descriptions:
+      - Your task is to analyze and comprehend passages where multiple entities and references exist. You must accurately resolve coreferences and select answers that clearly align with the information provided in the text.
+      - This task requires understanding textual context and identifying relationships between various entities. You are expected to resolve references and extract the correct answer based on the given passage.
+      - You will be presented with passages that contain complex coreferences. Use your reasoning skills to connect the references with appropriate entities and locate answers that fit the context of the text perfectly.
+
+unifiedqa:openbookqa_with_ir:
+  descriptions:
+    - In this task, you will review a set of potential answers along with relevant supporting information. Your goal is to identify the most accurate and contextually appropriate answer based on the prompt and accompanying evidence.
+    - Analyze the given question along with retrieved supporting facts or evidence. Use logical reasoning and scientific knowledge to select the option that best aligns with the context and evidence provided.
+    - You are tasked with identifying the correct answer to a question by integrating the provided supporting information. This requires you to evaluate how well each option fits the context and corroborates with the additional evidence.
+    - This task involves assessing various answer choices alongside relevant retrieved knowledge. Your objective is to select the answer that best explains, completes, or aligns with both the question and the supporting evidence.
+    - Use the additional information provided as context to evaluate and choose the best answer to the question. This requires synthesizing provided evidence with your general knowledge to make a logical decision.
+    - Here, you'll need to connect the retrieved supporting texts with the main question to derive the most plausible answer. Focus on logical consistency and the relevance of the evidence to the question.
+    - Your role is to analyze the question alongside the supporting facts provided, leveraging the evidence to accurately justify and select the most fitting answer.
+    - This task asks you to integrate retrieved evidence into your decision-making process. Evaluate each option critically, considering both the question's context and the relevance of the provided information.
+    - Study the question and align it with the supporting information provided. The goal is to identify the choice that most effectively utilizes the evidence to support its validity.
+    - You are required to determine the answer that best resolves the question by reasoning through the provided supporting statements. Both critical thinking and an understanding of the evidence are key. 
+
+unifiedqa:social_iqa:
+  descriptions:
+    - In this task, your job is to analyze real-world social interactions and relationships, and choose the best answer that captures the most appropriate or expected social behavior or reasoning.
+    - This task involves understanding human intentions, emotions, and social dynamics to select the option that aligns with typical responses or behaviors in given social scenarios.
+    - Analyze everyday social situations and infer the best choice that reflects the implicit norms, motivations, or outcomes of interpersonal interactions.
+    - Your role is to interpret scenarios involving social behavior and reasoning. Choose the answer that most accurately explains the likely actions or emotions in the context of a given social situation.
+    - This task requires you to comprehend social contexts and motivations by evaluating questions about human behavior. Use reasoning and empathy to determine the most plausible option.
+    - In this task, you must predict or explain the social consequences, outcomes, or thought processes of individuals in various scenarios. The goal is to discern the most logical and context-appropriate response.
+    - Use your understanding of social norms, intentions, and cause-effect relationships to choose an option that best aligns with the underlying dynamics of the given situation.
+    - This challenge focuses on understanding reasoning behind social actions or responses. Your choice should reflect common understanding of how people interact within given contexts.
+
+
+unifiedqa:race_string:
+  descriptions:
+    - This task requires you to carefully read a given passage and analyze its content to answer comprehension questions accurately. Pay attention to details within the text to make logical inferences.
+    - You will evaluate a passage and answer related questions that test your understanding, critical thinking skills, and ability to deduce meanings or implications from the provided context.
+    - Your task involves reading and interpreting passages, identifying key points within the text, and selecting the most appropriate answer to questions based on your comprehension and reasoning abilities.
+    - Analyze the text carefully, using contextual clues to determine the meanings and implications behind the questions, then choose the best fitting answer.
+    - You are asked to read a passage attentively and provide answers to questions that rely on your understanding, analysis of details, and ability to infer from the context.
+    - This task involves understanding the passage content and answering questions that assess your ability to extract key information and draw accurate conclusions.
+    - Read the passage meticulously and determine the best answers to questions by identifying critical details, understanding intent, and applying reasoning to the given text.
+    - Your responsibility is to interpret the ideas and details presented in a given text, and then use logical reasoning and context comprehension to answer questions accurately.
+    - You must evaluate a passage, examine its main ideas, and analyze surrounding contextual information to choose the best response to each comprehension question.
+    - This task focuses on testing your reading comprehension by asking you to identify themes, arguments, and specific details presented in the passages while choosing the most relevant answers.
+
+unifiedqa:squad2:
+  descriptions:  
+    - In this task, you will read a passage and answer questions based on its content. Your goal is to identify the most accurate and contextually appropriate response for each question.  
+    - You will analyze context paragraphs and determine whether a question can be answered based on the given information. If the question is unanswerable, your response should indicate this clearly.  
+    - The task emphasizes extracting precise information from a textual passage to answer posed questions or identifying when sufficient information is missing to provide an answer.  
+    - Your role is to read and comprehend a passage of text, then evaluate whether the given question is answerable and provide a specific answer or indicate its unanswerability.  
+    - Carefully analyze the provided context and associated question. Identify factual connections or explicitly state when the context does not contain enough information to answer the question.  
+    - For each question, determine if the answer can be inferred directly from the given text. If it can, extract and provide the correct answer; otherwise, communicate that the question cannot be answered.  
+
+
+unifiedqa:drop:
+  descriptions:
+    - This task involves answering complex questions over a passage that require discrete reasoning, numeric computations, or retrieval of relevant text spans. You must analyze the text carefully to provide accurate responses.
+    - Your objective is to demonstrate reasoning skills by solving multi-step problems based on a given passage. This includes processing and extracting information such as numerical values, dates, and textual evidence.
+    - To complete this task, you will need to comprehend a passage and solve questions through logical reasoning or mathematical operations while ensuring your answers are grounded in the provided content.
+    - You are required to process a passage and answer questions involving operations such as addition, subtraction, comparison, or event sequencing. The task tests your ability to work through multi-step reasoning challenges.
+    - Engage with question prompts to extract relevant information from a detailed passage. Determine relationships, perform mathematical operations, or deduce outcomes to arrive at the correct answer.
+
+unifiedqa:physical_iqa:
+  descriptions:
+    - This task requires you to consider physical interactions and capabilities of objects in order to choose the most plausible solution for a given scenario.
+    - You will analyze real-world situations and determine the most logical answer based on principles of physics, common sense, and practical knowledge of how objects behave.
+    - Your role is to evaluate scenarios involving physical reasoning, such as the behavior of objects or the feasibility of actions, and select the answer that aligns with realistic outcomes.
+    - This task focuses on practical questions requiring an understanding of physical properties, forces, or interactions. You must pick the most reasonable option based on learned experiences and observations about physical reality.
+    - The goal is to assess your ability to reason about the physical world and its rules by selecting the most logical answer for a given question rooted in common physical knowledge.
+    - Analyze the given situation that simulates real-life physical contexts and choose an answer that is consistent with the natural rules governing objects, motion, and material interactions.
+
+unifiedqa:newsqa:
+  descriptions:
+    - This task involves reading a passage from a news article and answering a question based on the text. You will need to identify key details in the content to provide an accurate and specific response.
+    - Analyze a given news excerpt and answer questions that evaluate your comprehension of its main ideas and supporting information. This task tests your ability to retrieve and synthesize relevant details from the passage.
+    - Your goal is to read and understand news-related content, then determine the answers to questions by relying solely on the information provided in the text.
+    - In this task, you will extract answers to questions based on facts outlined in a news article. This requires close attention to specific details and an understanding of the context presented.
+    - Read through news passages and respond to questions by identifying relevant information, applying logical reasoning, and summarizing essential details accurately.
+
+unifiedqa:qasc_with_ir:
+  descriptions:
+    - In this task, your goal is to answer questions that require a combination of factual knowledge and reasoning. You will evaluate supporting evidence and select the most accurate answer based on the provided information.
+    - This task evaluates your ability to synthesize information from multiple sources to respond to questions. Carefully integrate the given input to deduce the most logical and accurate conclusion.
+    - You will analyze questions that require connecting scientific concepts, reasoning through provided evidence, and selecting the answer that best addresses the problem.
+    - This task involves interpreting multiple pieces of information, linking them logically, and determining the most plausible answer to the question posed.
+    - Your objective is to combine prior knowledge with supplied evidence, reasoning through connections between concepts to select the answer that aligns with scientific principles.
+
+unifiedqa:ai2_science_middle:
+  descriptions:
+    - You will analyze middle school science questions and choose the answer that most accurately reflects scientific concepts and principles, such as energy, matter, ecosystems, and physical processes.
+    - This task requires you to apply your understanding of general science topics to solve problems related to biology, chemistry, physics, and earth science at a middle school level.
+    - Focus on interpreting scientific data, analyzing concepts, and selecting the response that aligns with established scientific reasoning and knowledge.
+    - You are tasked with answering questions that explore real-world scientific phenomena or principles. Use logical reasoning and systematic thinking to identify the most appropriate solution.
+    - This task involves connecting fundamental principles of science to practical situations. Base your answer on observed patterns, experimental results, or theoretical models consistent with middle school science.
+    - Determine the best answer by critically evaluating the options, utilizing an understanding of core scientific ideas, and reasoning through their application in relevant scenarios.
+    - Your role is to assess questions related to middle school science topics, such as energy transfer, weather patterns, or the properties of matter, to identify scientifically accurate conclusions.
+    - Use your scientific knowledge and reasoning skills to address middle school-level inquiries regarding natural processes, ecosystems, and the interactions between various components of the environment.
+    - This task challenges you to integrate scientific facts and logical thinking to solve problems related to physical, biological, and earth sciences at a foundational level.
+    - Carefully examine scientific scenarios and textual information to identify the correct answer. This requires knowledge of middle school science concepts and the ability to think critically and infer conclusions.
+
+unifiedqa:ropes:
+  descriptions:
+    - This task is centered on reasoning through the relationships presented in a passage and answering questions that test your ability to apply those relationships to new scenarios or contexts.
+    - You will analyze a passage containing scientific or factual knowledge and evaluate how its information applies to specific questions, requiring contextual understanding and logical reasoning.
+    - Your responsibility is to connect the given passage's content with a new situation, using the provided information and relationships to deduce the most accurate and logical answer.
+    - This task challenges you to understand complex relationships or processes described in a passage and to apply that understanding in answering questions about novel but related situations.
+    - You are expected to integrate scientific or factual information within a passage and determine how it informs a new scenario, asking for critical thinking and analytical skills.
+    - Analyze the relationships described in the text and assess how they can be used to answer questions related to new examples or hypothetical situations, demanding reasoning and inference skills.
+    - This task involves interpreting textual contexts and applying the described ideas to solve questions about unfamiliar situations. Your goal is to identify the answer that best aligns with the information in the passage.
+
+unifiedqa:openbookqa:
+  descriptions:
+    - Review the context and identify the statement that is most consistent with scientific knowledge or common principles. This task tests deductive reasoning and application of fundamental facts.
+    - Carefully evaluate the provided question or statement and choose the option that best aligns with tested knowledge, logical rules, or broad concepts.
+    - Focus on analyzing the relationships and facts from the question, then select the answer that provides the most reasonable and evidence-based explanation or continuation.
+    - Use your knowledge of fundamental facts and general rules to evaluate the accuracy and relevance of the provided options, selecting the one that best suits the input context.
+    - Apply scientific principles or general knowledge to discern the most accurate and logical response to the given question or scenario.
+    - This task challenges your ability to connect abstract ideas and established knowledge. Examine the facts, assess the choices, and select the one that is most compatible with the context.
+
+glue-rte:
+  descriptions:
+    - Your task is to determine whether a given hypothesis logically follows from, contradicts, or is neutral with respect to a provided premise. This requires careful reasoning and understanding of text relationships.
+    - Analyze the relationship between the provided premise and hypothesis, and decide if the hypothesis can be inferred, contradicted, or is unrelated based on the information given.
+    - You are required to evaluate the logical connection between two statements, classifying the hypothesis as either entailed by, contradicting, or unrelated to the premise.
+    - In this task, you will assess pairs of statements to determine the relationship between them based on textual entailment. Consider the premise and judge if it supports, contradicts, or does not relate to the hypothesis.
+    - Given a premise and a hypothesis, your role is to assess the logical relationship and classify the hypothesis as being either true, false, or indeterminate based on the premise.
+
+qasc:
+  descriptions:
+    - This task requires you to integrate information from multiple sources to answer scientific questions. You’ll need to use deductive reasoning to synthesize facts and arrive at the most logical conclusion.
+    - Your job is to analyze questions that require connecting two or more pieces of information, identifying how they combine to form a coherent and scientifically valid answer.
+    - In this task, you'll use evidence-based reasoning to select answers that best reconcile information from multiple statements, reflecting logical relationships between scientific facts.
+    - This task involves bridging concepts by combining different pieces of knowledge. You’ll need to identify connections between supporting facts to answer questions in a scientifically accurate manner.
+    - You are required to determine the correct answer by reasoning through linked concepts or ideas. This involves identifying relationships between scientific principles presented in the question.
+    - Use your critical thinking and problem-solving abilities to merge details from multiple pieces of information, arriving at the most comprehensive and accurate conclusion for the given scientific question.
+    - This task tests your ability to integrate disparate facts or statements to infer the correct answer. You’ll need an understanding of science as well as logical reasoning to succeed.
+
+superglue-copa:
+  descriptions:
+    - Your task is to determine the correct causal relationship by identifying which of the two given options best explains the cause or effect of the provided premise.
+    - Analyze the provided premise and evaluate the two possible choices, selecting the option that logically aligns with the causal relationship implied in the context.
+    - This task involves reasoning about cause-and-effect relationships. You are required to select the option that serves as either the most plausible cause or effect for the given statement.
+    - Given a scenario and two potential causes or outcomes, your goal is to apply logical reasoning to identify the most suitable option based on the contextual evidence.
+    - For each test case, you will analyze a given premise and select the most appropriate choice—either the cause or effect—that directly links to the context of the premise.
+    - Examine the premise provided and carefully consider each of the two options. Identify the choice that best explains the underlying cause or logical consequence.
+    - Your task is to select the alternative that best completes the causal relationship presented in the given situation, utilizing your reasoning and contextual understanding.
+    - This involves reasoning about how one thing causes another or what effects may arise from a situation. Select the option that has the strongest logical connection to the premise.
+    - Consider the scenario described in the premise and evaluate the two options. Choose the one that best establishes a clear and logical causal relationship.
+    - Assess the relationship between events or ideas and determine the most logical cause or effect by selecting one of the proposed options presented in the question.
+
+web_questions:
+  descriptions:
+    - In this task, you will interpret natural language questions asking for specific factual answers, using your ability to understand and identify accurate information from a knowledge base or general knowledge.
+    - Analyze questions phrased in natural language and determine the correct factual answer by relying on both context understanding and precise fact retrieval skills.
+    - Your responsibility is to assess a question's meaning and provide the most accurate and concise answer possible, demonstrating strong comprehension and factual reasoning abilities.
+    - This task requires responding to open-domain questions with highly precise information. Evaluate the query critically and provide an appropriate and factually correct response.
+    - You will be presented with fact-based, open-ended questions, and your job is to deliver the most relevant and concise answer, showing an understanding of general knowledge and retrieval skills.
+    - Identify and provide the most accurate and succinct answer to various open-ended questions based on factual data or general knowledge concepts.
+    - This task involves comprehending detailed questions in natural language and producing responses that are both factually correct and contextually relevant.
+
+
+wiqa:  
+  descriptions:  
+    - This task involves analyzing a series of cause-and-effect relationships to determine the most likely outcome of a given scenario. Your role is to use logical reasoning to understand the sequence of events and their impacts.  
+    - You are given questions about how changes in one part of a system can affect other parts. Use your understanding of causal reasoning to select the answer that best aligns with the logical flow of cause and effect.  
+    - Analyze the provided information to understand how various changes influence outcomes or processes within a system. Your task is to choose the response that reflects a coherent understanding of the cause-effect dynamics described.  
+    - You are required to evaluate a situation where modifications to certain elements are introduced. With critical thinking, identify the cascading effects and determine which answer appropriately describes the chain of outcomes.  
+    - This task presents scenarios with hypothetical changes and asks you to infer potential consequences. Use your comprehension and reasoning abilities to identify answers grounded in logical cause-effect relationships.
+
+squad-with_context:
+  descriptions:
+    - In this task, you will analyze a passage and answer questions about it by identifying the most precise and relevant information within the context provided.
+    - The objective of this task is to carefully read a given text and provide accurate answers to questions that test your comprehension and ability to extract critical information from the passage.
+    - Your role is to evaluate an input passage and select information that directly answers a specified question, requiring a deep understanding of the given context.
+    - In this task, you need to focus on extracting specific details or key ideas from a given text to accurately respond to the questions based on the content of the passage.
+    - This task requires you to carefully analyze a provided context and answer questions by identifying the most relevant and precise parts of the text that align with the query.
+    - You will read a passage of text and answer a set of questions that examine your understanding. Your focus should be on identifying and selecting information that best fits each question.
+    - This task involves using your comprehension skills to locate exact answers to questions within a given passage. Analyze the information provided to determine the most relevant and accurate response.
+    - For each question in this task, you need to use evidence from the text to identify the best answer. You must closely reference the given material to ensure your answer aligns with the passage.
+    - Given a passage and a related question, your job is to locate the specific sentence or information in the text that fully and correctly answers the question.
+    - This task requires critical reading of a passage and careful matching of context to questions. Your goal is to provide the exact or best-fitting answer by scrutinizing the given text.
+
+mc_taco:
+  descriptions:
+    - This task requires you to assess temporal reasoning by identifying whether a statement about time-related events is valid. Your answers should reflect accurate understanding of the timeframes involved.
+    - Analyze questions that deal with the duration, frequency, or timing of events. Use reasoning skills to determine which answer best aligns with realistic expectations or temporal knowledge.
+    - Your role is to evaluate statements that describe when and how often events occur. This involves critically assessing the plausibility of the temporal relationships provided in the options.
+    - For this task, focus on understanding the temporal context of a given scenario and evaluate which options provide reasonable judgments about time or duration.
+    - You will be presented with questions that require temporal reasoning, such as estimating how long an event might last or when it might occur. Use logical thinking and common sense to choose the most fitting option.
+    - This task involves reasoning about the timing, sequence, or duration of events based on real-world knowledge. Your goal is to identify the answer that fits logically within the specified context.
+    - Examine temporal information and decide which option provides the most accurate or plausible judgment regarding time-related aspects of a situation or action.
+    - Here, you're tasked with answering questions about the timing, duration, or repetition of an event. Your responses should reflect a keen understanding of chronological details rooted in everyday reasoning.
+    - The questions in this task challenge you to estimate durations, assess sequences, or decide on the feasibility of time-related actions. Apply practical knowledge and reasoning to select the best option.
+    - This task focuses on temporal understanding, requiring you to analyze various scenarios and make informed choices about when or how often events occur, based on the context provided.
+
+wino_grande:
+  descriptions:
+    - This task focuses on coreference resolution within a given context. Your role is to determine which noun a pronoun most likely refers to, based on the relationships and logical coherence of the passage.
+    - You will analyze sentences where pronouns can refer to multiple antecedents, and your goal is to choose the option that preserves meaning and aligns with the context.
+    - The objective of this task is to resolve ambiguous pronoun references in a passage by making inferences about the logical connections between entities.
+    - Given a sentence or short narrative, your task is to use contextual reasoning to accurately identify the correct antecedent for an ambiguous pronoun.
+    - Your role is to assess the relationships between entities in a scenario and decide which noun a pronoun is referring to, using the contextual clues provided.
+
+search_qa:
+  descriptions:
+    - This task involves analyzing the provided question and utilizing general knowledge or research skills to identify the most accurate and relevant answer.
+    - Your role is to use your reasoning and comprehension abilities to evaluate the potential answers and select the one that best responds to the given query.
+    - In this task, you will carefully examine a question and choose the most precise answer based on commonly known facts or inferred logical reasoning.
+    - Search through the answer options to determine which one provides the best evidence-based response to the question.
+    - Your task is to solve questions by employing critical thinking and reasoning, selecting the choice that is the most directly supported by the query context.
+    - This task requires you to locate factual or logical solutions for a given question, prioritizing clarity, accuracy, and relevance.
+    - You are tasked with finding the correct answer to a question by leveraging structured reasoning or retrieving knowledge effectively.
+    - This involves reading and analyzing questions requiring you to resolve ambiguities and choose the most specific and factually accurate answer.
+
+quail:
+  descriptions:
+    - In this task, you will analyze questions that pertain to a given passage and choose the most appropriate answer based on the details and implications present in the text.
+    - Your goal is to comprehend the provided passage and evaluate multiple-choice questions to determine the answer that best reflects the information or context within the text.
+    - This task requires you to carefully read and interpret passages, then use your reasoning and understanding to select the answer choice that aligns most logically with the content provided.
+    - Given a passage, your task is to answer questions by evaluating the context, identifying key details, and selecting the answer that offers the best explanation or conclusion.
+    - You will review a short passage and address questions that require an understanding of the passage's implicit and explicit ideas, making connections, or reasoning about its content.
+
+kilt_nq:
+  descriptions:
+    - This task involves answering open-domain factual questions by synthesizing key information from a wide range of possible knowledge sources. You must evaluate the question carefully and provide the most accurate and concise response.
+    - Your goal is to identify and extract relevant facts to correctly answer general knowledge and trivia-style questions. This involves understanding the query and leveraging factual reasoning to find the best answer.
+    - Analyze the given question and retrieve the appropriate factual information to construct a precise and coherent response. The task requires proficiency in reasoning and knowledge extraction across diverse domains.
+    - You will be asked to generate answers to open-ended questions using your factual understanding of a broad range of topics. This requires the ability to connect concise, accurate details to address the question effectively.
+    - This challenge includes comprehending diverse questions and providing contextually appropriate responses based on factual data. Your answer should be both relevant to the question and rooted in reliable knowledge.
+
+tweet_qa:
+  descriptions:
+    - This task involves answering questions based on the content of a tweet. You need to extract or infer the most relevant information from the given text to provide the correct answer.
+    - Your role is to analyze the details of a tweet and respond accurately to a specific question about its content. This requires contextual understanding and the ability to interpret concise, informal language.
+    - In this task, you are expected to identify key details or implied meanings from a tweet and select or compose the most appropriate response to the posed question.
+    - The objective is to comprehend the meaning of a short tweet, identify relevant information, and respond to the question with the most logical and accurate answer.
+    - You will examine a tweet, which may include abbreviations, slang, or incomplete sentences. Your goal is to focus on the core message and provide the most fitting response to the question.
+    - This task challenges you to make sense of an informal text snippet and extract meaningful information to answer a given question effectively and accurately.
+    - Your responsibility is to respond to a question in reference to a tweet, determining the most appropriate or implied answer based on the available context.
+    - Interpret the content of the provided tweet, taking nuances and subtext into account, and answer the associated question by identifying the most relevant information.
+
+superglue-record:
+  descriptions:
+    - In this task, you are given a context passage and a query with a blank. Your goal is to identify one or more entities from the passage that most accurately complete the blank or answer the query based on the context.
+    - This task requires you to read a passage and analyze a query related to it. You need to extract the correct entity or entities that align with the information provided in the text.
+    - Based on a given context and a question, your role is to locate the most relevant entities within the passage that fit logically and meaningfully into the question's blank space.
+    - You will be provided with a passage and a query containing one or more blanks. Use your comprehension and reasoning skills to select the best-fitting answers from the passage.
+    - For this task, read a short passage and answer a query by identifying the correct entity mentioned in the text. This requires close reading and inference based on the provided information.
+    - Your objective is to extract the entity or entities from the passage that accurately answer the query or fill in the blank while maintaining coherence and correctness.
+    - In this task, identify and select the entity from the passage that matches the details needed to answer the question correctly, ensuring logical consistency with the context.
+    - You must carefully analyze the passage and the given query to find the appropriate entity that best fulfills the required information or blank in the question.
+    - Read a context-filled passage and then determine the best matching entity (or entities) that can be drawn from the text to logically and accurately complete the provided question.
+    - You are tasked with identifying the correct information from the passage necessary to answer a specific question or complete a blank, using both comprehension and reasoning skills.
+
+codah:
+  descriptions:
+    - This task involves understanding real-world scenarios and selecting the suitable answer that best resolves or aligns with the context of the question. It requires critical thinking and context awareness.
+    - Focus on analyzing situational prompts and responding with the choice that logically fits or completes the given context. This assessment emphasizes your ability to infer and reason effectively.
+    - You are tasked with reasoning through hypothetical scenarios or real-life situations to determine the most appropriate or probable outcome, reflecting logical decision-making skills.
+    - Given a situation, you must evaluate all possible responses and choose the one that best aligns with common sense or the likely course of action, showcasing practical reasoning.
+    - This task tests your ability to infer the most reasonable answer based on everyday scenarios. Careful reading and understanding of potential outcomes are vital to choosing the best option.
+
+
+quartz-with_knowledge:
+  descriptions:
+    - This task involves analyzing a given question and using your reasoning skills to select an answer based on the knowledge provided alongside the query. It requires you to accurately combine the given context with logical inference.
+    - You will evaluate questions and accompanying knowledge statements, synthesizing information to determine the answer that best fits the scenario. Critical thinking and an ability to connect the dots are key to solving these problems.
+    - The task is centered around reasoning with both the question and the knowledge provided. Your job is to carefully compare the options and select the one that aligns most closely with the relevant facts and context given.
+    - This task asks you to work with provided knowledge statements and apply reasoning to answer a question accurately. You'll need to carefully assess how each choice fits with the given information to reach the best conclusion.
+    - Your role in this task is to integrate the supplied knowledge with the question at hand to evaluate the most appropriate answer. This necessitates a detailed understanding of the context and the ability to draw logical connections based on the given facts.
+    - Given a question and related background knowledge, your task is to deduce the answer that logically follows from the specified supporting information. Careful reading and logical inference are key components in making the right choice. 
+
+lama-trex:
+  descriptions:
+    - This task involves completing factual statements by identifying the most accurate and contextually appropriate continuation based on general world knowledge and facts.
+    - You are required to fill in the blanks or complete incomplete information by using knowledge about various topics, which may include history, science, geography, or cultural contexts.
+    - Your responsibility is to leverage general knowledge to choose the answer that correctly supplements the given statement, ensuring that the continuation fits naturally and factually.
+    - Use your understanding of world facts, relationships, and well-established knowledge to select the best option to fill in the gaps or complete the provided context correctly.
+    - This task is about evaluating incomplete factual sentences and determining which choice logically and factually completes them, requiring broad knowledge across diverse domains.
+    - Analyze and process the given text to identify its missing or implied information accurately. Then, select the most plausible option that fulfills the underlying intent of the statement.
+    - You will address factual or knowledge-based questions by assessing possible responses to correctly match them with the most suitable or universally accepted fact or knowledge piece.
+    - Your goal is to determine the correct and accurate piece of information that completes the given contexts, employing reasoning and familiarity with common world knowledge.
+    - Examine the input sentence and predict the missing factual piece by understanding the subject matter and applying logical reasoning based on encyclopedic knowledge.
+    - The task requires utilizing your knowledge of general facts and logical inference to determine the most suitable completion of the provided text or factual statement.
+
+quoref:
+  descriptions:
+    - This task focuses on reading comprehension and reasoning over multiple sentences in a passage. Your goal is to identify which answer accurately resolves a question by referencing and connecting details distributed across the text.
+    - Carefully analyze the given passage and questions. The task is to determine which option provides the correct answer by understanding the relationships and references between different parts of the text.
+    - Your task is to evaluate questions that require cross-referencing different portions of the text. This involves identifying key details, resolving coreferences, and selecting the answer that best aligns with the given context.
+    - This task challenges your ability to track entities and their relationships within a text. To succeed, you need to connect references in the passage and choose the most accurate response to the question.
+    - Quoref tasks require close reading of a provided text to examine connections among entities and concepts. Use logical reasoning and interpretation skills to select the most accurate and well-supported answer.
+    - Engage with a reading passage that requires understanding intricate relationships, resolving ambiguous references, and synthesizing information to answer the posed questions accurately.
+    - For each question, determine the correct response by cross-referencing relevant sections of the passage and identifying connections and dependencies that clarify the intended meaning.
+
+cosmos_qa:
+  descriptions:
+    - This task involves reading a short passage and answering a question about it. You need to consider the context and draw reasoning from the details provided to select the most plausible answer.
+    - Analyze the text and identify the answer that best explains the underlying reasoning or situation described in the passage. Utilize your comprehension and critical thinking skills to determine the most coherent choice.
+    - Your task is to carefully review the provided passage and question. By drawing on logical inference and understanding the context, you must choose the answer that makes the most sense given the scenario.
+    - This dataset challenges you to interpret relationships, motives, and outcomes described in a passage, selecting the most reasonable answer that aligns with the context.
+    - Read and comprehend a short text, then apply reasoning to answer a related question. The focus is on evaluating given information to identify the answer that best fits the scenario.
+
+ai2_arc:
+  descriptions:  
+    - Your task is to answer science-related multiple-choice questions, requiring logical reasoning, subject knowledge, and the ability to apply concepts to real-world scenarios.  
+    - You need to analyze questions on core scientific principles and deduce the most logical answer by synthesizing prior knowledge and the provided information.  
+    - This task involves answering scientifically grounded questions by evaluating each option critically and selecting the one that aligns best with established facts or theoretical concepts.  
+    - Analyze the information presented and make careful judgments about the correct answer, focusing on your familiarity with general science, biology, chemistry, or physics concepts.  
+    - Your role is to assess each scientific question, considering how concepts are applied or linked to the natural world. Use logical reasoning and scientific reasoning to determine the correct solution.  
+
+swag:
+  descriptions:
+    - Your goal is to select the most plausible continuation to a given situation or event from a set of options, based on contextual understanding and logical inference.
+    - This task requires you to carefully analyze the initial description and choose an outcome or action that most naturally follows, considering coherence and narrative flow.
+    - You are tasked with determining the most appropriate next step or event in a scenario by evaluating which option aligns best with the described context and logical progression.
+    - In this task, you will assess incomplete scenarios and select the continuation that makes the most sense, keeping in mind real-world probabilities and situational logic.
+    - Your responsibility is to analyze narratives and predict their logical or most expected progression. This involves understanding the text's intent and selecting the most suitable outcome.
+    - This task involves reasoning about situations. Choose the most reasonable and contextually relevant follow-up action or event from the provided choices.
+    - You are presented with an initial event or action and must select the most coherent and conceptually accurate subsequent event, based on your understanding of causality and context.
+    - Focus on the given descriptions of actions or events and decide which of the provided continuations is the most contextually appropriate and likely to occur.
+    - This task tests your understanding of situational dynamics by requiring you to predict what is most likely to happen next, using reasoning and contextual clues.
+    - Analyze the sequence described in the scenario and infer the most plausible continuation that adheres to the logical structure or intent of the story.
+
+squad-no_context:
+  descriptions:
+    - Your task is to answer questions based on general knowledge without referring directly to any specific context. Use logical reasoning and apply what you know to provide the most accurate response.
+    - Analyze the provided questions and determine the answer solely from general factual information. The goal is to rely on prior knowledge and reasoning, as no additional context is given.
+    - In this task, you are provided with standalone questions. Your job is to derive correct answers using your understanding of common knowledge and deductive reasoning.
+
+boolq:
+  descriptions:
+    - Analyze the given details about various subjects, including movies, sports, and television shows. Your role is to confirm whether certain claims are true or false.
+    - Your task is to determine the truthfulness of specific statements based on the provided background information. This requires careful reading and comprehension of the content.
+    - The goal is to evaluate factual claims made in relation to highlighted texts. You will need to discern whether the statements align with the information provided.
+gsm8k:
+  descriptions:
+    - You will be tasked with interpreting mathematical situations described in words. The goal is to use logical reasoning and calculations to determine the numerical answers based on the context provided.
+    - This task challenges your problem-solving abilities through mathematical reasoning. You must carefully read each scenario and systematically work through the data to compute the final outcome.
+    - Your role is to engage with practical math scenarios presented as questions. The task requires translating textual data into numerical operations that will lead you to the final solution.
+humaneval:
+  descriptions:
+    - Engage in building distinct functions that meet the requirements of various presented problems, honing your ability to translate problem statements into logical code. Utilize structured thinking to implement efficient solutions.
+    - You are tasked with generating specific solutions in Python by interpreting problem descriptions associated with tasks like counting odds or validating inputs. Recognizing patterns and leveraging programming techniques will be beneficial.
+    - This task focuses on developing algorithms in Python for specific scenarios, such as counting characters, assessing conditions between numbers, or converting integers into a different format. Critical thinking and algorithmic design will be important.
+mbpp:
+  descriptions:
+    - Your challenge is to solve a series of problems by writing functions in Python. These problems require handling lists and strings, allowing you to showcase your proficiency in coding while addressing practical programming scenarios.
+    - You will be tasked with creating various Python functions that tackle programming challenges. The exercises will test your ability to manipulate data structures, search for patterns, and implement checks on numerical products.
+    - The goal is to develop Python functions that perform designated operations on lists and strings. This requires a solid grasp of logical reasoning and the ability to apply relevant algorithms in your code.
+winogrande:
+  descriptions:
+    - In this exercise, you need to read short narratives and discern which person or object fits best within the context of the sentence.
+    - This task requires synthesizing information from concise textual scenarios to identify crucial elements that drive the narrative forward.
+    - The goal is to evaluate descriptions and select the entity that best aligns with the sentiments or actions presented in the scenario.
+piqa:
+  descriptions:
+    - You will explore practical questions and select an answer that presents a logical and widely accepted approach to solve a given problem or complete a task successfully.
+    - Analyze the provided scenarios where practical advice or solutions are required, focusing on selecting the most commonly used or convenient method.
+    - Given a question related to common tasks, your responsibility is to discern which proposed solution aligns with typical practices or makes the task easier to achieve.
+hellaswag:
+  descriptions:
+    - This task revolves around completing an unfinished text by selecting an ending that matches its tone and context. It requires you to think critically about how narratives develop and conclude effectively.
+    - This task asks you to select a suitable conclusion for an unfinished narrative or instructional content. It tests your comprehension and reasoning skills as you assess how well each option aligns with the given text.
+    - Your task involves completing an incomplete passage by selecting the ending that logically continues the context provided. This requires reading comprehension and the ability to infer meaning from a text.
+arc_easy:
+  descriptions:
+    - Your job is to discern which information best answers a posed question, focusing on practical examples and scientific principles. This requires a strong grasp of underlying concepts in ecology or physics.
+    - You will analyze questions that explore important connections such as environmental issues or animal adaptations. Utilize your background knowledge to evaluate and select the most fitting answer.
+    - This task involves selecting answers that reflect accurate relationships or effects seen in nature or society. You will need to sort through potential choices critically to find the appropriate one.
+arc_challenge:
+  descriptions:
+    - This task is about analyzing questions which examine your grasp of scientific ideas. You must connect conceptual knowledge with practical examples from geology, ecology and environmental changes.
+    - The objective here is to evaluate various scientific scenarios and infer the most logical explanations or definitions based on established knowledge. This task will strengthen your analytical and reasoning skills in the context of natural science.
+    - Your role is to interpret questions focusing on earth science and biological interactions. This demands a clear understanding of relevant processes, such as decomposition, weathering, and species adaptation.
+
+fiqa:
+  descriptions:
+    - In this task, your responsibility is to analyze financial questions and determine the most suitable response. This requires a strong understanding of financial concepts and critical reasoning skills.
+    - You will be presented with questions and scenarios related to financial topics. Your goal is to evaluate the given options and identify the one that best satisfies the context and provides the most accurate or relevant explanation.
+    - This task challenges you to interpret financial information, analyze market-related scenarios, and select appropriate answers based on economic principles and practical applications.
+    - Your role is to assess financial data, reasoning, or queries by applying your understanding of investment, economics, and business trends. Choose the response that aligns best with sound financial practices.
+    - In this task, focus on the context of financial or market-related questions, identifying which response is most logically consistent and grounded in financial reasoning.
+    - Analyze scenarios involving business, economics, or personal finance, and select the answer that reflects both the context provided and established financial knowledge.
+    - This task involves comprehending and interpreting financial-related topics. Use your understanding of monetary systems, markets, and principles to select the response that best aligns with the scenario.
