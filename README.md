@@ -5,7 +5,7 @@
 ## arxiv: https://arxiv.org/abs/2605.01973
 
 
-This is repo is a revise version of LlamaFactory 0.8.3. Questions to the basic pipeline can refer to the original repo.
+This project is implemented on the basis of LlamaFactory 0.8.3. Questions to the basic usage can refer to the original repo: https://github.com/hiyouga/LlamaFactory/tree/v0.8.3.
 
 
 ## Data Preprocessing
