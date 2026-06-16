@@ -2,9 +2,12 @@
 <h1 align="center">Learn-to-learn on Arbitrary Textual Conditioning: A Hypernetwork-Driven Meta-Gated LLM</h1>
 <div align="center">
 Luo Ji, Qi Qin, Ningyuan Xi, Teng Chen, Qingqing Gu, Hongyan Li
-[![arXiv](https://img.shields.io/badge/arXiv-2605.01973-B31B1B)](https://arxiv.org/abs/2605.01973)
 Email: jiluoaaron@hotmail.com; qinqi@pku.edu.cn
+
+[![arXiv](https://img.shields.io/badge/arXiv-2605.01973-B31B1B)](https://arxiv.org/abs/2605.01973)
 </div>
+
+https://arxiv.org/abs/2605.01973
 
 ## Accepted by ICML2026
 
