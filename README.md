@@ -1,9 +1,12 @@
 
-# Learn-to-learn on Arbitrary Textual Conditioning: A Hypernetwork-Driven Meta-Gated LLM
+<h1 align="center">Learn-to-learn on Arbitrary Textual Conditioning: A Hypernetwork-Driven Meta-Gated LLM</h1>
+<div align="center">
+Luo Ji, Qi Qin, Ningyuan Xi, Teng Chen, Qingqing Gu, Hongyan Li
+![arXiv](https://img.shields.io/badge/arXiv-2605.01973-b31b1b.svg)
+Email: jiluoaaron@hotmail.com; qinqi@pku.edu.cn
+</div>
+
 ## Accepted by ICML2026
-
-## arxiv: https://arxiv.org/abs/2605.01973
-
 
 This project is implemented on the basis of LlamaFactory 0.8.3. Questions to the basic usage can refer to the original repo: https://github.com/hiyouga/LlamaFactory/tree/v0.8.3.
 
