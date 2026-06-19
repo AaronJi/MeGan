@@ -236,7 +236,7 @@ class MultiheadAttentionProjectQuery(nn.Module):
         self.d1 = d1
         self.d2 = d2
 
-        # 注意力层：所有维度都设为d2
+        # attention layer: all dims set to d2
         self.attention = nn.MultiheadAttention(
             embed_dim=d2,  # 所有维度都使用d2
             num_heads=num_heads,
@@ -244,18 +244,18 @@ class MultiheadAttentionProjectQuery(nn.Module):
             batch_first=True
         )
 
-        # 投影层：将输入从d1投影到d2
+        # projection layer: dim from d1 to d2
         self.query_proj = nn.Linear(d1, d2)
         self.key_proj = nn.Linear(d1, d2)
         self.value_proj = nn.Linear(d1, d2)
 
     def forward(self, q, k, v, key_padding_mask=None, attn_mask=None, need_weights=False):
-        # 将查询、键、值都投影到d2
+        # project query, key, value to d2
         query = self.query_proj(q)
         key = self.key_proj(k)
         value = self.value_proj(v)
 
-        # 注意力计算（输出维度为d2）
+        # attention calculation, output dim=d2
         attn_output, attn_weights = self.attention(
             query=query,
             key=key,
@@ -275,7 +275,7 @@ class LlamaMLP(nn.Module):
         self.hidden_size = config.hidden_size
         self.intermediate_size = config.intermediate_size
         
-        # 基础投影层
+        # basic projection layers
         self.gate_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
         self.up_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
         self.down_proj = nn.Linear(self.intermediate_size, self.hidden_size, bias=config.mlp_bias)
@@ -298,7 +298,7 @@ class LlamaMLP(nn.Module):
         else:
             # not reduced; hidden_size to intermediate size
 
-            # 风格适配模块 - 使用交叉注意力
+            # condition adapting block
             if self.config.meta_swishglu_attn_key is not None and self.config.meta_swishglu_attn_head_num is not None:
                 #  and self.config.meta_swishglu_attn_head_num > 0
                 self.style_attention = nn.MultiheadAttention(
@@ -309,7 +309,7 @@ class LlamaMLP(nn.Module):
             else:
                 self.style_attention = None
 
-            # 风格适配模块
+            # generating beta
             self.beta_generator = nn.Sequential(
                 nn.Linear(self.hidden_size, self.intermediate_size, bias=with_bias),
                 nn.Tanh(),
@@ -344,7 +344,6 @@ class LlamaMLP(nn.Module):
             up_out = self.up_proj(x)
             
             if style is not None:
-                # 使用注意力机制对齐序列长度
                 if self.style_attention is None:
                     style_aligned = style
                 else:
@@ -363,7 +362,7 @@ class LlamaMLP(nn.Module):
             else:
                 beta = 0
             
-            # 带风格调节的门控机制
+            # meta-gating on conditions
             activated = torch.nn.functional.silu((beta + 1) * gate_out) / (beta + 1)
             down_proj = self.down_proj(activated * up_out)
         #print('&&&&&&&&&&')
@@ -382,69 +381,6 @@ class LambdaLayer(nn.Module):
         self.lambd = lambd
     def forward(self, x):
         return self.lambd(x)
-
-# class LlamaMLP(nn.Module):
-#     def __init__(self, config):
-#         super().__init__()
-#         self.config = config
-#         self.hidden_size = config.hidden_size
-#         self.intermediate_size = config.intermediate_size
-#         self.gate_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
-#         self.up_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
-#         self.down_proj = nn.Linear(self.intermediate_size, self.hidden_size, bias=config.mlp_bias)
-#         self.beta_generator = nn.Linear(self.hidden_size, self.intermediate_size)
-#         # 初始化权重：正态分布，均值0，标准差0.02
-#         init.normal_(self.beta_generator.weight, mean=0.0, std=0.02)
-#         self.act_fn = ACT2FN[config.hidden_act]
-#         self.Tanh = nn.Tanh()
-
-#     def forward(self, x, style=None):
-#         if self.config.pretraining_tp > 1:
-#             slice = self.intermediate_size // self.config.pretraining_tp
-#             gate_proj_slices = self.gate_proj.weight.split(slice, dim=0)
-#             up_proj_slices = self.up_proj.weight.split(slice, dim=0)
-#             down_proj_slices = self.down_proj.weight.split(slice, dim=1)
-
-#             gate_proj = torch.cat(
-#                 [F.linear(x, gate_proj_slices[i]) for i in range(self.config.pretraining_tp)], dim=-1
-#             )
-#             up_proj = torch.cat([F.linear(x, up_proj_slices[i]) for i in range(self.config.pretraining_tp)], dim=-1)
-
-#             intermediate_states = (self.act_fn(gate_proj) * up_proj).split(slice, dim=2)
-#             down_proj = [
-#                 F.linear(intermediate_states[i], down_proj_slices[i]) for i in range(self.config.pretraining_tp)
-#             ]
-#             down_proj = sum(down_proj)
-#         else:
-#             gate_out = self.gate_proj(x)
-#             up_out = self.up_proj(x)
-
-#             beta = 0
-            
-#             if style is not None:
-#                 # beta = self.beta_generator(style)
-#                 style = style.to(self.beta_generator.weight.dtype)
-#                 # print(style.size()) # 形状: (batch_size, sequence_len, hidden_size)
-#                 beta = 0.5 * self.Tanh(self.beta_generator(style)) 
-#                 # print(beta.size())
-#                 # print(gate_out.size())
-#                 # beta = beta.mean()  # [1,2,11008] → [1,1,11008]
-#                 beta = beta.mean(dim=1, keepdim=True)
-#             else:
-#                 beta = 0  # 默认值
-
-#             # print(f"style:  {style.size()}\n{style}")
-#             # print(f"beta:  {beta.size()}\n{beta}")
-#             # print(f"gate_out: {gate_out.size()}\n{gate_out}")
-#             activated = torch.nn.functional.silu((beta + 1) * gate_out) / (beta + 1)
-
-            
-#             # print(f"activated: {activated.size()}\n{activated}")
-
-#             down_proj = self.down_proj(activated * up_out)
-
-#         return down_proj
-
 
 def repeat_kv(hidden_states: torch.Tensor, n_rep: int) -> torch.Tensor:
     """
@@ -859,7 +795,7 @@ class LlamaDecoderLayer(nn.Module):
 
         hidden_states = self.input_layernorm(hidden_states)
 
-        # Self Attention
+        # Self-Attention
         hidden_states, self_attn_weights, present_key_value = self.self_attn(
             hidden_states=hidden_states,
             attention_mask=attention_mask,

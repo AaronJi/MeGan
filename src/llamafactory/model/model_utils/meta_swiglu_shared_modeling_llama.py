@@ -238,7 +238,7 @@ class MultiheadAttentionProjectQuery(nn.Module):
         self.d1 = d1
         self.d2 = d2
 
-        # 注意力层：所有维度都设为d2
+        # attention layer: all dims set to d2
         self.attention = nn.MultiheadAttention(
             embed_dim=d2,  # 所有维度都使用d2
             num_heads=num_heads,
@@ -246,18 +246,18 @@ class MultiheadAttentionProjectQuery(nn.Module):
             batch_first=True
         )
 
-        # 投影层：将输入从d1投影到d2
+        # projection layer: dim from d1 to d2
         self.query_proj = nn.Linear(d1, d2)
         self.key_proj = nn.Linear(d1, d2)
         self.value_proj = nn.Linear(d1, d2)
 
     def forward(self, q, k, v, key_padding_mask=None, attn_mask=None, need_weights=False):
-        # 将查询、键、值都投影到d2
+        # project query, key, value to d2
         query = self.query_proj(q)
         key = self.key_proj(k)
         value = self.value_proj(v)
 
-        # 注意力计算（输出维度为d2）
+        # attention calculation, output dim=d2
         attn_output, attn_weights = self.attention(
             query=query,
             key=key,
@@ -306,7 +306,7 @@ class HyperStyle2Beta(nn.Module):
                 #  and self.config.meta_swishglu_attn_head_num > 0
                 self.style_attention = nn.MultiheadAttention(
                     embed_dim=self.hidden_size,
-                    num_heads=self.config.meta_swishglu_attn_head_num,  # 可调整
+                    num_heads=self.config.meta_swishglu_attn_head_num,  # adjustable
                     batch_first=True
                 )
             else:
@@ -314,7 +314,7 @@ class HyperStyle2Beta(nn.Module):
 
             self.layer_embeddings = nn.Embedding(self.config.num_hidden_layers, self.hidden_size)
 
-            # 风格适配模块
+            # generating beta
             self.beta_generator = nn.Sequential(
                 nn.Linear(self.hidden_size, self.intermediate_size, bias=with_bias),
                 nn.Tanh(),
@@ -328,12 +328,11 @@ class HyperStyle2Beta(nn.Module):
         return
 
     def forward(self, x, style, layer_index):
-        # 使用注意力机制对齐序列长度
         if self.style_attention is None:
             style_aligned = style
         else:
             if self.config.meta_swishglu_attn_key == 'x':
-                # query: x (目标序列), key/value: style (源序列)
+                # query: x (target seq), key/value: style (source seq)
                 # x: [B, 64, hidden_size]
                 # style: [B, 16, hidden_size]
                 # style_aligned: [B, 64, hidden_size]
@@ -361,7 +360,7 @@ class LlamaMLP(nn.Module):
         self.intermediate_size = config.intermediate_size
         self.hyper_style2beta = hyper_style2beta
 
-        # 基础投影层
+        # basic projection layers
         self.gate_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
         self.up_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=config.mlp_bias)
         self.down_proj = nn.Linear(self.intermediate_size, self.hidden_size, bias=config.mlp_bias)
@@ -394,7 +393,7 @@ class LlamaMLP(nn.Module):
             else:
                 beta = 0
 
-            # 带风格调节的门控机制
+            # meta-gating on conditions
             activated = torch.nn.functional.silu((beta + 1) * gate_out) / (beta + 1)
             down_proj = self.down_proj(activated * up_out)
         # print('&&&&&&&&&&')
@@ -829,7 +828,7 @@ class LlamaDecoderLayer(nn.Module):
 
         hidden_states = self.input_layernorm(hidden_states)
 
-        # Self Attention
+        # Self-Attention
         hidden_states, self_attn_weights, present_key_value = self.self_attn(
             hidden_states=hidden_states,
             attention_mask=attention_mask,
