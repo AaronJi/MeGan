@@ -67,7 +67,7 @@ bash train_eval_MetaICL_non-nli-to-nli.sh
 ```
 
 ---
-## Summary
+## 🧠 Summary
 
 This project is implemented on the basis of LlamaFactory 0.8.3. Questions to the basic usage can refer to the original repo: https://github.com/hiyouga/LlamaFactory/tree/v0.8.3.
 
@@ -88,7 +88,7 @@ During training, the condition content is first converted into a natural express
 ---
 ## 🚀 Model Configuration
 
-We keep a local copy of the official llama model code with the implemetation of beta-SwiGLU and the hypernetwork in [meta_swiglu_shared_modeling_llama.py](src/llamafactory/model/model_utils/meta_swiglu_shared_modeling_llama.py). We also implement another version of model code which has layer-wise hypernetworks in [meta_swiglu_modeling_llama.py](src/llamafactory/model/model_utils/meta_swiglu_modeling_llama.py).
+We keep a local copy of the official llama model code with the implementation of beta-SwiGLU and the hypernetwork in [meta_swiglu_shared_modeling_llama.py](src/llamafactory/model/model_utils/meta_swiglu_shared_modeling_llama.py). We also implement another version of model code which has layer-wise hypernetworks in [meta_swiglu_modeling_llama.py](src/llamafactory/model/model_utils/meta_swiglu_modeling_llama.py).
 
 ### model loading:
 One of the above model objects (`LlamaForCausalLM_sharedHyper` or `LlamaForCausalLM`) is loaded by [loader.py](src/llamafactory/model/loader.py), depending on the configuration of `meta_swishglu_shared_hyper`. 
@@ -96,24 +96,176 @@ One of the above model objects (`LlamaForCausalLM_sharedHyper` or `LlamaForCausa
 ### hyperparameter passing:
 To automatically customize the model architecture by script configurations, one need to execute the setattr method within the patch_config function in [patcher.py](src/llamafactory/model/patcher.py), to pass the running config (e.g., meta_swishglu_attn_key) to model_args.
 
+### revised objects:
+We create a new model object called `LlamaForCausalLM_sharedHyper` in [meta_swiglu_shared_modeling_llama.py](src/llamafactory/model/model_utils/meta_swiglu_shared_modeling_llama.py), which has the following hierarchy:
+- LlamaForCausalLM_sharedHyper
+- LlamaModel
+- LlamaDecoderLayer
+- LlamaMLP
+- HyperStyle2Beta
 
-
----
-## 🔥Training
-
-Training of MeGan is based on the template script: [run_llama_sft_template.sh](train_meta_swish/run_llama_sft_template.sh)
-
-
-
----
-## Baselines
-The following script trains an exampled SFT: [run_sft_test.sh](train_meta_swish/run_sft_test.sh)
-
-For LoRA, switch the finetuning type from `full` to `lora`
+in which `HyperStyle2Beta` is the **hypernetwork** which is fed into the text expression of condition and the layer index, and outputs the layer-specific beta.
 
 ---
+## 🔥 Training
 
-## 🖼️ Other metdadata:
+Training of MeGan is based on the template script: [run_meta_swiglu_sft_template.sh](train_meta_swish/run_meta_swiglu_sft_template.sh).
+
+### key configurations:
+<table>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: top;">
+      <b>category</b>
+    </td>
+    <td>
+      <b>name</b>
+    </td>
+    <td>
+      <b>values</b>
+    </td>
+    <td>
+      <b>expaination</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>finetuning_args</b>
+    </td>
+    <td>
+      <b>finetuning_type</b>
+    </td>
+    <td>
+      <b>"meta_swiglu", "meta_swiglu_full"</b>
+    </td>
+    <td>
+      <b>if `full`: also finetune the original LLM parameter</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_args</b>
+    </td>
+    <td>
+      <b>meta_swishglu_shared_hyper</b>
+    </td>
+    <td>
+      <b>1, 0</b>
+    </td>
+    <td>
+      <b>if use the standalone hypernetwork (layer-independent) </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_args</b>
+    </td>
+    <td>
+      <b>meta_swishglu_attn_key</b>
+    </td>
+    <td>
+      <b>`x`</b>
+    </td>
+    <td>
+      <b>the key of cross-attention in hypernetwork (x means using the block input) </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_args</b>
+    </td>
+    <td>
+      <b>meta_swishglu_attn_head_num</b>
+    </td>
+    <td>
+      <b>int</b>
+    </td>
+    <td>
+      <b>the number of cross-attention heads in hypernetwork; default 4 </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_args</b>
+    </td>
+    <td>
+      <b>meta_swishglu_beta_num_layer</b>
+    </td>
+    <td>
+      <b>int</b>
+    </td>
+    <td>
+      <b>the number of cross-attention layers in hypernetwork; default 1 </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_args</b>
+    </td>
+    <td>
+      <b>meta_swishglu_mlp_bias</b>
+    </td>
+    <td>
+      <b>1, 0</b>
+    </td>
+    <td>
+      <b>if include the bias in MLP of hypernetwork; default 0 </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_args</b>
+    </td>
+    <td>
+      <b>meta_swishglu_beta_hidden_dim</b>
+    </td>
+    <td>
+      <b>int</b>
+    </td>
+    <td>
+      <b>the hidden dimension of hypernetwork (`R` in the paper); set to 128 or 512 </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>data_args</b>
+    </td>
+    <td>
+      <b>style_prompt_type</b>
+    </td>
+    <td>
+      <b>"None", "inSystem", "inQuery"</b>
+    </td>
+    <td>
+      <b>if also include the instruction (with the **condition**) in the system prompt or query; default inSystem </b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>data_args</b>
+    </td>
+    <td>
+      <b>style_expression_type</b>
+    </td>
+    <td>
+      <b>"None", "withInstruction"</b>
+    </td>
+    <td>
+      <b>if use a full expression of instruction including the **condition**; default withInstruction </b>
+    </td>
+  </tr>
+</table>
+
+Besides the above project-specific configurations, we also inherit all the original configurations from the official LlamaFactory. Refer to the original repo for their detailed usages.
+
+---
+## 🎯 Baseline
+The following script trains an exampled SFT: [run_sft_test.sh](train_meta_swish/run_sft_test.sh) based on the template script [run_llama_sft_template.sh](train_meta_swish/run_llama_sft_template.sh).
+
+For LoRA, switch the finetuning type from `full` to `lora`; after training, LlamaFactory will save the adapter weights; use [convert_lora_model.sh](train_meta_swish/convert_lora_model.sh) to convert it into the full checkpoint.
+
+---
+
+## 🖼️ The Conference Metadata:
 https://icml.cc/virtual/2026/poster/63102
 
 For questions, please email:
