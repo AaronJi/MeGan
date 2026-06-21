@@ -13,11 +13,11 @@ export TORCH_USE_CUDA_DSA=1
 CUDA_LAUNCH_BLOCKING=1
 
 # 开始训练的时候改成LlamaFactory代码的公共目录或者个人git branch
-cd /vepfs/DI/user/turghunrahman/workspace/LLaMA-Factory-0.8.2
+cd /path/to/LLaMA-Factory-0.8.2
 
-OUTPUT_MODEL_PATH="/vepfs/DI/user/turghunrahman/model/sft/xxx"
-MODEL_PATH="/vepfs/DI/beijing-public/models/Qwen2.5-7B-Instruct" 
-TOKENIZER_PATH="/vepfs/DI/beijing-public/models/Qwen2.5-7B-Instruct" 
+OUTPUT_MODEL_PATH="/path/to/model/sft/xxx"
+MODEL_PATH="/path/to/models/Qwen2.5-7B-Instruct"
+TOKENIZER_PATH="/path/to/models/Qwen2.5-7B-Instruct"
 DATASET="merge_all_distinct" 
 OUTPUT_PATH=$OUTPUT_MODEL_PATH 
 LR=3e-7 

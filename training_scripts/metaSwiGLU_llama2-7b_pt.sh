@@ -52,10 +52,10 @@ FIX_ARGS="
     --flash_attn fa2 \
 "
 
-: ${MODEL_PATH:="/vepfs/DI/beijing-public/models/Llama-2-7b-hf"}
-: ${TOKENIZER_PATH:="/vepfs/DI/beijing-public/models/Llama-2-7b-hf"}
+: ${MODEL_PATH:="/path/to/models/Llama-2-7b-hf"}
+: ${TOKENIZER_PATH:="/path/to/models/Llama-2-7b-hf"}
 : ${DATASET:="sentiment"}
-: ${OUTPUT_PATH:="/vepfs/DI/user/xiningyuan/results/metaSwiglu/metaSwiGLU_llama2_7b_cpt_test_local"}
+: ${OUTPUT_PATH:="/path/to/results/metaSwiglu/metaSwiGLU_llama2_7b_cpt_test_local"}
 : ${TEMPLATE:="llama2"}
 : ${LR:=1e-6}
 : ${LR_TYPE:="cosine"}

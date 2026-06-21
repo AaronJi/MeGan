@@ -55,8 +55,8 @@ FIX_ARGS="
     --flash_attn fa2 \
 "
 
-: ${MODEL_PATH:="/vepfs/DI/model-public/Mistral-8x7B-Instruct-v0.1"}
-: ${TOKENIZER_PATH:="/vepfs/DI/model-public/Mistral-8x7B-Instruct-v0.1"}
+: ${MODEL_PATH:="/path/to/models/Mistral-8x7B-Instruct-v0.1"}
+: ${TOKENIZER_PATH:="/path/to/models/Mistral-8x7B-Instruct-v0.1"}
 : ${DATASET:="dataset"}
 : ${OUTPUT_PATH:="output_path"}
 : ${TEMPLATE:="mistral"}

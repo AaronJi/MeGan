@@ -3,7 +3,7 @@ export PIP_EXTRA_INDEX_URL="https://pkg.geely.com/artifactory/api/pypi/nvidia-py
 
 # pip install transformers==4.46.1
 # pip install accelerate==0.34.0
-cd /vepfs/DI/user/xiningyuan/MetaLLamaFactory
+cd /path/to/MetaLLamaFactory
 
 #!/bin/bash
 
@@ -60,10 +60,10 @@ FIX_ARGS="
     --preprocessing_num_workers 5\
 "
 
-: ${MODEL_PATH:="/vepfs/DI/beijing-public/models/Llama-2-7b-hf"}
-: ${TOKENIZER_PATH:="/vepfs/DI/beijing-public/models/Llama-2-7b-hf"}
+: ${MODEL_PATH:="/path/to/models/Llama-2-7b-hf"}
+: ${TOKENIZER_PATH:="/path/to/models/Llama-2-7b-hf"}
 : ${DATASET:="SST_test_score"}
-: ${OUTPUT_PATH:="/vepfs/DI/user/xiningyuan/results/metaSwiglu/metaSwiGLU_llama2_7b_cpt_SST_test_score_tanh_0620"}
+: ${OUTPUT_PATH:="/path/to/results/metaSwiglu/metaSwiGLU_llama2_7b_cpt_SST_test_score_tanh_0620"}
 : ${TEMPLATE:="llama2"}
 : ${LR:=1e-6}
 : ${LR_TYPE:="cosine"}

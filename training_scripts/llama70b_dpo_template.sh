@@ -55,8 +55,8 @@ FIX_ARGS="
     --flash_attn fa2 \
 "
 
-: ${MODEL_PATH:="/vepfs/DI/model-public/Llama-3-70B-Instruct"}
-: ${TOKENIZER_PATH:="/vepfs/DI/model-public/Llama-3-70B-Instruct"}
+: ${MODEL_PATH:="/path/to/models/Llama-3-70B-Instruct"}
+: ${TOKENIZER_PATH:="/path/to/models/Llama-3-70B-Instruct"}
 : ${DATASET:="dataset"}
 : ${OUTPUT_PATH:="output_path"}
 : ${TEMPLATE:="llama3"}

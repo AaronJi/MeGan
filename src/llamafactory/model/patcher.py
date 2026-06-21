@@ -210,6 +210,7 @@ def freeze_parameters(module):
         param.requires_grad = False
 
 def replace_layers(model, old_layer_type, new_layer_class, config, finetuning_args):
+    # deprecated
     layers_to_replace = []
     print(f"*** old_layer_type: {old_layer_type}")
     print(f"*** new_layer_class: {new_layer_class}")
@@ -249,4 +250,5 @@ def replace_layers(model, old_layer_type, new_layer_class, config, finetuning_ar
         # print(f'Replaced {name} in {module.__class__.__name__} with MetaLlamaMLP')
 
 def patch_activation_model(model: torch.nn.Module, old_layer_type: type, new_layer_class: type, config, finetuning_args) -> None:
+    # deprecated
     replace_layers(model, old_layer_type, new_layer_class, config, finetuning_args)

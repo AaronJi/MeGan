@@ -3,7 +3,7 @@
 
 #pip install transformers==4.46.1
 #pip install accelerate==0.34.0
-#cd /vepfs/DI/user/xiningyuan/MetaLLamaFactory
+#cd /path/to/MetaLLamaFactory
 cd /vepfs/DI/user/jl/projects/MetaLLamaFactory
 
 #!/bin/bash
@@ -61,10 +61,10 @@ FIX_ARGS="
     --preprocessing_num_workers 16\
 "
 
-: ${MODEL_PATH:="/vepfs/DI/beijing-public/models/Llama-3.2-1B"}
-: ${TOKENIZER_PATH:="/vepfs/DI/beijing-public/models/Llama-3.2-1B"}
+: ${MODEL_PATH:="/path/to/models/Llama-3.2-1B"}
+: ${TOKENIZER_PATH:="/path/to/models/Llama-3.2-1B"}
 : ${DATASET:="Shakespeare"}
-: ${OUTPUT_PATH:="/vepfs/DI/user/xiningyuan/results/metaSwiglu/metaSwiGLU_llama3_1b_cpt_Shakespeare_lr1e-4_tanh_0825"}
+: ${OUTPUT_PATH:="/path/to/results/metaSwiglu/metaSwiGLU_llama3_1b_cpt_Shakespeare_lr1e-4_tanh_0825"}
 : ${TEMPLATE:="llama3"}
 : ${LR:=1e-4}
 : ${LR_TYPE:="cosine"}

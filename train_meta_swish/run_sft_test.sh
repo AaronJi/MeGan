@@ -12,9 +12,9 @@ else
   GPUS_PER_NODE=1
 fi
 
-cd /vepfs/group04/user/jl/projects/MetaLLamaFactory
+cd /path/to/MeGan/
 
-OUT_MODEL_DIR="/vepfs/group04/user/jl/results/metaSwiglu/"
+OUT_MODEL_DIR="/path/to/MeGan/checkpoint/"
 
 PROJECT_NAME="sft-test"
 BASE_MODEL_NAME="Llama-3.2-1B-Instruct"

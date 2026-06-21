@@ -3,7 +3,7 @@ export PIP_EXTRA_INDEX_URL="https://pkg.geely.com/artifactory/api/pypi/nvidia-py
 
 pip install transformers==4.46.1
 pip install accelerate==0.34.0
-#cd /vepfs/DI/user/xiningyuan/MetaLLamaFactory
+#cd /path/to/MetaLLamaFactory
 cd /vepfs/group04/user/jl/projects/MetaLLamaFactory
 
 #!/bin/bash

@@ -55,8 +55,8 @@ FIX_ARGS="
     --flash_attn auto \
 "
 
-: ${MODEL_PATH:="/vepfs/DI/beijing-public/models/Qwen2-72B-Instruct"}
-: ${TOKENIZER_PATH:="/vepfs/DI/beijing-public/models/Qwen2-72B-Instruct"}
+: ${MODEL_PATH:="/path/to/models/Qwen2-72B-Instruct"}
+: ${TOKENIZER_PATH:="/path/to/models/Qwen2-72B-Instruct"}
 : ${DATASET:="dataset"}
 : ${OUTPUT_PATH:="output_path"}
 : ${TEMPLATE:="xingrui_dpo"}

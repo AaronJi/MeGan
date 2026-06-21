@@ -54,7 +54,7 @@ FIX_ARGS="
 : ${TRAINING_TYPE:="full"}
 : ${MODEL_NAME:="llama_3.1_8b_instruct"}
 : ${TOKENIZER_NAME:="llama_3.1_8b_instruct"}
-: ${OUTPUT_PATH:="/vepfs/group04/user/jl/results/metaSwiglu/test_model"}
+: ${OUTPUT_PATH:="/path/to/MeGan/checkpoint/test_model"}
 : ${DATASET:="Shakespeare_qa"}
 : ${TEMPLATE:="llama3"}
 : ${LR:=1e-4}
@@ -65,7 +65,7 @@ FIX_ARGS="
 : ${STYLE_PROMPT:="None"}
 : ${PREPROCESS_WORKERS:=16}
 
-MODEL_DIR="/vepfs/group04/beijing-public/models/"
+MODEL_DIR="/path/to/pretrained_models/"
 MODEL_PATH=$MODEL_DIR$MODEL_NAME
 TOKENIZER_PATH=$MODEL_DIR$MODEL_NAME
 

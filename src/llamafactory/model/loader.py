@@ -177,13 +177,12 @@ def load_model(
 
                 for name, param in model.named_parameters():
                     if is_meta and finetuning_args.finetuning_type != "meta_swiglu_full":
-                        # TODO two blocks; keep names!
                         if "beta_generator" not in name and "style_attention" not in name:
                             param.requires_grad_(False)
                         else:
-                            print(f"保持可训练: {name}")  # 调试用
+                            print(f"Keep trainable: {name}")
                     else:
-                        print(f"保持可训练: {name}")  # 调试用
+                        print(f"Keep trainable: {name}")
 
         #if is_meta:
             # meta specific configs
@@ -198,7 +197,6 @@ def load_model(
         patch_model(model, tokenizer, model_args, is_trainable, add_valuehead)
         register_autoclass(config, model, tokenizer)
 
-        # # 输出meta llama中的参数，并输出是否可以训练
         # for name, module in model.named_modules():
         #     if isinstance(module, MetaLlamaMLP):
         #         print("module is MetaLlamaMLP")
@@ -206,13 +204,7 @@ def load_model(
         #             print(f"MetaLlamaMLP Parameter: {name}.{sub_name}, requires_grad: {param.requires_grad}")
                 
     model = init_adapter(config, model, model_args, finetuning_args, is_trainable)
-    # # 输出meta llama中的参数，并输出是否可以训练，主要起到验证的作用，之后可以删掉
-    # if finetuning_args.finetuning_type == "meta_swiglu" or finetuning_args.finetuning_type == "meta_swiglu_simple":
-    #     print("验证替换模型的参数是不是可训练，之后可以删掉")
     for name, module in model.named_modules():
-         #if isinstance(module, MetaLlamaMLP):
-         #    for sub_name, param in module.named_parameters():
-         #        print(f"After init_adapter MetaLlamaMLP Parameter: {name}.{sub_name}, requires_grad: {param.requires_grad}")
          for sub_name, param in module.named_parameters():
              if param.requires_grad == True:
                  print(f"After init_adapter Trainable Parameter: {name}.{sub_name}, requires_grad: {param.requires_grad}")

@@ -207,13 +207,12 @@ def preprocess_supervised_dataset(
             mask_history=data_args.mask_history,
         )
         
-        # 获取输入序列长度
+        # get input seq length
         seq_length = len(input_ids)
         
-        # 处理style文本
+        # deal with style expression
         if style:
             # print(examples["_style"][i])
-            # 如果是positive，生成全1矩阵，否则全0矩阵
             # is_positive = examples["_style"][i].lower() in ["pos", "positive"]
             # shape: [seq_length, intermediate_size]
             # style = torch.ones(seq_length, 11008) if is_positive \

@@ -1,4 +1,4 @@
-PROJECT_DIR="/vepfs/group04/user/jl/projects/MetaLLamaFactory"
+PROJECT_DIR="/path/to/MeGan/"
 #MODEL_NAME="llama_3.1_8b_instruct"
 #LORA_MODEL_NAME="sft-lora-None-llama_3.1_8b_instruct-LR1e-4-bsz8-epoch1"
 RESULT_MODEL_NAME="mergeModel-"$LORA_MODEL_NAME

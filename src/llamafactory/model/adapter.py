@@ -61,10 +61,11 @@ def _setup_meta_swiglu_tuning(
     is_trainable: bool,
     cast_trainable_params_to_fp32: bool,
 ) -> None:
+    # deprecated
     if not is_trainable:
         return
 
-    logger.info_rank0("Fine-tuning method: MetaSwiGLU, Add")
+    logger.info_rank0("Fine-tuning method: MetaSwiGLU, Added")
     for name, param in model.named_parameters():
         if "meta_act_fn" in name:
             if cast_trainable_params_to_fp32:

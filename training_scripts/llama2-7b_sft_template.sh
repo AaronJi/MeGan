@@ -53,8 +53,8 @@ FIX_ARGS="
     --flash_attn fa2 \
 "
 
-: ${MODEL_PATH:="/vepfs/DI/beijing-public/models/Llama-2-7b-hf"}
-: ${TOKENIZER_PATH:="/vepfs/DI/beijing-public/models/Llama-2-7b-hf"}
+: ${MODEL_PATH:="/path/to/models/Llama-2-7b-hf"}
+: ${TOKENIZER_PATH:="/path/to/models/Llama-2-7b-hf"}
 : ${DATASET:="dataset"}
 : ${OUTPUT_PATH:="output_path"}
 : ${TEMPLATE:="llama2"}

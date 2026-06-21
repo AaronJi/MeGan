@@ -3,11 +3,11 @@
 export TORCH_USE_CUDA_DSA=1
 CUDA_LAUNCH_BLOCKING=1
 
-cd /vepfs/DI/user/xiningyuan/MetaLLamaFactory
+cd /path/to/MetaLLamaFactory
 
-OUTPUT_MODEL_PATH="/vepfs/DI/user/xiningyuan/results/metaSwiglu/test"
-MODEL_PATH="/vepfs/DI/beijing-public/models/Llama-2-7b-hf" 
-TOKENIZER_PATH="/vepfs/DI/beijing-public/models/Llama-2-7b-hf" 
+OUTPUT_MODEL_PATH="/path/to/results/metaSwiglu/test"
+MODEL_PATH="/path/to/models/Llama-2-7b-hf"
+TOKENIZER_PATH="/path/to/models/Llama-2-7b-hf"
 DATASET="gsm8k" 
 OUTPUT_PATH=$OUTPUT_MODEL_PATH 
 LR=1e-6 
