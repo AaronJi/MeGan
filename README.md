@@ -63,13 +63,13 @@ bash train_eval_MetaICL_non-nli-to-nli.sh
 ### evaluation only
 An exampled model checkpoint is on https://huggingface.co/jiluoaaron/MeGan-R512-CrossFit_UnifiedQA-nn2n-lr1e-6/.
 ```bash
-bash train_eval_MetaICL_non-nli-to-nli.sh
+bash eval_MetaICL_non-nli-to-nli.sh
 ```
 
 ---
 ## 🧠 Summary
 
-This project is implemented on the basis of LlamaFactory 0.8.3. Questions to the basic usage can refer to the original repo: https://github.com/hiyouga/LlamaFactory/tree/v0.8.3.
+This project is implemented on the basis of LlamaFactory 0.8.3. Questions to the basic usage can refer to the original repo: https://github.com/hiyouga/LlamaFactory/tree/v0.8.2.
 
 ---
 ## ⚙️ Data Processing
@@ -258,6 +258,147 @@ Training of MeGan is based on the template script: [run_meta_swiglu_sft_template
 Besides the above project-specific configurations, we also inherit all the original configurations from the official LlamaFactory. Refer to the original repo for their detailed usages.
 
 ---
+## 🎯 Evaluation
+Evaluations on different conditions are integrated into this single script: [evaluate_style.py](src/llamafactory/model/model_utils/evaluate_style.py). Currently, only a single machine (up to 8 GPUs) is supported.
+
+### key configurations:
+<table>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: top;">
+      <b>name</b>
+    </td>
+    <td>
+      <b>values</b>
+    </td>
+    <td>
+      <b>expaination</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_type</b>
+    </td>
+    <td>
+      <b>0, 1, 2</b>
+    </td>
+    <td>
+      <b>0: the standard LLM; 1: LLM with layer-wise hypernetworks; 2: LLM with a single, layer independent hypernetwork (the main method)</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>model_path</b>
+    </td>
+    <td>
+      <b>string</b>
+    </td>
+    <td>
+      <b>the checkpoint absolute path to evalulate</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>output_dir</b>
+    </td>
+    <td>
+      <b>string</b>
+    </td>
+    <td>
+      <b>the output folder to save the evaluated metrics and detaild results</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>data_path</b>
+    </td>
+    <td>
+      <b>string</b>
+    </td>
+    <td>
+      <b>the absolute path of the test dataset</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>num_gpus</b>
+    </td>
+    <td>
+      <b>int</b>
+    </td>
+    <td>
+      <b>the number of GPUs to evaulate (up to 8)</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>eval_form</b>
+    </td>
+    <td>
+      <b>string</b>
+    </td>
+    <td>
+      <b>"gen": ca, "gen_choice": calculate automatic metrics direclty based on the generated responses; "PPL_choice": calculate the accurary for multi-choice question (by PPL comparison of options); "gen_math": calculate the accuracy for math questions (e.g., GSM8K); "gen_code": calculate the pass-1 for coding questions (e.g., HumanEval, MBPP)</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>eval_mode</b>
+    </td>
+    <td>
+      <b>string</b>
+    </td>
+    <td>
+      <b>"case_include", "strict", "case_strict"   when eval_form="gen_choice", the principle of response correctness judgement: if strictly equaling or include; if case-sensitive or not</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>sample_format</b>
+    </td>
+    <td>
+      <b>string</b>
+    </td>
+    <td>
+      <b>"qa_domain": for the condition type of `domain`, inlcuding datasets AdaptSum; "qa_persona": for the condition type of `persona`, such as Persona-Chat; "qa_task": for the condition type of `task description`, inlcuding datasets SNI, CrossFit&UnifiedQA; "qa_style": for the condition type of `style`, inlcuding datasets GYAFC, MIC; "qa_sentiment": for the condition type of `sentiment`, such as SST</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>style_prompt_type</b>
+    </td>
+    <td>
+      <b>"None", "inSystem", "inQuery"</b>
+    </td>
+    <td>
+      <b>if also include the instruction (with the **condition**) in the system prompt or query; default inSystem</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>style_expression_type</b>
+    </td>
+    <td>
+      <b>"None", "withInstruction"</b>
+    </td>
+    <td>
+      <b>if use a full expression of instruction including the **condition**; default withInstruction</b>
+    </td>
+  </tr>
+  <tr>
+    <td style="white-space: nowrap; padding-right: 16px; vertical-align: middle;">
+      <b>style_domain</b>
+    </td>
+    <td>
+      <b>string</b>
+    </td>
+    <td>
+      <b>the detailed evaluation domain which differentite the output subfolder (e.g., when evaludating a specific domain of AdaptSum)</b>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 🎯 Baseline
 The following script trains an exampled SFT: [run_sft_test.sh](train_meta_swish/run_sft_test.sh) based on the template script [run_llama_sft_template.sh](train_meta_swish/run_llama_sft_template.sh).
 

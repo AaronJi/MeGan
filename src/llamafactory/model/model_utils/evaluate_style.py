@@ -485,11 +485,11 @@ def extract_sample(sample, args):
     style = None
     instruction = None
     history = None
-    if args.sample_format == 'text_style_role':
+    if args.sample_format == 'text_style_role': # deprecated
         query = sample["messages"][0]["content"]
         response = None
         style = sample["messages"][1]["content"]
-    elif args.sample_format == 'qa_style_role':
+    elif args.sample_format == 'qa_style_role': # deprecated
         query = sample['messages'][0]['content']
         response = sample['messages'][1]['content']
         style = sample['messages'][2]['content']
